@@ -6,7 +6,7 @@ sidebar_position: 1
 ---
 <div className="chapter-hero">
 
-![Introduction](/img/chapters/introduction.png)
+![Introduction](/static/img/chapters/introduction.png)
 
 </div>
 
