@@ -21,11 +21,11 @@ const config = {
     v4: false,
   },
 
-  url: 'https://your-docusaurus-site.example.com',
-  baseUrl: '/',
+  url: 'https://hadikhd.github.io',
+  baseUrl: '/llm-training-handbook/',
 
-  organizationName: 'facebook',
-  projectName: 'docusaurus',
+  organizationName: 'hadikhd',
+  projectName: 'llm-traning-handbook',
 
   onBrokenLinks: 'throw',
 
