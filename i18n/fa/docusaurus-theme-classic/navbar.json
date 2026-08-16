@@ -1,0 +1,10 @@
+{
+  "title": {
+    "message": "LLM Training Handbook",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "LLM Training Handbook",
+    "description": "LLM Training Handbook"
+  }
+}

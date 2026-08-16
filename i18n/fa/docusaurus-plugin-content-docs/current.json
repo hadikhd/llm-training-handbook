@@ -1,0 +1,22 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.i18n": {
+    "message": "i18n",
+    "description": "The label for category 'i18n' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.fa": {
+    "message": "fa",
+    "description": "The label for category 'fa' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.docusaurus-plugin-content-docs": {
+    "message": "docusaurus-plugin-content-docs",
+    "description": "The label for category 'docusaurus-plugin-content-docs' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.current": {
+    "message": "current",
+    "description": "The label for category 'current' in sidebar 'tutorialSidebar'"
+  }
+}
