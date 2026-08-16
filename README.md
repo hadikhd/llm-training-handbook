@@ -296,6 +296,25 @@ If the Persian edition is stored alongside the English edition, use the correspo
 > **Note:** The exact Persian file paths may depend on the Docusaurus i18n configuration. Keep the language-specific paths consistent with the project's `i18n` configuration.
 
 ---
+## 📖 Read the Handbook
+
+The complete handbook is available as a Docusaurus website:
+
+🌐 Website:
+`https://YOUR_USERNAME.github.io/llm-training-handbook/`
+
+Source Markdown files:
+
+### English 🇬🇧
+
+- [Preface](./docs/00-preface.md)
+- [Introduction](./docs/01-introduction.md)
+- [Book Index](./docs/index.md)
+
+### فارسی 🇮🇷
+
+- [پیشگفتار](./i18n/fa/docusaurus-plugin-content-docs/current/00-preface.md)
+- [مقدمه](./i18n/fa/docusaurus-plugin-content-docs/current/01-introduction.md)
 
 ## 🧩 Why This Handbook Exists
 
