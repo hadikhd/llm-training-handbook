@@ -157,7 +157,7 @@ Traditional statistical language models approximate the next-token probability u
 A trigram model approximates:
 
 $$
-P(x_t \mid x_{<t})
+P(x_t \mid x_{\lt t})
 \approx
 P(x_t \mid x_{t-2}, x_{t-1})
 $$
@@ -167,13 +167,13 @@ Its probabilities can be estimated using corpus counts:
 $$
 P(x_t \mid x_{t-2}, x_{t-1})
 =
-
 \frac{
 C(x_{t-2}, x_{t-1}, x_t)
 }{
 C(x_{t-2}, x_{t-1})
 }
 $$
+
 
 N-gram models are conceptually simple, but they have important limitations:
 
