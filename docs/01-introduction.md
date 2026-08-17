@@ -207,11 +207,8 @@ The Transformer replaced recurrence with attention-based sequence processing.
 Its central operation is self-attention:
 
 $$
-\operatorname{Attention}(Q,K,V)
-=
-
-\operatorname{softmax}
-\left(
+\operatorname{Attention}(Q,K,V) =
+\operatorname{softmax}\left(
 \frac{QK^\top}{\sqrt{d_k}} + M
 \right)V
 $$
