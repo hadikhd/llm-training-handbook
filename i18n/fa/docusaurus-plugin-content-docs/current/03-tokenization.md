@@ -7,7 +7,7 @@ sidebar_position: 1
 # توکن‌سازی
 <div className="chapter-hero">
 
-![فصل ۳ — توکن سازی ](/img/chapters/tokenization.png)
+![فصل ۳ — توکن سازی ](/static/img/chapters/tokenization.png)
 
 </div>
 

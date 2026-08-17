@@ -7,7 +7,7 @@ description: How raw data becomes a governed, filtered, deduplicated, multilingu
 ---
 <div className="chapter-hero">
 
-![Chapter 2 — Data](/img/chapters/data.png)
+![Chapter 2 — Data](/static/img/chapters/data.png)
 
 </div>
 

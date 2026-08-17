@@ -8,7 +8,7 @@ description: How model size, data, compute, context, and infrastructure interact
 
 <div className="chapter-hero">
 
-![Chapter 6 — Scaling Laws](/img/chapters/scaling-laws.png)
+![Chapter 6 — Scaling Laws](/static/img/chapters/scaling-laws.png)
 
 </div>
 

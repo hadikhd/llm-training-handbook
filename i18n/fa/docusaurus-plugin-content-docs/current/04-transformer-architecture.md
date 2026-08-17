@@ -7,7 +7,7 @@ sidebar_position: 1
 
 <div className="chapter-hero">
 
-![ فصل ۴ — معماری ترنسفورمرزها](/img/chapters/transformer-architecture.png)
+![ فصل ۴ — معماری ترنسفورمرزها](/static/img/chapters/transformer-architecture.png)
 
 </div>
 
