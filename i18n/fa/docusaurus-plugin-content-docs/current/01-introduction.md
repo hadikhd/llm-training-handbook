@@ -24,22 +24,23 @@ sidebar_position: 1
 $$
 x_{1:T} = (x_1, x_2, \ldots, x_T)
 $$
-<div className="ltr-term">
+<div className="rtl-content">
 یک مدل زبانی (Language Model) احتمال مشترک (Joint Probability) را به‌صورت زیر برآورد می‌کند:
 </div>
 $$
 P(x_{1:T})
 $$
-<div className="ltr-term">
+<div className="rtl-content">
 با استفاده از قانون زنجیره‌ای احتمال (Probability Chain Rule)، این توزیع مشترک (Joint Distribution) را می‌توان به‌صورت زیر تجزیه کرد:
 </div>
+<div className="math-block">
 $$
 P(x_{1:T})
 =
 \prod_{t=1}^{T}
 P(x_t \mid x_{1:t-1})
 $$
-
+</div>
 که در آن:
 
 $$
