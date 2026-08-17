@@ -106,11 +106,9 @@ $$
 A softmax function converts those logits into probabilities:
 
 $$
-P(x_t = i \mid x_{<t})
-=
-\frac{\exp(z_{t,i})}
-{\sum_{j=1}^{V}\exp(z_{t,j})}
+P(x_t = i \mid x_{\lt t}) = \frac{\exp(z_{t,i})}{\sum_{j=1}^{V}\exp(z_{t,j})}
 $$
+
 
 The resulting vector defines a categorical probability distribution over the next token.
 
