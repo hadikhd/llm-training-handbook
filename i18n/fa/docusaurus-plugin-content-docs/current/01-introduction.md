@@ -34,10 +34,10 @@ $$
 با استفاده از قانون زنجیره‌ای احتمال (Probability Chain Rule)، این توزیع مشترک (Joint Distribution) را می‌توان به‌صورت زیر تجزیه کرد:
 
 $$
-P(x_{1:T})
+P\left(x_{1:T}\right)
 =
 \prod_{t=1}^{T}
-P(x_t \mid x_{1:t-1})
+P\left(x_t \mid x_{1:t-1}\right)
 $$
 
 که در آن:
