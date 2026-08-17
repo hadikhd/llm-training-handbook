@@ -117,11 +117,6 @@ const config = {
             position: 'left',
             label: 'Chapters',
           },
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
-          },
         ],
       },
       footer: {
