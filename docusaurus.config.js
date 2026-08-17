@@ -83,7 +83,7 @@ const config = {
           rehypePlugins: [rehypeKatex],
 
           editUrl:
-            'https://github.com/hadikhd/llm-trainning-handbook/edit/main/',
+            'https://github.com/hadikhd/llm-training-handbook/edit/main/',
         },
         blog: false, // Disabled for your book
         theme: {
