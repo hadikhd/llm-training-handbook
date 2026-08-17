@@ -167,11 +167,8 @@ Its probabilities can be estimated using corpus counts:
 $$
 P(x_t \mid x_{t-2}, x_{t-1})
 =
-\frac{
-C(x_{t-2}, x_{t-1}, x_t)
-}{
-C(x_{t-2}, x_{t-1})
-}
+\frac{C(x_{t-2}, x_{t-1}, x_t)}
+     {C(x_{t-2}, x_{t-1})}
 $$
 
 
