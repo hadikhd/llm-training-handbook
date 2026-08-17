@@ -16,7 +16,7 @@ sidebar_position: 1
 [فهرست (Contents)](./index.md) |
 [بعدی: توکن‌سازی (Tokenization)](./02-data.md)
 
-<div className="mixed-content">
+<div className="ltr-term">
 یک مدل زبانی (Language Model) به دنباله‌هایی از توکن‌ها (Tokens) احتمال اختصاص می‌دهد.
 
 فرض کنید یک دنبالهٔ توکن (Token Sequence) به‌صورت زیر باشد:
@@ -24,15 +24,15 @@ sidebar_position: 1
 $$
 x_{1:T} = (x_1, x_2, \ldots, x_T)
 $$
-
+<div className="ltr-term">
 یک مدل زبانی (Language Model) احتمال مشترک (Joint Probability) را به‌صورت زیر برآورد می‌کند:
-
+</div>
 $$
 P(x_{1:T})
 $$
-
+<div className="ltr-term">
 با استفاده از قانون زنجیره‌ای احتمال (Probability Chain Rule)، این توزیع مشترک (Joint Distribution) را می‌توان به‌صورت زیر تجزیه کرد:
-
+</div>
 $$
 P(x_{1:T})
 =

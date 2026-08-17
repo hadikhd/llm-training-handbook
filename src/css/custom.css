@@ -74,3 +74,51 @@
   border-radius: 16px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
+
+/* =========================================
+   Persian / RTL Documentation
+   ========================================= */
+
+.rtl-content {
+  direction: rtl;
+  text-align: right;
+  unicode-bidi: isolate;
+}
+
+/* English technical terms inside Persian text */
+.rtl-content .ltr-term {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+  text-align: left;
+}
+
+/* Code should always remain LTR */
+.rtl-content pre,
+.rtl-content code {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Code blocks */
+.rtl-content pre {
+  unicode-bidi: isolate;
+}
+
+/* Tables */
+.rtl-content table {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Lists */
+.rtl-content ul,
+.rtl-content ol {
+  direction: rtl;
+  text-align: right;
+}
+
+.ltr-term {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
