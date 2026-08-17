@@ -7,7 +7,7 @@ sidebar_position: 1
 # فصل ۹: سامانه‌ها
 <div className="chapter-hero">
 
-![فصل ۹: سامانه‌ها](/static/img/chapters/systems.png)
+![فصل ۹: سامانه‌ها](/img/chapters/systems.png)
 
 </div>
 

@@ -7,7 +7,7 @@ description: The foundations, terminology, lifecycle, and engineering mental mod
 ---
 <div className="chapter-hero">
 
-![Introduction](/static/img/chapters/introduction.png)
+![Introduction](/img/chapters/introduction.png)
 
 </div>
 

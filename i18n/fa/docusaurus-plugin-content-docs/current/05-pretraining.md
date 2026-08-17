@@ -7,7 +7,7 @@ sidebar_position: 1
 ## پیش‌آموزش
 <div className="chapter-hero">
 
-![فصل ۵  — پیش آموزش](/static/img/chapters/pretraining.png)
+![فصل ۵  — پیش آموزش](/img/chapters/pretraining.png)
 
 </div>
 [فهرست مطالب](./index.md) |
