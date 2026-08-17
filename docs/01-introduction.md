@@ -210,7 +210,9 @@ $$
 \mathrm{Attention}(Q, K, V) = \mathrm{softmax}\left(\frac{QK^\top}{\sqrt{d_k}} + M\right)V
 $$
 
-
+$$
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}} + M\right)V
+$$
 where:
 
 * $Q$ contains query vectors.
