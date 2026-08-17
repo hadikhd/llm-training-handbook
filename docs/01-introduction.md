@@ -48,14 +48,15 @@ $$
 Using the probability chain rule, this joint distribution can be factorized as:
 
 $$
-   P(x_{1:T}) = \prod_{t=1}^{T} P(x_t \mid x_{<t})
+P(x_{1:T}) = \prod_{t=1}^{T} P(x_t \mid x_{\lt t})
 $$
 
 where:
 
 $$
-x_{&lt;t} = (x_1, x_2, \ldots, x_{t-1})
+x_{\lt t} = (x_1, x_2, \ldots, x_{t-1})
 $$
+
 
 The model therefore learns to predict each token from the tokens that precede it.
 
