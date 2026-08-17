@@ -210,9 +210,7 @@ $$
 \mathrm{Attention}(Q, K, V) = \mathrm{softmax}\left(\frac{QK^\top}{\sqrt{d_k}} + M\right)V
 $$
 
-$$
-\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}} + M\right)V
-$$
+
 where:
 
 * $Q$ contains query vectors.
@@ -255,18 +253,16 @@ Parameter count alone is not sufficient. A large model trained on insufficient o
 Model quality depends on the interaction of:
 
 $$
-\text{Capability}
-=
-
-f(
-\text{architecture},
-\text{parameters},
-\text{data},
-\text{compute},
-\text{optimization},
-\text{post-training}
+\mathrm{Capability} = f(
+\mathrm{architecture}, 
+\mathrm{parameters}, 
+\mathrm{data}, 
+\mathrm{compute}, 
+\mathrm{optimization}, 
+\mathrm{post\text{-}training}
 )
 $$
+
 
 Two models with the same number of parameters may behave very differently because of differences in data quality, tokenization, context length, optimization, or post-training.
 
