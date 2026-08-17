@@ -48,11 +48,7 @@ $$
 Using the probability chain rule, this joint distribution can be factorized as:
 
 $$
-P(x_{1:T})
-=
-
-\prod_{t=1}^{T}
-P(x_t \mid x_{<t})
+P(x_{1:T}) = \prod_{t=1}^{T} P(x_t \mid x_{<t})
 $$
 
 where:
