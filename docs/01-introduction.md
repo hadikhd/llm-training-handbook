@@ -11,7 +11,7 @@ description: The foundations, terminology, lifecycle, and engineering mental mod
 
 </div>
 
-[Previous:Preface](./01-preface.md) |
+[Previous:Preface](./00-preface.md) |
 [Contents](./index.md) |
 [Next: Tokenization](./02-data.md)
 
