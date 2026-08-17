@@ -50,14 +50,13 @@ An LLM is shaped by more than its architecture and parameter count. Its training
 A useful abstraction is:
 
 $$
-\mathrm{Model behavior}
-=
-f(
-\mathrm{architecture},
-\mathrm{training objective},
-\mathrm{data distribution},
-\mathrm{optimization},
-\mathrm{post-training}
+\mathrm{Capability} = f(
+\mathrm{architecture}, 
+\mathrm{parameters}, 
+\mathrm{data}, 
+\mathrm{compute}, 
+\mathrm{optimization}, 
+\mathrm{post\text{-}training}
 )
 $$
 
