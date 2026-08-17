@@ -282,26 +282,13 @@ A typical structure is:
 The project has two complementary surfaces: the **GitHub repository** for source, collaboration, and version history, and the **Docusaurus site** for reading the handbook as structured documentation.
 
 The repository is designed to support a Docusaurus documentation experience in addition to GitHub Markdown.
-
-### English
-
-- [English Preface](./00-preface.md)
-- [English Introduction](./01-introduction.md)
-- [Book Index](./index.md)
-
-### فارسی
-
-If the Persian edition is stored alongside the English edition, use the corresponding Persian Markdown/Docusaurus documents from the repository's language-specific documentation structure.
-
-> **Note:** The exact Persian file paths may depend on the Docusaurus i18n configuration. Keep the language-specific paths consistent with the project's `i18n` configuration.
-
 ---
 ## 📖 Read the Handbook
 
 The complete handbook is available as a Docusaurus website:
 
 🌐 Website:
-`https://YOUR_USERNAME.github.io/llm-training-handbook/`
+`https://hadikhd.github.io/llm-training-handbook/`
 
 Source Markdown files:
 
@@ -312,6 +299,10 @@ Source Markdown files:
 - [Book Index](./docs/index.md)
 
 ### فارسی 🇮🇷
+
+If the Persian edition is stored alongside the English edition, use the corresponding Persian Markdown/Docusaurus documents from the repository's language-specific documentation structure.
+
+> **Note:** The exact Persian file paths may depend on the Docusaurus i18n configuration. Keep the language-specific paths consistent with the project's `i18n` configuration.
 
 - [پیشگفتار](./i18n/fa/docusaurus-plugin-content-docs/current/00-preface.md)
 - [مقدمه](./i18n/fa/docusaurus-plugin-content-docs/current/01-introduction.md)
