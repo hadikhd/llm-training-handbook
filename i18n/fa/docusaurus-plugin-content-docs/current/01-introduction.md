@@ -12,7 +12,7 @@ sidebar_position: 1
 
 ## ۱.۱ مدل زبانی چیست؟ (What Is a Language Model?)
 
-[قبلی: پیشگفتار (Preface)](./01-preface.md) |
+[قبلی: پیشگفتار (Preface)](./00-preface.md) |
 [فهرست (Contents)](./index.md) |
 [بعدی: توکن‌سازی (Tokenization)](./02-data.md)
 
