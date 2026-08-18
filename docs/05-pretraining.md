@@ -189,9 +189,7 @@ Ignoring padding and masked tokens, the nominal number of tokens presented per o
 
 
 $$
-N_{\text{tokens/update}}
-=
-B_{\text{global}} \times T
+N_{\text{tokens/update}} = B_{\text{global}} \times T
 $$
 
 
@@ -201,13 +199,11 @@ For example:
 global_batch_size = 1024
 sequence_length = 4096
 ```
+
 $$
-N_{\text{tokens/update}}
-=
-1024 \times 4096
-=
-4{,}194{,}304
+N_{\text{tokens/update}} = 1024 \times 4096 = 4{,}194{,}304
 $$
+
 
 
 Large token batches can stabilize training, but they also require more memory and more distributed coordination.
