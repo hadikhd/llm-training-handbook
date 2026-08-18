@@ -188,7 +188,7 @@ In LLM training, the true unit of scale is usually tokens, not examples.
 Ignoring padding and masked tokens, the nominal number of tokens presented per optimizer update is:
 
 
-$
+$$
 N_{\text{tokens/update}} = B_{\text{global}} \times T
 $$
 
