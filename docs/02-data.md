@@ -768,9 +768,10 @@ A smaller language model can assign a perplexity score to documents.
 
 Given a sequence $x_{1:T}$, average negative log-likelihood is:
 
-```math
-sim(x,y) = \frac{e_x^T e_y}{|e_x|_2 |e_y|_2}
-```
+$$
+L(x) = -\frac{1}{T} \sum_{t=1}^{T} \mathrm{log}\, P\left(x_t \mid x_{<t}\right)
+$$
+
 Perplexity is:
 
 $$
