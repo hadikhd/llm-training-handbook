@@ -103,13 +103,13 @@ $$
 the model estimates:
 
 $$
-P(x_t \mid x_{<t}) 
+P(x_t \mid x_{1:t-1})
 $$
 
 The training objective is usually next-token prediction:
 
 $$
-\mathcal{L} = -\sum_{t=1}^{T} \log P(x_t \mid x_{<t})
+\mathcal{L} = -\sum_{t=1}^{T} \log P(x_t \mid x_{1:t-1})
 $$
 
 This means tokenization determines what the model predicts at each step.
@@ -155,13 +155,13 @@ $$
 \text{tokenizer}: \text{text} \rightarrow [i_1, i_2, \ldots, i_T]
 $$
 
-where each \(i_t\) is an integer in:
+where each $i_t$ is an integer in:
 
 $$
 0 \le i_t < |V|
 $$
 
-and \(|V|\) is the vocabulary size.
+and $|V|$ is the vocabulary size.
 
 The embedding matrix is:
 
@@ -177,9 +177,9 @@ $$
 
 where:
 
-- $$|V|\) is the vocabulary size.
-- $$d_{\text{model}}\) is the hidden dimension.
-- $$e_t\) is the dense vector for token $$i_t\).
+- $$|V|$$ is the vocabulary size.
+- $$d_{\text{model}}$$ is the hidden dimension.
+- $$e_t$$ is the dense vector for token $$i_t$$.
 
 If the vocabulary has 50,000 tokens and the model dimension is 4096, the input embedding matrix contains:
 
