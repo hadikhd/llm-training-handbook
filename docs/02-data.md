@@ -612,11 +612,11 @@ Segment-level language identification is more precise but more expensive.
 
 Instead of accepting the highest-scoring language unconditionally, use a confidence threshold:
 
-$ \hat{\ell} = \arg\max_{\ell} P(\ell \mid x) $
+$$\hat{\ell} = \arg\max_{\ell} P(\ell \mid x)$$
 
 Accept the prediction only if:
 
-$ P(\hat{\ell} \mid x) \ge \tau $
+$$P(\hat{\ell} \mid x) \ge \tau$$
 
 Documents below the threshold may be:
 
