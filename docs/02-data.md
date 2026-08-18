@@ -1758,15 +1758,15 @@ Let $S$ be the selected corpus and $U(S)$ its expected training utility.
 
 The objective is:
 
-$$\max_S U(S)$$
+$$ \max_S U(S) $$
 
 subject to constraints such as:
 
-$$\operatorname{tokens}(S) \le B$$
+$$ \operatorname{tokens}(S) \le B $$
 
-$$\operatorname{risk}(S) \le R$$
+$$ \operatorname{risk}(S) \le R $$
 
-$$\operatorname{cost}(S) \le C$$
+$$ \operatorname{cost}(S) \le C $$
 
 where:
 
