@@ -726,15 +726,15 @@ The classifier may use:
 
 Let $x$ be a document. A classifier may produce:
 
-$ q(x) = P(\text{high quality} \mid x) $
+$$q(x) = P(\text{high quality} \mid x)$$
 
 A hard filter retains the document if:
 
-$ q(x) \ge \tau $
+$$q(x) \ge \tau$$
 
 A soft approach converts quality into a sampling weight:
 
-$ w(x) = g(q(x)) $
+$$w(x) = g(q(x))$$
 
 This allows lower-scoring documents to remain in the corpus at reduced frequency.
 
@@ -768,11 +768,11 @@ A smaller language model can assign a perplexity score to documents.
 
 Given a sequence $x_{1:T}$, average negative log-likelihood is:
 
-$ L(x) = -\frac{1}{T} \sum_{t=1}^{T} \log P(x_t \mid x_{<t}) $
+$$L(x) = -\frac{1}{T} \sum_{t=1}^{T} \log P(x_t \mid x_{<t})$$
 
 Perplexity is:
 
-$ \operatorname{PPL}(x) = \exp(L(x)) $
+$$\operatorname{PPL}(x) = \exp(L(x))$$
 
 Extremely high perplexity may indicate:
 
@@ -847,7 +847,7 @@ Exact deduplication removes identical content.
 
 A normalized document can be hashed:
 
-$ h(x) = \operatorname{SHA256}(\operatorname{normalize}(x)) $
+$$h(x) = \operatorname{SHA256}(\operatorname{normalize}(x))$$
 
 Documents with the same hash are duplicates.
 
@@ -937,14 +937,14 @@ Let $S(A)$ and $S(B)$ be the shingle sets of documents $A$ and $B$.
 
 Their Jaccard similarity is:
 
-$ J(A,B) = \frac{ |S(A)\cap S(B)| }{ |S(A)\cup S(B)| } $
+$$J(A,B) = \frac{ |S(A)\cap S(B)| }{ |S(A)\cup S(B)| }$$
 
 
 A value close to 1 indicates strong overlap.
 
 Directly comparing every pair of documents is impractical. For $N$ documents, all-pairs comparison requires approximately:
 
-$ O(N^2) $
+$$O(N^2)$$
 
 This motivates approximate methods such as MinHash and locality-sensitive hashing.
 
@@ -956,20 +956,18 @@ MinHash creates a compact signature that approximates Jaccard similarity.
 
 For a set of shingles $S$, define a hash function $h$. Its MinHash value is:
 
-$ m_h(S) = \min_{s \in S} h(s) $
+$$m_h(S) = \min_{s \in S} h(s)$$
 
 Using $k$ independent hash functions gives a signature:
 
-$ M(S) = [ m_{h_1}(S), m_{h_2}(S), \ldots, m_{h_k}(S) ] $
+$$M(S) = [ m_{h_1}(S), m_{h_2}(S), \ldots, m_{h_k}(S) ]$$
 
 A central MinHash property is:
 
-$ P(m_h(A)=m_h(B)) = J(A,B) $
-
+$$P(m_h(A)=m_h(B)) = J(A,B) $$
 Therefore, the fraction of matching signature positions estimates Jaccard similarity:
 
-$ \hat{J}(A,B) = \frac{1}{k} \sum_{i=1}^{k} \mathbf{1} [ M_i(A)=M_i(B) ] $
-
+$$\hat{J}(A,B) = \frac{1}{k} \sum_{i=1}^{k} \mathbf{1} [ M_i(A)=M_i(B) ] $$
 Larger signatures improve estimation accuracy but require more storage and computation.
 
 ---
@@ -980,13 +978,13 @@ Locality-Sensitive Hashing, or LSH, retrieves likely similar signatures without 
 
 For MinHash LSH, a signature is divided into $b$ bands with $r$ rows per band:
 
-$ k = b \times r $
+$$k = b \times r$$
 
 Two documents become candidate duplicates if they match in every row of at least one band.
 
 The approximate candidate probability is:
 
-$ P(\text{candidate} \mid s) = 1-(1-s^r)^b $
+$$P(\text{candidate} \mid s) = 1-(1-s^r)^b$$
 
 where $s$ is the true Jaccard similarity.
 
@@ -1045,18 +1043,17 @@ Possible ranking criteria include:
 
 For duplicate cluster $C$, select:
 
-$ x^* = \arg\max_{x \in C} \operatorname{utility}(x) $
-
+ $$x^* = \arg\max_{x \in C} \operatorname{utility}(x)$$
+ 
 A utility function might combine several signals:
 
-$ \operatorname{utility}(x) = \alpha q(x) + \beta c(x) + \gamma p(x) - \delta n(x) $
-
+ $$\operatorname{utility}(x) = \alpha q(x) + \beta c(x) + \gamma p(x) - \delta n(x)$$
 where:
 
-- $q(x)$ is quality.
-- $c(x)$ is completeness.
-- $p(x)$ is provenance preference.
-- $n(x)$ is noise.
+- $$q(x)$$ is quality.
+- $$c(x)$$ is completeness.
+- $$p(x)$$ is provenance preference.
+- $$n(x)$$ is noise.
 
 Keeping an arbitrary first-seen document may retain a corrupted copy instead of the original.
 
@@ -1068,11 +1065,11 @@ Lexical methods may miss documents that convey the same information using differ
 
 Semantic deduplication can use embeddings:
 
-$ e_x = f_{\text{encoder}}(x) $
+$$e_x = f_{\text{encoder}}(x)$$
 
 Similarity may be computed with cosine similarity:
 
-$ \operatorname{sim}(x,y) = \frac{ e_x^\top e_y }{ \|e_x\|_2 \|e_y\|_2 } $
+$$\operatorname{sim}(x,y) = \frac{ e_x^\top e_y }{ \|e_x\|_2 \|e_y\|_2 }$$
 
 Candidate documents can be retrieved with an approximate nearest-neighbor index.
 
@@ -1143,7 +1140,7 @@ Represent benchmark examples and training documents as n-gram sets.
 
 A document may be removed if overlap exceeds a threshold:
 
-$ \operatorname{overlap}(d,b) \ge \tau $
+$$\operatorname{overlap}(d,b) \ge \tau$$
 
 This detects copied fragments but may create false positives for common phrases.
 
@@ -1201,19 +1198,19 @@ LLMs are usually trained on a mixture of datasets.
 
 Let dataset $D_i$ contain $N_i$ available tokens. A simple sampling probability is:
 
-$ p_i = \frac{N_i}{\sum_j N_j} $
+$$p_i = \frac{N_i}{\sum_j N_j}$$
 
 This proportional strategy can cause large web datasets to dominate higher-quality or lower-resource sources.
 
 A temperature-based mixture can be defined as:
 
-$ p_i = \frac{N_i^\alpha} {\sum_j N_j^\alpha} $
+$$p_i = \frac{N_i^\alpha} {\sum_j N_j^\alpha}$$
 
 where:
 
-- $\alpha = 1$ gives proportional sampling.
-- $0 < \alpha < 1$ increases the relative weight of smaller datasets.
-- $\alpha = 0$ gives equal probability to every dataset.
+- $$\alpha = 1$$ gives proportional sampling.
+- $$0 < \alpha < 1$$ increases the relative weight of smaller datasets.
+- $$\alpha = 0$$ gives equal probability to every dataset.
 
 For multilingual training, the same method can be applied to language-level token counts.
 
@@ -1242,7 +1239,7 @@ It can improve balance, but may discard useful diversity.
 
 For dataset $D_i$, define:
 
-$ \text{effective epochs}_i = \frac{ \text{tokens sampled from }D_i }{ N_i } $
+$$\text{effective epochs}_i = \frac{ \text{tokens sampled from }D_i }{ N_i }$$
 
 Tracking effective epochs helps identify small datasets that are repeated too many times.
 
@@ -1264,7 +1261,7 @@ Let $p_i(t)$ denote the sampling probability for dataset $i$ at training step $t
 
 A schedule may define:
 
-$ p_i(t) = (1-\lambda_t)p_i^{\text{initial}} + \lambda_t p_i^{\text{final}} $
+$$p_i(t) = (1-\lambda_t)p_i^{\text{initial}} + \lambda_t p_i^{\text{final}}$$
 
 where $ lambda_t$ changes from 0 to 1 during training.
 
@@ -1477,7 +1474,7 @@ Token counts depend on the final tokenizer.
 
 The same document may contain different numbers of tokens under different tokenizers:
 
-$ T_A(x) \neq T_B(x) $
+$$T_A(x) \neq T_B(x)$$
 
 Tokenization affects:
 
@@ -1490,7 +1487,7 @@ Tokenization affects:
 
 For multilingual datasets, fertility is a useful metric:
 
-$ \operatorname{fertility} = \frac{ \text{number of tokens} }{ \text{number of words or characters} } $
+$$\operatorname{fertility} = \frac{ \text{number of tokens} }{ \text{number of words or characters} }$$
 
 A high tokenization fertility for one language means that the language consumes more sequence positions and training compute for the same amount of text.
 
@@ -1520,7 +1517,7 @@ Short sequences can be padded, but padding wastes compute.
 
 If sequence length is $L$ and a sample contains only $l$ useful tokens, its utilization is:
 
-$ u = \frac{l}{L} $
+$$u = \frac{l}{L}$$
 
 ### 2.36.3 Sequence Packing
 
@@ -1717,7 +1714,7 @@ A complete dataset version should identify:
 
 A dataset fingerprint can be built from configuration files and shard checksums:
 
-$ F = H( \text{configuration} \Vert \text{manifest} \Vert \text{checksums} ) $
+$$F = H( \text{configuration} \Vert \text{manifest} \Vert \text{checksums} )$$
 
 This fingerprint can be stored with model checkpoints.
 
@@ -1761,15 +1758,15 @@ Let $S$ be the selected corpus and $U(S)$ its expected training utility.
 
 The objective is:
 
-$ \max_S U(S) $
+$$\max_S U(S)$$
 
 subject to constraints such as:
 
-$ \operatorname{tokens}(S) \le B $
+$$\operatorname{tokens}(S) \le B$$
 
-$ \operatorname{risk}(S) \le R $
+$$\operatorname{risk}(S) \le R$$
 
-$ \operatorname{cost}(S) \le C $
+$$\operatorname{cost}(S) \le C$$
 
 where:
 
@@ -2080,7 +2077,7 @@ Persian text:       20 billion tokens
 
 Calculate sampling probabilities for:
 ```
-$ \alpha \in \{1.0, 0.7, 0.5, 0.0\} $
+$$\alpha \in \{1.0, 0.7, 0.5, 0.0\}$$
 
 Then estimate the effective epochs of each dataset for a one-trillion-token training run.
 
