@@ -168,7 +168,7 @@ Perplexity is a common metric derived from cross-entropy:
 
 
 $$
-\operatorname{PPL} = \exp(\mathcal{L})
+\mathrm{PPL} = \exp(\mathcal{L})
 $$
 
 Intuitively, perplexity measures how uncertain the model is when predicting the next token.
@@ -188,7 +188,7 @@ In LLM training, the true unit of scale is usually tokens, not examples.
 Ignoring padding and masked tokens, the nominal number of tokens presented per optimizer update is:
 
 
-$$
+$
 N_{\text{tokens/update}} = B_{\text{global}} \times T
 $$
 
@@ -203,7 +203,6 @@ sequence_length = 4096
 $$
 N_{\text{tokens/update}} = 1024 \times 4096 = 4{,}194{,}304
 $$
-
 
 
 Large token batches can stabilize training, but they also require more memory and more distributed coordination.
