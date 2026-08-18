@@ -1487,7 +1487,9 @@ Tokenization affects:
 
 For multilingual datasets, fertility is a useful metric:
 
-$$\operatorname{fertility} = \frac{ \text{number of tokens} }{ \text{number of words or characters} }$$
+$$
+\operatorname{fertility} = \frac{ \text{number of tokens} }{ \text{number of words or characters} }
+$$
 
 A high tokenization fertility for one language means that the language consumes more sequence positions and training compute for the same amount of text.
 
