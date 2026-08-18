@@ -959,7 +959,7 @@ $$
 |V| \times d_{\text{model}} 
 $$
 
-Example with $$|V|=100{,}000\) and \(d_{\text{model}}=4096$$:
+Example with $$|V|=100{,}000$$ and $$d_{\text{model}}=4096$$:
 
 Untied:
 
