@@ -769,7 +769,7 @@ A smaller language model can assign a perplexity score to documents.
 Given a sequence $x_{1:T}$, average negative log-likelihood is:
 
 $$
-L(x) = -\frac{1}{T} \sum_{t=1}^{T} \log P(x_t \mid x_{<t})
+L(x) = -\frac{1}{T} \sum_{t=1}^{T} \log P(x_t \mid x_{1:t-1})
 $$
 
 
