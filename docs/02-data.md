@@ -768,11 +768,15 @@ A smaller language model can assign a perplexity score to documents.
 
 Given a sequence $x_{1:T}$, average negative log-likelihood is:
 
-$$L(x) = -\frac{1}{T} \sum_{t=1}^{T} \log P(x_t \mid x_{<t})$$
+$$
+L(x) = -\frac{1}{T} \sum_{t=1}^{T} \log P(x_t \mid x_{<t})
+$$
 
 Perplexity is:
 
-$$\operatorname{PPL}(x) = \exp(L(x))$$
+$$
+\mathrm{PPL}(x) = \exp(L(x))
+$$
 
 Extremely high perplexity may indicate:
 
@@ -847,7 +851,9 @@ Exact deduplication removes identical content.
 
 A normalized document can be hashed:
 
-$$h(x) = \operatorname{SHA256}(\operatorname{normalize}(x))$$
+$$
+h(x) = \mathrm{SHA256}(\mathrm{normalize}(x))
+$$
 
 Documents with the same hash are duplicates.
 
@@ -1043,11 +1049,15 @@ Possible ranking criteria include:
 
 For duplicate cluster $C$, select:
 
- $$x^* = \arg\max_{x \in C} \operatorname{utility}(x)$$
+$$
+x^* = \mathrm{argmax}_{x \in C} \mathrm{utility}(x)
+$$
  
 A utility function might combine several signals:
 
- $$\operatorname{utility}(x) = \alpha q(x) + \beta c(x) + \gamma p(x) - \delta n(x)$$
+$$
+\mathrm{utility}(x) = \alpha q(x) + \beta c(x) + \gamma p(x) - \delta n(x)
+$$
 where:
 
 - $$q(x)$$ is quality.
@@ -1069,7 +1079,9 @@ $$e_x = f_{\text{encoder}}(x)$$
 
 Similarity may be computed with cosine similarity:
 
-$$\operatorname{sim}(x,y) = \frac{ e_x^\top e_y }{ \|e_x\|_2 \|e_y\|_2 }$$
+$$
+\mathrm{sim}(x,y) = \frac{ e_x^\top e_y }{ \|e_x\|_2 \|e_y\|_2 }
+$$
 
 Candidate documents can be retrieved with an approximate nearest-neighbor index.
 
@@ -1141,7 +1153,7 @@ Represent benchmark examples and training documents as n-gram sets.
 A document may be removed if overlap exceeds a threshold:
 
 $$
-\operatorname{overlap}(d,b) \ge \tau
+\mathrm{overlap}(d,b) \ge \tau
 $$
 
 This detects copied fragments but may create false positives for common phrases.
