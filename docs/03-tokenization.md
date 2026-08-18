@@ -183,13 +183,17 @@ where:
 
 If the vocabulary has 50,000 tokens and the model dimension is 4096, the input embedding matrix contains:
 
-$ 50{,}000 \times 4096 = 204{,}800{,}000 $
+$$
+50{,}000 \times 4096 = 204{,}800{,}000
+$$
 
 parameters.
 
 If embeddings are stored in bf16 or fp16, this matrix alone requires approximately:
 
-$ 204{,}800{,}000 \times 2 \approx 409.6 \text{ MB} $
+$$
+204{,}800{,}000 \times 2 \approx 409.6 \text{ MB}
+$$
 
 This illustrates why vocabulary size is not free.
 
