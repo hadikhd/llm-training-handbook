@@ -96,15 +96,21 @@ Autoregressive LLMs are commonly trained to predict the next token.
 
 Given a token sequence:
 
-$ x_1, x_2, \ldots, x_T $
+$$
+x_1, x_2, \ldots, x_T
+$$
 
 the model estimates:
 
-$ P(x_t \mid x_{<t}) $
+$$
+P(x_t \mid x_{<t}) 
+$$
 
 The training objective is usually next-token prediction:
 
-$ \mathcal{L} = -\sum_{t=1}^{T} \log P(x_t \mid x_{<t}) $
+$$
+\mathcal{L} = -\sum_{t=1}^{T} \log P(x_t \mid x_{<t})
+$$
 
 This means tokenization determines what the model predicts at each step.
 
@@ -145,27 +151,35 @@ A tokenizer affects:
 
 A tokenizer maps text to token IDs:
 
-$ \text{tokenizer}: \text{text} \rightarrow [i_1, i_2, \ldots, i_T] $
+$$ 
+\text{tokenizer}: \text{text} \rightarrow [i_1, i_2, \ldots, i_T]
+$$
 
 where each \(i_t\) is an integer in:
 
-$ 0 \le i_t < |V| $
+$$
+0 \le i_t < |V|
+$$
 
 and \(|V|\) is the vocabulary size.
 
 The embedding matrix is:
 
-$ E \in \mathbb{R}^{|V| \times d_{\text{model}}} $
+$$
+E \in \mathbb{R}^{|V| \times d_{\text{model}}}
+$$
 
 Each token ID indexes one row of the embedding matrix:
 
-$ e_t = E[i_t] $
+$$
+e_t = E[i_t]
+$$
 
 where:
 
-- \(|V|\) is the vocabulary size.
-- \(d_{\text{model}}\) is the hidden dimension.
-- \(e_t\) is the dense vector for token \(i_t\).
+- $$|V|\) is the vocabulary size.
+- $$d_{\text{model}}\) is the hidden dimension.
+- $$e_t\) is the dense vector for token $$i_t\).
 
 If the vocabulary has 50,000 tokens and the model dimension is 4096, the input embedding matrix contains:
 
@@ -297,7 +311,7 @@ In a Transformer, attention cost grows approximately quadratically with sequence
 
 $ O(T^2) $
 
-where \(T\) is the sequence length. If tokenization doubles the number of tokens, attention computation can increase substantially.
+where $$T\) is the sequence length. If tokenization doubles the number of tokens, attention computation can increase substantially.
 
 Character-level tokenization is elegant but usually inefficient for large-scale LLMs.
 
@@ -629,7 +643,7 @@ The Unigram Language Model tokenizer starts with a large candidate vocabulary an
 
 Instead of learning merges, it assumes a probabilistic model over possible segmentations.
 
-For a text sequence \(x\), multiple tokenizations may be possible:
+For a text sequence $$x\), multiple tokenizations may be possible:
 
 ```text
 tokenization
@@ -848,9 +862,9 @@ Vocabulary size is one of the most important tokenizer design choices.
 
 Let:
 
-- \(|V|\) be vocabulary size.
-- \(d_{\text{model}}\) be hidden dimension.
-- \(T\) be sequence length.
+- $$|V|$$ be vocabulary size.
+- $$d_{\text{model}}$$ be hidden dimension.
+- $$T$$ be sequence length.
 
 Increasing vocabulary size usually reduces sequence length, but increases embedding and output projection size.
 
@@ -913,11 +927,15 @@ A large vocabulary may contain 64k, 100k, 128k, or more tokens.
 
 The output logits for next-token prediction are:
 
-$ z_t = h_t W_{\text{out}} $
+$$
+z_t = h_t W_{\text{out}}
+$$
 
 where:
 
-$ W_{\text{out}} \in \mathbb{R}^{d_{\text{model}} \times |V|} $
+$$
+W_{\text{out}} \in \mathbb{R}^{d_{\text{model}} \times |V|}
+$$
 
 A larger vocabulary increases the cost of computing logits and softmax.
 
@@ -927,23 +945,31 @@ A larger vocabulary increases the cost of computing logits and softmax.
 
 If input and output embeddings are not tied, vocabulary-dependent parameters are approximately:
 
-$ 2 \times |V| \times d_{\text{model}} $
+$$
+2 \times |V| \times d_{\text{model}}
+$$
 
 If embeddings are tied, they are approximately:
 
-$ |V| \times d_{\text{model}} $
+$$
+|V| \times d_{\text{model}} 
+$$
 
 Example with \(|V|=100{,}000\) and \(d_{\text{model}}=4096\):
 
 Untied:
 
-$ 2 \times 100{,}000 \times 4096 = 819{,}200{,}000 $
+$$
+2 \times 100{,}000 \times 4096 = 819{,}200{,}000
+$$
 
 parameters.
 
 Tied:
 
-$ 100{,}000 \times 4096 = 409{,}600{,}000 $
+$$
+100{,}000 \times 4096 = 409{,}600{,}000
+$$
 
 parameters.
 
@@ -988,11 +1014,15 @@ Tokenization fertility measures how many tokens are produced per unit of text.
 
 Common definitions include:
 
-$ \text{fertility}_{word} = \frac{ \text{number of tokens} }{ \text{number of words} } $
+$$
+\text{fertility}_{word} = \frac{ \text{number of tokens} }{ \text{number of words} }
+$$
 
 or:
 
-$ \text{fertility}_{char} = \frac{ \text{number of tokens} }{ \text{number of characters} } $
+$$
+\text{fertility}_{char} = \frac{ \text{number of tokens} }{ \text{number of characters} }
+$$
 
 Lower fertility usually means more efficient tokenization.
 
@@ -1024,16 +1054,20 @@ For a fixed corpus measured in characters or words, a tokenizer that produces mo
 
 Approximate attention cost per layer scales as:
 
-$ O(T^2 d) $
+$$ 
+O(T^2 d)
+$$
 
 and feed-forward computation scales roughly as:
 
-$ O(T d^2) $
+$$
+O(T d^2)
+$$
 
 where:
 
-- \(T\) is sequence length.
-- \(d\) is hidden dimension.
+- $$T$$ is sequence length.
+- $$d$$ is hidden dimension.
 
 Thus, token inflation increases both attention and non-attention computation.
 
@@ -1060,7 +1094,9 @@ For autoregressive decoding, each new token extends the KV cache.
 
 The KV-cache size is approximately proportional to:
 
-$ \text{batch size} \times \text{sequence length} \times \text{number of layers} \times \text{hidden size} $
+$$
+\text{batch size} \times \text{sequence length} \times \text{number of layers} \times \text{hidden size}
+$$
 
 Higher token counts directly increase memory usage during inference.
 
@@ -1528,7 +1564,7 @@ A multilingual tokenizer should minimize assumptions that disadvantage specific 
 
 A practical tokenizer training pipeline looks like:
 
-text
+```text
 Collect representative corpus
 |
 v
@@ -1557,7 +1593,7 @@ Freeze tokenizer
 |
 v
 Use for data tokenization and model training
-
+```
 The tokenizer should be trained on data that reflects the intended model usage.
 
 For example, a bilingual English-Persian model should train its tokenizer on a balanced English-Persian tokenizer corpus, not only on the final raw token proportions. Otherwise, English may dominate vocabulary allocation.
@@ -1600,17 +1636,17 @@ If tokenizer training data is sampled proportionally from a web corpus, high-res
 
 A better approach is to use temperature sampling.
 
-Let language \(i\) have \(N_i\) characters or documents. Define:
+Let language $$i$$ have $$N_i$$ characters or documents. Define:
 
 $ p_i = \frac{N_i^\alpha} {\sum_j N_j^\alpha} $
 
 where:
 
-- \(\alpha = 1\): proportional sampling.
-- \(0 < \alpha < 1\): boosts lower-resource languages.
-- \(\alpha = 0\): equal language sampling.
+- $$\alpha = 1$$: proportional sampling.
+- $$0 < \alpha < 1$$: boosts lower-resource languages.
+- $$\alpha = 0$$: equal language sampling.
 
-For tokenizer training, using \(\alpha < 1\) can improve vocabulary allocation for lower-resource languages.
+For tokenizer training, using $$\alpha < 1$$ can improve vocabulary allocation for lower-resource languages.
 
 This is separate from the final pretraining data mixture.
 
@@ -1668,7 +1704,9 @@ No single metric is sufficient.
 
 If a tokenizer uses `<UNK>`, measure:
 
-$ \text{UNK rate} = \frac{ \text{number of unknown tokens} }{ \text{total number of tokens} } $
+$$
+\text{UNK rate} = \frac{ \text{number of unknown tokens} }{ \text{total number of tokens} }
+$$
 
 For modern LLM tokenizers, the unknown rate should ideally be zero or extremely low.
 
@@ -1678,7 +1716,7 @@ Unknown tokens are harmful because they collapse different inputs into the same 
 
 Example:
 
-text
+```text
 Input A:
 quantization
 
@@ -1689,14 +1727,16 @@ Bad tokenizer:
 ["<UNK>"]
 
 Both become indistinguishable.
-
+```
 ---
 
 ## 3.48 Byte-Fallback Rate
 
 If the tokenizer uses byte fallback, measure how often byte tokens are used.
 
-$ \text{byte fallback rate} = \frac{ \text{number of byte tokens} }{ \text{total number of tokens} } $
+$$
+\text{byte fallback rate} = \frac{ \text{number of byte tokens} }{ \text{total number of tokens} }
+$$
 
 High byte-fallback rates may indicate:
 
@@ -1718,13 +1758,17 @@ Tokenizers can be evaluated as compressors.
 
 A simple metric is:
 
-$ \text{characters per token} = \frac{ \text{number of characters} }{ \text{number of tokens} } $
+$$
+\text{characters per token} = \frac{ \text{number of characters} }{ \text{number of tokens} }
+$$
 
 Higher characters per token means more text is represented per token.
 
 Another metric is bytes per token:
 
-$ \text{bytes per token} = \frac{ \text{number of UTF-8 bytes} }{ \text{number of tokens} } $
+$$
+\text{bytes per token} = \frac{ \text{number of UTF-8 bytes} }{ \text{number of tokens} }
+$$
 
 These metrics should be computed per language and domain.
 
@@ -1774,9 +1818,9 @@ return query @ key.T
 
 For noisy web text:
 
-text
+```text
 loooool 😂 check this out: https://example.com/a/b?id=123
-
+```
 Check whether:
 
 - Common words are split reasonably.
@@ -1854,7 +1898,7 @@ Similarly, if the tokenizer preserves ZWNJ during training but the inference pip
 
 All stages should share the same text policy:
 
-text
+```text
 Raw text
    |
    v
@@ -1865,7 +1909,7 @@ Tokenization
    |
    v
 Model
-
+```
 ---
 
 ## 3.54 Tokenizer Versioning
@@ -2013,7 +2057,7 @@ Rerankers often use separate encoders with their own tokenizers.
 
 This can create mismatches:
 
-text
+```text
 Retriever embedding model tokenizer:
 Tokenizer A
 
@@ -2022,7 +2066,7 @@ Tokenizer B
 
 Reranker tokenizer:
 Tokenizer C
-
+```
 A passage that is 400 tokens for the generator may be 600 tokens for the reranker.
 
 Practical systems should track token counts for each model component separately.
