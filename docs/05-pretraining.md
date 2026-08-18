@@ -63,16 +63,16 @@ For decoder-only language models, the dominant pretraining objective is causal l
 
 Given a sequence of tokens:
 
-$
+$$
 x = [x_1, x_2, x_3, \ldots, x_T]
-$
+$$
 
 the model is trained to predict each token from the tokens before it:
 
 
-$
+$$
 P(x_t \mid x_1, x_2, \ldots, x_{t-1})
-$
+$$
 
 
 The training target is simply the same sequence shifted by one position.
