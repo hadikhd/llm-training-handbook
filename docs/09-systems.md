@@ -8,7 +8,7 @@ description: The distributed systems, hardware, memory, communication, reliabili
 
 <div className="chapter-hero">
 
-![Chapter 9 — Evaluation](/img/chapters/systems.png)
+![Chapter 9 — Evaluation](/static/static/img/chapters/systems.png)
 
 </div>
 

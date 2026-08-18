@@ -8,7 +8,7 @@ description: How LLMs generate tokens and how serving systems optimize latency, 
 
 <div className="chapter-hero">
 
-![Chapter 10 — Evaluation](/img/chapters/inference.png)
+![Chapter 10 — Evaluation](/static/img/chapters/inference.png)
 
 </div>
 

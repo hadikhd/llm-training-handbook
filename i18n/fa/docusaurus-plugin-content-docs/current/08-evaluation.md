@@ -7,7 +7,7 @@ sidebar_position: 1
 # فصل ۸: ارزیابی (Evaluation)
 <div className="chapter-hero">
 
-![فصل ۸: ارزیابی ](/img/chapters/evaluation.png)
+![فصل ۸: ارزیابی ](/static/img/chapters/evaluation.png)
 
 </div>
 

@@ -8,7 +8,7 @@ description: How to measure quality, safety, robustness, multilingual behavior, 
 
 <div className="chapter-hero">
 
-![Chapter 8 — Evaluation](/img/chapters/evaluation.png)
+![Chapter 8 — Evaluation](/static/static/img/chapters/evaluation.png)
 
 </div>
 [Previous: Post-Training](./07-post-training.md) |

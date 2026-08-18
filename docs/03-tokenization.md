@@ -7,7 +7,7 @@ description: How text becomes tokens and how tokenizer design affects efficiency
 ---
 <div className="chapter-hero">
 
-![Chapter 3 — Tokenization](/img/chapters/tokenization.png)
+![Chapter 3 — Tokenization](/static/img/chapters/tokenization.png)
 
 </div>
 

@@ -7,7 +7,7 @@ description: The Transformer components and architectural trade-offs behind mode
 ---
 <div className="chapter-hero">
 
-![Chapter 4 — Transformer Architecture](/img/chapters/transformer-architecture.png)
+![Chapter 4 — Transformer Architecture](/static/img/chapters/transformer-architecture.png)
 
 </div>
 

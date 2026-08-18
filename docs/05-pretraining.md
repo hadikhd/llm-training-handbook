@@ -7,7 +7,7 @@ description: The optimization process that turns large token streams into a pret
 ---
 <div className="chapter-hero">
 
-![Chapter 5 — Pretraining](/img/chapters/pretraining.png)
+![Chapter 5 — Pretraining](/static/img/chapters/pretraining.png)
 
 </div>
 
