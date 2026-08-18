@@ -1140,7 +1140,9 @@ Represent benchmark examples and training documents as n-gram sets.
 
 A document may be removed if overlap exceeds a threshold:
 
-$$\operatorname{overlap}(d,b) \ge \tau$$
+$$
+\operatorname{overlap}(d,b) \ge \tau
+$$
 
 This detects copied fragments but may create false positives for common phrases.
 
@@ -1488,7 +1490,9 @@ Tokenization affects:
 For multilingual datasets, fertility is a useful metric:
 
 $$
-\operatorname{fertility} = \frac{ \text{number of tokens} }{ \text{number of words or characters} }
+\mathrm{fertility}
+=
+\frac{\mathrm{number\ of\ tokens}}{\mathrm{number\ of\ words\ or\ characters}}
 $$
 
 A high tokenization fertility for one language means that the language consumes more sequence positions and training compute for the same amount of text.
