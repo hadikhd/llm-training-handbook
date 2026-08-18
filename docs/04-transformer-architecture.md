@@ -550,7 +550,7 @@ The model predicts:
 
 
 $$
-P(x_t \mid x_{<t})
+P(x_t \mid x_{1:t-1})
 $$
 
 
