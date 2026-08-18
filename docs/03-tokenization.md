@@ -1642,7 +1642,9 @@ A better approach is to use temperature sampling.
 
 Let language $$i$$ have $$N_i$$ characters or documents. Define:
 
-$ p_i = \frac{N_i^\alpha} {\sum_j N_j^\alpha} $
+$$
+p_i = \frac{N_i^\alpha} {\sum_j N_j^\alpha}
+$$
 
 where:
 
