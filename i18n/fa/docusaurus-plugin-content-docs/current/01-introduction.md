@@ -26,25 +26,20 @@ x_{1:T} = (x_1, x_2, \ldots, x_T)
 $$
 <div className="rtl-content">
 یک مدل زبانی (Language Model) احتمال مشترک (Joint Probability) را به‌صورت زیر برآورد می‌کند:
-</div>
+
 $$
 P(x_{1:T})
 $$
-<div className="rtl-content">
 با استفاده از قانون زنجیره‌ای احتمال (Probability Chain Rule)، این توزیع مشترک (Joint Distribution) را می‌توان به‌صورت زیر تجزیه کرد:
-</div>
-<div className="math-block">
+
 $$
-P(x_{1:T})
-=
-\prod_{t=1}^{T}
-P(x_t \mid x_{1:t-1})
+P(x_{1:T}) = \prod_{t=1}^{T} P(x_t \mid x_{\lt t})
 $$
-</div>
+
 که در آن:
 
 $$
-x_{1:t-1} = (x_1, x_2, \ldots, x_{t-1})
+x_{\lt t} = (x_1, x_2, \ldots, x_{t-1})
 $$
 
 بنابراین مدل یاد می‌گیرد هر توکن (Token) را از روی توکن‌هایی که پیش از آن آمده‌اند پیش‌بینی کند.
@@ -94,10 +89,7 @@ $$
 یک تابع سافت‌مکس (Softmax Function) این لاجیت‌ها (Logits) را به احتمال تبدیل می‌کند:
 
 $$
-P(x_t = i \mid x_{<t})
-=
-\frac{\exp(z_{t,i})}
-{\sum_{j=1}^{V}\exp(z_{t,j})}
+P(x_t = i \mid x_{\lt t}) = \frac{\exp(z_{t,i})}{\sum_{j=1}^{V}\exp(z_{t,j})}
 $$
 
 بردار حاصل یک توزیع احتمال دسته‌ای (Categorical Probability Distribution) را روی توکن بعدی (Next Token) تعریف می‌کند.
@@ -153,13 +145,8 @@ $$
 احتمال‌های آن را می‌توان با استفاده از شمارش‌های پیکره (Corpus Counts) برآورد کرد:
 
 $$
-P(x_t \mid x_{t-2}, x_{t-1})
-=
-\frac{
-C(x_{t-2}, x_{t-1}, x_t)
-}{
-C(x_{t-2}, x_{t-1})
-}
+P(x_t \mid x_{t-2}, x_{t-1}) =
+\frac{C(x_{t-2}, x_{t-1}, x_t)}{C(x_{t-2}, x_{t-1})}
 $$
 
 مدل‌های N-Gram از نظر مفهومی ساده هستند، اما محدودیت‌های مهمی دارند:
@@ -199,12 +186,7 @@ $$
 عملیات مرکزی آن خودتوجهی (Self-Attention) است:
 
 $$
-\operatorname{Attention}(Q,K,V)
-=
-\operatorname{softmax}
-\left(
-\frac{QK^\top}{\sqrt{d_k}} + M
-\right)V
+\mathrm{Attention}(Q, K, V) = \mathrm{softmax}\left(\frac{QK^\top}{\sqrt{d_k}} + M\right)V
 $$
 
 که در آن:
@@ -249,15 +231,13 @@ $$
 کیفیت مدل به تعامل میان موارد زیر بستگی دارد:
 
 $$
-\text{Capability}
-=
-f(
-\text{architecture},
-\text{parameters},
-\text{data},
-\text{compute},
-\text{optimization},
-\text{post-training}
+\mathrm{Capability} = f(
+\mathrm{architecture}, 
+\mathrm{parameters}, 
+\mathrm{data}, 
+\mathrm{compute}, 
+\mathrm{optimization}, 
+\mathrm{post\text{-}training}
 )
 $$
 
