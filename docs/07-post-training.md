@@ -8,7 +8,7 @@ description: How supervised and preference-based methods shape a pretrained mode
 
 <div className="chapter-hero">
 
-![Chapter 7 — Post-training](/static/static/img/chapters/post-training.png)
+![Chapter 7 — Post-training](/static/img/chapters/post-training.png)
 
 </div>
 [Previous: Scaling Laws](./06-scaling-laws.md) |
