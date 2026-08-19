@@ -8,7 +8,7 @@ description: Durable engineering principles, emerging directions, and practical 
 
 <div className="chapter-hero">
 
-![Chapter 11 — Outlook](/static/static/img/chapters/outlook.png)
+![Chapter 11 — Outlook](/static/img/chapters/outlook.png)
 
 </div>
 
