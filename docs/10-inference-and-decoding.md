@@ -119,8 +119,9 @@ many concurrent users -> scheduling and memory pressure
 
 The model outputs logits: unnormalized scores over the vocabulary.
 To convert logits into probabilities, a softmax is applied:
+
 $$
-p(\mathrm{token}_i) = \frac{\exp(\mathrm{logit}_i)}{\sum_j \exp(\mathrm{logit}_j)}
+p(\mathrm{token}_i) = \frac{\exp(\mathrm{logit}_i)}{\sum_{j} \exp(\mathrm{logit}_j)}
 $$
 
 The next token can then be selected using different decoding strategies.
