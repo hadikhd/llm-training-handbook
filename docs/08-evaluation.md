@@ -129,7 +129,7 @@ $$
 Perplexity is derived from cross-entropy:
 
 $$
-\operatorname{PPL} = \exp(\mathcal{L})
+\mathrm{PPL} = \exp(\mathcal{L})
 $$
 
 Lower perplexity means the model assigns higher probability to the correct next tokens.
