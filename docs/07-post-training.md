@@ -416,7 +416,9 @@ $$ \rho_t(\theta) = \frac{\pi_{\theta}(a_t \mid s_t)}{\pi_{\theta_{\text{old}}}(
 
 The clipped PPO objective is:
 
-$$ \mathcal{L}_{\text{PPO}}(\theta) = \mathbb{E}_t\!\left[ \min\!\left( \rho_t(\theta) A_t,\; \operatorname{clip}(\rho_t(\theta), 1-\epsilon, 1+\epsilon) A_t \right) \right] $$
+$$
+\mathcal{L}_{\text{PPO}}(\theta) = \mathbb{E}_t \left[ \min \left( \rho_t(\theta) A_t, \mathrm{clip}(\rho_t(\theta), 1-\epsilon, 1+\epsilon) A_t \right) \right]
+$$
 
 where:
 
