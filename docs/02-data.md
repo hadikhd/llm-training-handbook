@@ -612,11 +612,15 @@ Segment-level language identification is more precise but more expensive.
 
 Instead of accepting the highest-scoring language unconditionally, use a confidence threshold:
 
-$$\hat{\ell} = \arg\max_{\ell} P(\ell \mid x)$$
+$$
+\hat{\ell} = \arg\max_{\ell} P(\ell \mid x)
+$$
 
 Accept the prediction only if:
 
-$$P(\hat{\ell} \mid x) \ge \tau$$
+$$
+P(\hat{\ell} \mid x) \ge \tau
+$$
 
 Documents below the threshold may be:
 
@@ -726,15 +730,21 @@ The classifier may use:
 
 Let $x$ be a document. A classifier may produce:
 
-$$q(x) = P(\text{high quality} \mid x)$$
+$$
+q(x) = P(\text{high quality} \mid x)
+$$
 
 A hard filter retains the document if:
 
-$$q(x) \ge \tau$$
+$$
+q(x) \ge \tau
+$$
 
 A soft approach converts quality into a sampling weight:
 
-$$w(x) = g(q(x))$$
+$$
+w(x) = g(q(x))
+$$
 
 This allows lower-scoring documents to remain in the corpus at reduced frequency.
 
@@ -944,14 +954,18 @@ Let $S(A)$ and $S(B)$ be the shingle sets of documents $A$ and $B$.
 
 Their Jaccard similarity is:
 
-$$J(A,B) = \frac{ |S(A)\cap S(B)| }{ |S(A)\cup S(B)| }$$
+$$
+J(A,B) = \frac{ |S(A)\cap S(B)| }{ |S(A)\cup S(B)| }
+$$
 
 
 A value close to 1 indicates strong overlap.
 
 Directly comparing every pair of documents is impractical. For $N$ documents, all-pairs comparison requires approximately:
 
-$$O(N^2)$$
+$$
+O(N^2)
+$$
 
 This motivates approximate methods such as MinHash and locality-sensitive hashing.
 
@@ -963,18 +977,26 @@ MinHash creates a compact signature that approximates Jaccard similarity.
 
 For a set of shingles $S$, define a hash function $h$. Its MinHash value is:
 
-$$m_h(S) = \min_{s \in S} h(s)$$
+$$
+m_h(S) = \min_{s \in S} h(s)
+$$
 
 Using $k$ independent hash functions gives a signature:
 
-$$M(S) = [ m_{h_1}(S), m_{h_2}(S), \ldots, m_{h_k}(S) ]$$
+$$
+M(S) = [ m_{h_1}(S), m_{h_2}(S), \ldots, m_{h_k}(S) ]
+$$
 
 A central MinHash property is:
 
-$$P(m_h(A)=m_h(B)) = J(A,B) $$
+$$
+P(m_h(A)=m_h(B)) = J(A,B)
+$$
 Therefore, the fraction of matching signature positions estimates Jaccard similarity:
 
-$$\hat{J}(A,B) = \frac{1}{k} \sum_{i=1}^{k} \mathbf{1} [ M_i(A)=M_i(B) ] $$
+$$
+\hat{J}(A,B) = \frac{1}{k} \sum_{i=1}^{k} \mathbf{1} [ M_i(A)=M_i(B) ]
+$$
 Larger signatures improve estimation accuracy but require more storage and computation.
 
 ---
@@ -985,13 +1007,17 @@ Locality-Sensitive Hashing, or LSH, retrieves likely similar signatures without 
 
 For MinHash LSH, a signature is divided into $b$ bands with $r$ rows per band:
 
-$$k = b \times r$$
+$$
+k = b \times r
+$$
 
 Two documents become candidate duplicates if they match in every row of at least one band.
 
 The approximate candidate probability is:
 
-$$P(\text{candidate} \mid s) = 1-(1-s^r)^b$$
+$$
+P(\text{candidate} \mid s) = 1-(1-s^r)^b
+$$
 
 where $s$ is the true Jaccard similarity.
 
@@ -1076,7 +1102,9 @@ Lexical methods may miss documents that convey the same information using differ
 
 Semantic deduplication can use embeddings:
 
-$$e_x = f_{\text{encoder}}(x)$$
+$$
+e_x = f_{\text{encoder}}(x)
+$$
 
 Similarity may be computed with cosine similarity:
 
@@ -1213,13 +1241,17 @@ LLMs are usually trained on a mixture of datasets.
 
 Let dataset $D_i$ contain $N_i$ available tokens. A simple sampling probability is:
 
-$$p_i = \frac{N_i}{\sum_j N_j}$$
+$$
+p_i = \frac{N_i}{\sum_j N_j}
+$$
 
 This proportional strategy can cause large web datasets to dominate higher-quality or lower-resource sources.
 
 A temperature-based mixture can be defined as:
 
-$$p_i = \frac{N_i^\alpha} {\sum_j N_j^\alpha}$$
+$$
+p_i = \frac{N_i^\alpha} {\sum_j N_j^\alpha}
+$$
 
 where:
 
@@ -1254,7 +1286,9 @@ It can improve balance, but may discard useful diversity.
 
 For dataset $D_i$, define:
 
-$$\text{effective epochs}_i = \frac{ \text{tokens sampled from }D_i }{ N_i }$$
+$$
+\text{effective epochs}_i = \frac{ \text{tokens sampled from }D_i }{ N_i }
+$$
 
 Tracking effective epochs helps identify small datasets that are repeated too many times.
 
@@ -1276,9 +1310,11 @@ Let $p_i(t)$ denote the sampling probability for dataset $i$ at training step $t
 
 A schedule may define:
 
-$$p_i(t) = (1-\lambda_t)p_i^{\text{initial}} + \lambda_t p_i^{\text{final}}$$
+$$
+p_i(t) = (1-\lambda_t)p_i^{\text{initial}} + \lambda_t p_i^{\text{final}}
+$$
 
-where $ lambda_t$ changes from 0 to 1 during training.
+where $lambda_t$ changes from 0 to 1 during training.
 
 Dynamic mixtures add operational complexity. Every schedule change must be logged to preserve reproducibility.
 
@@ -1489,7 +1525,9 @@ Token counts depend on the final tokenizer.
 
 The same document may contain different numbers of tokens under different tokenizers:
 
-$$T_A(x) \neq T_B(x)$$
+$$
+T_A(x) \neq T_B(x)
+$$
 
 Tokenization affects:
 
@@ -1535,7 +1573,9 @@ Short sequences can be padded, but padding wastes compute.
 
 If sequence length is $L$ and a sample contains only $l$ useful tokens, its utilization is:
 
-$$u = \frac{l}{L}$$
+$$
+u = \frac{l}{L}
+$$
 
 ### 2.36.3 Sequence Packing
 
@@ -1732,7 +1772,9 @@ A complete dataset version should identify:
 
 A dataset fingerprint can be built from configuration files and shard checksums:
 
-$$F = H( \text{configuration} \Vert \text{manifest} \Vert \text{checksums} )$$
+$$
+F = H( \text{configuration} \Vert \text{manifest} \Vert \text{checksums} )
+$$
 
 This fingerprint can be stored with model checkpoints.
 
@@ -2103,7 +2145,9 @@ Persian text:       20 billion tokens
 
 Calculate sampling probabilities for:
 ```
-$$\alpha \in \{1.0, 0.7, 0.5, 0.0\}$$
+$$
+\alpha \in \{1.0, 0.7, 0.5, 0.0\}
+$$
 
 Then estimate the effective epochs of each dataset for a one-trillion-token training run.
 

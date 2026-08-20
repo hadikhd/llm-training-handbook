@@ -40,14 +40,13 @@ sidebar_position: 1
 یک انتزاع (Abstraction) مفید به صورت زیر است:
 
 $$
-\text{Model behavior}
-=
-f(
-\text{architecture},
-\text{training objective},
-\text{data distribution},
-\text{optimization},
-\text{post-training}
+\mathrm{Capability} = f(
+\mathrm{architecture}, 
+\mathrm{parameters}, 
+\mathrm{data}, 
+\mathrm{compute}, 
+\mathrm{optimization}, 
+\mathrm{post\text{-}training}
 )
 $$
 
@@ -600,11 +599,15 @@ def normalize_persian(text: str) -> str:
 
 به‌جای پذیرش بی‌قیدوشرط زبانی که بالاترین امتیاز را دارد، از آستانه‌ی اطمینان استفاده کنید:
 
-$$ \hat{\ell} = \arg\max_{\ell} P(\ell \mid x) $$
+$$
+\hat{\ell} = \arg\max_{\ell} P(\ell \mid x)
+$$
 
 پیش‌بینی را فقط زمانی بپذیرید که:
 
-$$ P(\hat{\ell} \mid x) \ge \tau $$
+$$
+P(\hat{\ell} \mid x) \ge \tau
+$$
 
 اسنادی که زیر آستانه قرار می‌گیرند ممکن است:
 
@@ -713,15 +716,20 @@ Heuristicها می‌توانند حجم بزرگی از نویز آشکار ر�
 
 فرض کنید $x$ یک سند باشد. یک دسته‌بند می‌تواند تولید کند:
 
-$$ q(x) = P(\text{high quality} \mid x) $$
+$$
+q(x) = P(\text{high quality} \mid x) $$
 
 یک فیلتر سخت (Hard Filter) سند را زمانی نگه می‌دارد که:
 
-$$ q(x) \ge \tau $$
+$$
+q(x) \ge \tau
+$$
 
 یک رویکرد نرم (Soft Approach) کیفیت را به وزن نمونه‌برداری تبدیل می‌کند:
 
-$$ w(x) = g(q(x)) $$
+$$
+w(x) = g(q(x))
+$$
 
 این کار اجازه می‌دهد اسناد با امتیاز پایین‌تر، با بسامد کمتر در پیکره باقی بمانند.
 
@@ -755,11 +763,15 @@ $$ w(x) = g(q(x)) $$
 
 برای یک دنباله‌ی $$x_{1:T}$$، میانگین منفی لگاریتم درست‌نمایی (Average Negative Log-likelihood) برابر است با:
 
-$$ L(x) = -\frac{1}{T} \sum_{t=1}^{T} \log P(x_t \mid x_{<t}) $$
+$$
+L(x) = -\frac{1}{T} \sum_{t=1}^{T} \log P(x_t \mid x_{<t})
+$$
 
 Perplexity برابر است با:
 
-$$ \operatorname{PPL}(x) = \exp(L(x)) $$
+$$
+\mathrm{PPL}(x) = \exp(L(x))
+$$
 
 Perplexity بسیار بالا ممکن است نشان‌دهنده‌ی این موارد باشد:
 
@@ -834,7 +846,9 @@ Contact [PERSON] at [EMAIL].
 
 یک سند نرمال‌سازی‌شده را می‌توان هش کرد:
 
-$$ h(x) = \operatorname{SHA256}(\operatorname{normalize}(x)) $$
+$$
+h(x) = \mathrm{SHA256}(\mathrm{normalize}(x))
+$$
 
 اسنادی که هش یکسان دارند، تکراری (Duplicate) محسوب می‌شوند.
 
@@ -923,13 +937,17 @@ Shingles:
 
 شباهت جاکارد آن‌ها برابر است با:
 
-$$ J(A,B) = \frac{ |S(A)\cap S(B)| }{ |S(A)\cup S(B)| } $$
+$$
+J(A,B) = \frac{ |S(A)\cap S(B)| }{ |S(A)\cup S(B)| }
+$$
 
 مقداری نزدیک به 1 نشان‌دهنده‌ی هم‌پوشانی زیاد است.
 
 مقایسه‌ی مستقیم همه‌ی جفت‌های سند عملی نیست. برای $$N$$ سند، مقایسه‌ی همه‌باهمه تقریباً به این مرتبه نیاز دارد:
 
-$$ O(N^2) $$
+$$
+O(N^2)
+$$
 
 به همین دلیل از روش‌های تقریبی مانند MinHash و Locality-Sensitive Hashing استفاده می‌شود.
 
@@ -941,19 +959,27 @@ MinHash یک امضای فشرده (Compact Signature) می‌سازد که شب
 
 برای یک مجموعه‌ی Shingle به نام $$S$$، یک تابع هش $$h$$ تعریف کنید. مقدار MinHash آن برابر است با:
 
-$$ m_h(S) = \min_{s \in S} h(s) $$
+$$
+m_h(S) = \min_{s \in S} h(s)
+$$
 
 اگر از $$k$$ تابع هش مستقل استفاده کنیم، یک امضا به‌صورت زیر خواهیم داشت:
 
-$$ M(S) = [ m_{h_1}(S), m_{h_2}(S), \ldots, m_{h_k}(S) ] $$
+$$
+M(S) = [ m_{h_1}(S), m_{h_2}(S), \ldots, m_{h_k}(S) ]
+$$
 
 یک ویژگی مرکزی MinHash این است که:
 
-$$ P(m_h(A)=m_h(B)) = J(A,B) $$
+$$
+P(m_h(A)=m_h(B)) = J(A,B)
+$$
 
 بنابراین، کسر موقعیت‌های یکسان در امضا تخمینی از شباهت جاکارد می‌دهد:
 
-$$ \hat{J}(A,B) = \frac{1}{k} \sum_{i=1}^{k} \mathbf{1} [ M_i(A)=M_i(B) ] $$
+$$
+\hat{J}(A,B) = \frac{1}{k} \sum_{i=1}^{k} \mathbf{1} [ M_i(A)=M_i(B) ]
+$$
 
 امضاهای بزرگ‌تر دقت تخمین را بهبود می‌دهند، اما به ذخیره‌سازی و محاسبه‌ی بیشتری نیاز دارند.
 
@@ -965,13 +991,16 @@ Locality-Sensitive Hashing یا LSH، امضاهای احتمالاً مشابه
 
 در MinHash LSH، یک امضا به $$b$$ باند (Band) با $$r$$ سطر در هر باند تقسیم می‌شود:
 
-$$ k = b \times r $$
+$$
+k = b \times r
+$$
 
 دو سند زمانی نامزد تکراری‌بودن می‌شوند که در تمام سطرهای حداقل یک باند با هم منطبق باشند.
 
 احتمال تقریبی نامزدشدن برابر است با:
 
-$$ P(\text{candidate} \mid s) = 1-(1-s^r)^b $$
+$$P(\text{candidate} \mid s) = 1-(1-s^r)^b
+$$
 
 که در آن $$s$$ شباهت واقعی جاکارد است.
 
@@ -1029,11 +1058,15 @@ Build duplicate clusters
 
 برای یک خوشه‌ی تکراری $C$، انتخاب کنید:
 
-$$ x^* = \arg\max_{x \in C} \operatorname{utility}(x) $$
+$$
+x^* = \mathrm{argmax}_{x \in C} \mathrm{utility}(x)
+$$
 
 یک تابع مطلوبیت (Utility Function) می‌تواند چندین سیگنال را با هم ترکیب کند:
 
-$$ \operatorname{utility}(x) = \alpha q(x) + \beta c(x) + \gamma p(x) - \delta n(x) $$
+$$
+\mathrm{utility}(x) = \alpha q(x) + \beta c(x) + \gamma p(x) - \delta n(x)
+$$
 
 که در آن:
 
@@ -1052,11 +1085,15 @@ $$ \operatorname{utility}(x) = \alpha q(x) + \beta c(x) + \gamma p(x) - \delta n
 
 حذف تکرار معنایی می‌تواند از Embedding استفاده کند:
 
-$$ e_x = f_{\text{encoder}}(x) $$
+$$
+e_x = f_{\text{encoder}}(x)
+$$
 
 شباهت را می‌توان با Cosine Similarity محاسبه کرد:
 
-$$ \operatorname{sim}(x,y) = \frac{ e_x^\top e_y }{ \|e_x\|_2 \|e_y\|_2 } $$
+$$
+\mathrm{sim}(x,y) = \frac{ e_x^\top e_y }{ \|e_x\|_2 \|e_y\|_2 }
+$$
 
 اسناد نامزد را می‌توان با یک شاخص Approximate Nearest Neighbor بازیابی کرد.
 
@@ -1127,7 +1164,9 @@ $$ \operatorname{sim}(x,y) = \frac{ e_x^\top e_y }{ \|e_x\|_2 \|e_y\|_2 } $$
 
 اگر هم‌پوشانی از یک آستانه بیشتر شود، سند می‌تواند حذف شود:
 
-$$ \operatorname{overlap}(d,b) \ge \tau $$
+$$
+\mathrm{overlap}(d,b) \ge \tau
+$$
 
 این روش قطعات کپی‌شده را تشخیص می‌دهد، اما ممکن است برای عبارت‌های رایج False Positive ایجاد کند.
 
@@ -1185,13 +1224,17 @@ LLMها معمولاً روی ترکیبی از چندین مجموعه‌داد
 
 فرض کنید مجموعه‌داده‌ی $$D_i$$ شامل $$N_i$$ توکنِ در دسترس باشد. یک احتمال نمونه‌برداری ساده به‌صورت زیر است:
 
-$$ p_i = \frac{N_i}{\sum_j N_j} $$
+$$
+p_i = \frac{N_i}{\sum_j N_j}
+$$
 
 این راهبرد متناسب (Proportional Strategy) می‌تواند باعث شود مجموعه‌داده‌های عظیم وب بر منابع باکیفیت‌تر یا کم‌منبع‌تر غلبه کنند.
 
 یک ترکیب مبتنی بر دما (Temperature-based Mixture) را می‌توان چنین تعریف کرد:
 
-$$ p_i = \frac{N_i^\alpha} {\sum_j N_j^\alpha} $$
+$$
+p_i = \frac{N_i^\alpha} {\sum_j N_j^\alpha}
+$$
 
 که در آن:
 
@@ -1226,7 +1269,9 @@ Downsampling اثر یک مجموعه‌داده‌ی غالب را کاهش م�
 
 برای مجموعه‌داده‌ی $$D_i$$ تعریف کنید:
 
-$$ \text{effective epochs}_i = \frac{ \text{tokens sampled from }D_i }{ N_i } $$
+$$
+\text{effective epochs}_i = \frac{ \text{tokens sampled from }D_i }{ N_i }
+$$
 
 پایش Effective Epochها کمک می‌کند مجموعه‌داده‌های کوچکی را که بیش‌ازحد تکرار می‌شوند شناسایی کنید.
 
@@ -1248,7 +1293,9 @@ $$ \text{effective epochs}_i = \frac{ \text{tokens sampled from }D_i }{ N_i } $$
 
 یک زمان‌بندی (Schedule) می‌تواند تعریف کند:
 
-$$ p_i(t) = (1-\lambda_t)p_i^{\text{initial}} + \lambda_t p_i^{\text{final}} $$
+$$
+p_i(t) = (1-\lambda_t)p_i^{\text{initial}} + \lambda_t p_i^{\text{final}}
+$$
 
 که در آن $$\lambda_t$$ در طول آموزش از 0 به 1 تغییر می‌کند.
 
@@ -1459,7 +1506,9 @@ Training dataset
 
 یک سند یکسان ممکن است تحت Tokenizerهای مختلف تعداد توکن متفاوتی داشته باشد:
 
-$$ T_A(x) \neq T_B(x) $$
+$$
+T_A(x) \neq T_B(x)
+$$
 
 توکن‌سازی بر این موارد اثر می‌گذارد:
 
@@ -1472,7 +1521,9 @@ $$ T_A(x) \neq T_B(x) $$
 
 برای مجموعه‌داده‌های چندزبانه، Fertility یک معیار مفید است:
 
-$$ \operatorname{fertility} = \frac{ \text{number of tokens} }{ \text{number of words or characters} } $$
+$$
+\mathrm{fertility} = \frac{\text{number of tokens}}{\text{number of words or characters}}
+$$
 
 Fertility بالای توکن‌سازی برای یک زبان یعنی آن زبان برای همان مقدار متن، موقعیت‌های بیشتری از دنباله و Compute آموزشی بیشتری مصرف می‌کند.
 
@@ -1502,7 +1553,9 @@ Fertility بالای توکن‌سازی برای یک زبان یعنی آن ز
 
 اگر طول دنباله $$L$$ باشد و یک نمونه فقط $$l$$ توکن مفید داشته باشد، بهره‌وری آن برابر است با:
 
-$$ u = \frac{l}{L} $$
+$$
+u = \frac{l}{L}
+$$
 
 ### ۲.۳۶.۳ Sequence Packing
 
@@ -1696,7 +1749,9 @@ State مربوط به Data Loader ممکن است شامل این موارد ب�
 
 یک Fingerprint برای مجموعه‌داده را می‌توان از فایل‌های پیکربندی و Checksum شاردها ساخت:
 
-$$ F = H( \text{configuration} \Vert \text{manifest} \Vert \text{checksums} ) $$
+$$
+F = H( \text{configuration} \Vert \text{manifest} \Vert \text{checksums} )
+$$
 
 این Fingerprint را می‌توان همراه با Checkpointهای مدل ذخیره کرد.
 
@@ -1740,15 +1795,23 @@ $$ F = H( \text{configuration} \Vert \text{manifest} \Vert \text{checksums} ) $$
 
 هدف این است:
 
-$$ \max_S U(S) $$
+$$
+\max_S U(S)
+$$
 
 با قیود زیر و موارد مشابه:
 
-$$ \operatorname{tokens}(S) \le B $$
+$$
+\mathrm{tokens}(S) \le B
+$$
 
-$$ \operatorname{risk}(S) \le R $$
+$$
+\mathrm{risk}(S) \le R
+$$
 
-$$ \operatorname{cost}(S) \le C $$
+$$
+\mathrm{cost}(S) \le C
+$$
 
 که در آن:
 
@@ -2056,7 +2119,9 @@ Persian text:       20 billion tokens
 ```
 احتمال‌های نمونه‌برداری را برای این مقادیر محاسبه کنید:
 
-$$ \alpha \in \{1.0, 0.7, 0.5, 0.0\} $$
+$$
+\alpha \in \{1.0, 0.7, 0.5, 0.0\}
+$$
 
 سپس Effective Epoch هر مجموعه‌داده را برای یک اجرای آموزشی با یک تریلیون توکن برآورد کنید.
 
