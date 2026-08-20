@@ -764,7 +764,7 @@ $$
 برای یک دنباله‌ی $$x_{1:T}$$، میانگین منفی لگاریتم درست‌نمایی (Average Negative Log-likelihood) برابر است با:
 
 $$
-L(x) = -\frac{1}{T} \sum_{t=1}^{T} \log P(x_t \mid x_{<t})
+L(x) = -\frac{1}{T} \sum_{t=1}^{T} \log P(x_t \mid x_{1:t-1})
 $$
 
 Perplexity برابر است با:
