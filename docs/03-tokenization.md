@@ -313,9 +313,11 @@ The character-level sequence is much longer.
 ```
 In a Transformer, attention cost grows approximately quadratically with sequence length:
 
-$ O(T^2) $
+$$
+O(T^2)
+$$
 
-where $$T\) is the sequence length. If tokenization doubles the number of tokens, attention computation can increase substantially.
+where $$T$$ is the sequence length. If tokenization doubles the number of tokens, attention computation can increase substantially.
 
 Character-level tokenization is elegant but usually inefficient for large-scale LLMs.
 
@@ -647,7 +649,7 @@ The Unigram Language Model tokenizer starts with a large candidate vocabulary an
 
 Instead of learning merges, it assumes a probabilistic model over possible segmentations.
 
-For a text sequence $$x\), multiple tokenizations may be possible:
+For a text sequence $x$, multiple tokenizations may be possible:
 
 ```text
 tokenization
@@ -820,7 +822,9 @@ where `0` may be the PAD token.
 
 The loss should usually be masked on PAD positions:
 
-$ \mathcal{L}_{\text{pad}} = 0 $
+$$
+\mathcal{L}_{\text{pad}} = 0
+$$
 
 If PAD tokens contribute to loss incorrectly, the model may learn undesirable behavior.
 
@@ -1807,14 +1811,14 @@ Inspect examples manually.
 
 For English:
 
-text
+```text
 Tokenization should be efficient.
-
+```
 For Persian:
 
-text
+```text
 مدل‌های زبانی بزرگ به داده‌های باکیفیت نیاز دارند.
-
+```
 For code:
 
 ```python
