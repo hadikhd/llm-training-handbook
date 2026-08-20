@@ -43,11 +43,14 @@ The capital of France is -> Paris
 
 برای یک دنباله از توکن‌ها:
 
-$$x = [x_1, x_2, x_3, \ldots, x_T]$$
+$$
+x = [x_1, x_2, x_3, \ldots, x_T]
+$$
 
 مدل طوری آموزش می‌بیند که هر توکن را از روی توکن‌های پیش از آن پیش‌بینی کند:
 
-$$P(x_t \mid x_1, x_2, \ldots, x_{t-1})$$
+$$
+P(x_t \mid x_1, x_2, \ldots, x_{t-1})$$
 
 هدف آموزشی (Training Target) به‌سادگی همان دنباله است که یک موقعیت جابه‌جا شده است.
 
@@ -117,7 +120,9 @@ vocab_size = 32k, 50k, 100k, ...
 ```
 اگر توکن صحیح بعدی `y` باشد، loss برابر است با:
 
-$$\mathcal{L}_t = -\log P(y_t \mid x_{<t})$$
+$$
+\mathcal{L}_t = -\log P(y_t \mid x_{<t})
+$$
 
 loss نهایی روی تعداد زیادی توکن میانگین گرفته می‌شود.
 
@@ -131,7 +136,9 @@ loss کمتر یعنی مدل به توکن‌های صحیح بعدی احتم�
 پرپلکسیٹی (Perplexity) یک معیار رایج است که از آنتروپی متقاطع (Cross-Entropy) مشتق می‌شود:
 
 
-$$\operatorname{PPL} = \exp(\mathcal{L})$$
+$$
+\mathrm{PPL} = \exp(\mathcal{L})
+$$
 
 به‌صورت شهودی، پرپلکسیٹی میزان عدم‌قطعیت (Uncertainty) مدل را هنگام پیش‌بینی توکن بعدی اندازه می‌گیرد.
 
@@ -149,26 +156,20 @@ $$\operatorname{PPL} = \exp(\mathcal{L})$$
 با نادیده‌گرفتن padding و توکن‌های mask‌شده، تعداد اسمی توکن‌هایی که در هر به‌روزرسانی optimizer ارائه می‌شوند برابر است با:
 
 
-<div className="mixed-content">
-
 $$
-B_{\text{global}} \times T
+N_{\text{tokens/update}} = B_{\text{global}} \times T
 $$
 
-where:
+برای مثال:
 
 ```text
 global_batch_size = 1024
 sequence_length = 4096
 ```
 $$
-N_{\text{tokens/update}}
-=
-1024 \times 4096
-=
-4{,}194{,}304
+N_{\text{tokens/update}} = 1024 \times 4096 = 4{,}194{,}304
 $$
-</div>
+
 بچ‌های بزرگِ توکنی (Large Token Batches) می‌توانند آموزش را پایدارتر کنند، اما هم‌زمان به حافظه‌ی بیشتر و هماهنگی توزیع‌شده‌ی بیشتری نیاز دارند.
 
 کمیت‌های مهم شامل این موارد‌اند:

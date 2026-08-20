@@ -36,7 +36,7 @@ Read this chapter with four engineering questions in mind:
 4. **What failure modes should we expect, and how would we diagnose them?**
 
 
-# 1. What Pretraining Means
+## 1. What Pretraining Means
 
 Pretraining is the stage where a language model learns general linguistic, factual, and reasoning patterns from large-scale text before it is adapted to specific tasks or aligned with user preferences.
 
@@ -56,8 +56,7 @@ Pretraining is therefore the foundation of an LLM. Post-training can shape behav
 
 ---
 
-#
-# 2. The Next-Token Prediction Objective
+## 2. The Next-Token Prediction Objective
 
 For decoder-only language models, the dominant pretraining objective is causal language modeling.
 
@@ -88,8 +87,7 @@ Without causal masking, the model could cheat by directly attending to future to
 
 ---
 
-#
-# 3. From Documents to Token Streams
+## 3. From Documents to Token Streams
 
 Raw training data usually begins as documents: books, articles, code files, web pages, papers, conversations, or domain-specific corpora.
 
@@ -115,8 +113,7 @@ This teaches the model where one document ends and another begins. Without caref
 
 ---
 
-#
-# 4. Sequence Packing
+## 4. Sequence Packing
 
 Pretraining is expensive, so unused tokens are wasteful.
 
@@ -136,8 +133,7 @@ For chat, instruction, or code data, boundaries are even more important because 
 
 ---
 
-#
-# 5. Loss Function: Cross-Entropy
+## 5. Loss Function: Cross-Entropy
 
 The standard pretraining loss is token-level cross-entropy.
 
@@ -161,8 +157,7 @@ Lower loss means the model assigns higher probability to the correct next tokens
 
 ---
 
-#
-# 6. Perplexity
+## 6. Perplexity
 
 Perplexity is a common metric derived from cross-entropy:
 
@@ -180,8 +175,7 @@ Perplexity is useful for comparing models on the same tokenizer and evaluation c
 
 ---
 
-#
-# 7. Batch Size, Sequence Length, and Tokens per Update
+## 7. Batch Size, Sequence Length, and Tokens per Update
 
 In LLM training, the true unit of scale is usually tokens, not examples.
 
@@ -219,8 +213,7 @@ A practical training run is often constrained by GPU memory, interconnect bandwi
 
 ---
 
-#
-# 8. Optimizer: AdamW
+## 8. Optimizer: AdamW
 
 AdamW is a widely used optimizer for LLM pretraining.
 
@@ -255,8 +248,7 @@ Exact values depend on model size, data quality, batch size, and training durati
 
 ---
 
-#
-# 9. Learning-Rate Schedule
+## 9. Learning-Rate Schedule
 
 The learning rate is one of the most important training controls.
 
@@ -285,8 +277,7 @@ Too high a learning rate can cause divergence. Too low a learning rate wastes co
 
 ---
 
-#
-# 10. Gradient Clipping
+## 10. Gradient Clipping
 
 Gradient clipping prevents unusually large gradients from destabilizing training.
 
@@ -312,8 +303,7 @@ Gradient clipping is not a substitute for a good learning rate, clean data, or s
 
 ---
 
-#
-# 11. Mixed Precision Training
+## 11. Mixed Precision Training
 
 LLMs are rarely trained in full FP32 precision because it is too expensive.
 
@@ -337,8 +327,7 @@ Typical symptoms of precision issues include:
 
 ---
 
-#
-# 12. Distributed Pretraining
+## 12. Distributed Pretraining
 
 Large LLMs cannot usually be trained on a single GPU. Distributed training splits computation and memory across many devices.
 
@@ -360,8 +349,7 @@ FSDP and ZeRO-style methods reduce memory duplication by sharding model states a
 
 ---
 
-#
-# 13. Checkpointing
+## 13. Checkpointing
 
 Checkpointing is essential because pretraining runs may last days, weeks, or months.
 
@@ -388,8 +376,7 @@ Training checkpoints are often much larger because they include optimizer states
 
 ---
 
-#
-# 14. Monitoring Training
+## 14. Monitoring Training
 
 Pretraining should be monitored continuously.
 
@@ -413,8 +400,7 @@ Domain-level monitoring is especially important. If code, math, Persian, English
 
 ---
 
-#
-# 15. Common Pretraining Failures
+## 15. Common Pretraining Failures
 
 #
 ## Data Problems
@@ -486,8 +472,7 @@ Before starting a serious pretraining run, verify:
 
 ---
 
-#
-# 17. Key Takeaways
+## 17. Key Takeaways
 
 Pretraining is the stage where an LLM learns its broad capabilities from raw token streams.
 
