@@ -63,7 +63,7 @@ $$
 Q = f(N, D, C, Q_{\text{data}}, O)
 $$
 
-where $$N$$ is parameter count, $$D$$ is training-token count, $$C$$ is compute, $$Q_{\text{data}}$$ represents data quality, and $$O$$ represents the optimization/training recipe.
+where $N$ is parameter count, $D$ is training-token count, $C$ is compute, $Q_{\text{data}}$ represents data quality, and $O$ represents the optimization/training recipe.
 
 
 این فقط یک ساده‌سازی است. اجرای واقعی آموزش به جزئیات زیادی وابسته است؛ از جمله رفتار tokenizer، ترکیب داده (data mixture)، حذف تکرار (deduplication)، معماری، و بهره‌وری سیستم‌های توزیع‌شده.
@@ -396,9 +396,7 @@ Batch size بر بهینه‌سازی و throughput اثر می‌گذارد.
 
 
 $$
-N_{\text{tokens/update}}
-=
-B_{\text{global}} \times T
+N_{\text{tokens/update}} = B_{\text{global}} \times T
 $$
 
 

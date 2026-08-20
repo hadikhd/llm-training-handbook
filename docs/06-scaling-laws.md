@@ -425,7 +425,7 @@ $$
 N_{\text{tokens/update}} = B_{\text{global}} \times T
 $$
 
-where $B_{\text{global}}$ is the global batch size and $T$ the sequence length.
+   
 
 Larger batches can improve hardware utilization and reduce gradient noise. But very large batches may require learning-rate adjustments and can reduce the number of optimizer updates for a fixed token budget.
 
