@@ -162,9 +162,9 @@ $$
 
 که در آن:
 
-- $$|V|$$ اندازه‌ی واژگان (Vocabulary Size) است.
-- $$d_{\text{model}}$$ بُعد نهان یا عرض مدل (Hidden Dimension / Model Width) است.
-- $$h_t^{(0)}$$ بازنمایی اولیه‌ی توکن $$t$$ است.
+- $|V|$ اندازه‌ی واژگان (Vocabulary Size) است.
+- $d_{\text{model}}$ بُعد نهان یا عرض مدل (Hidden Dimension / Model Width) است.
+- $h_t^{(0)}$ بازنمایی اولیه‌ی توکن $$t$$ است.
 
 برای کل دنباله داریم:
 
@@ -174,8 +174,8 @@ $$
 
 که در آن:
 
-- $$T$$ طول دنباله (Sequence Length) است.
-- $$d_{\text{model}}$$ عرض مدل است.
+- $T$ طول دنباله (Sequence Length) است.
+- $d_{\text{model}}$ عرض مدل است.
 
 ترنسفورمر این ماتریس را در طول چندین لایه، بارها به‌روزرسانی می‌کند.
 
@@ -256,8 +256,8 @@ $$
 
 که در آن:
 
-- $$pos$$ موقعیت توکن است.
-- $$i$$ اندیس بُعد embedding را نشان می‌دهد.
+- $pos$ موقعیت توکن است.
+- $i$ اندیس بُعد embedding را نشان می‌دهد.
 
 کدگذاری‌های سینوسی به مدل اجازه می‌دهند که از طریق ترکیب توابع تناوبی، فاصله‌های نسبی را نمایش دهد.
 
@@ -338,10 +338,10 @@ $$
 
 که در آن:
 
-- $$H^{(l)}$$ ورودی لایه‌ی $$l$$ است.
-- $$H^{(l+1)}$$ خروجی لایه‌ی $$l$$ است.
-- $$\text{Norm}$$ معمولاً LayerNorm یا RMSNorm است.
-- $$\text{FFN}$$ شبکه‌ی پیش‌خور است.
+- $H^{(l)}$ ورودی لایه‌ی $$l$$ است.
+- $H^{(l+1)}$ خروجی لایه‌ی $$l$$ است.
+- $\text{Norm}$ معمولاً LayerNorm یا RMSNorm است.
+- $\text{FFN}$ شبکه‌ی پیش‌خور است.
 
 ---
 
@@ -424,10 +424,10 @@ $$
 
 که در آن:
 
-- $$Q \in \mathbb{R}^{T \times d_k}$$
-- $$K \in \mathbb{R}^{T \times d_k}$$
-- $$V \in \mathbb{R}^{T \times d_v}$$
-- $$d_k$$ بُعد key/query است.
+- $Q \in \mathbb{R}^{T \times d_k}$
+- $K \in \mathbb{R}^{T \times d_k}$
+- $V \in \mathbb{R}^{T \times d_v}$
+- $d_k$ بُعد key/query است.
 
 ماتریس
 
@@ -466,7 +466,7 @@ query4      .      .      .      .
 ```
 پس از اعمال softmax، هر سطر به یک توزیع احتمال روی توکن‌ها تبدیل می‌شود.
 
-خروجی برای توکن \(i\) یک مجموع وزن‌دار از بردارهای value است:
+خروجی برای توکن $i$ یک مجموع وزن‌دار از بردارهای value است:
 
 $$
 o_i = \sum_{j=1}^{T} a_{ij} v_j
@@ -474,14 +474,14 @@ $$
 
 که در آن:
 
-- $$a_{ij}$$ وزن attention از توکن $$i$$ به توکن $$j$$ است.
-- $$v_j$$ بردار value مربوط به توکن $$j$$ است.
+- $a_{ij}$ وزن attention از توکن $i$ به توکن $j$ است.
+- $v_j$ بردار value مربوط به توکن $j$ است.
 
 ---
 
 ## ۴.۱۳ ماسک‌گذاری علّی
 
-در مدل‌سازی زبان خودبازگشتی، توکن $$t$$ نباید به توکن‌های آینده توجه کند.
+در مدل‌سازی زبان خودبازگشتی، توکن $t$ نباید به توکن‌های آینده توجه کند.
 
 مدل این کمیت را پیش‌بینی می‌کند:
 
@@ -538,7 +538,7 @@ The capital of France is
 
 هر سر attention projectionهای query، key و value مخصوص به خود را دارد.
 
-برای سر $$h$$:
+برای سر $h$:
 
 $$
 Q_h = HW_Q^{(h)}
@@ -638,9 +638,9 @@ $$
 
 که در آن:
 
--  $$W_1$$ از  $$d_{\text{model}}$$ به  $$d_{\text{ff}}$$ projection می‌کند.
--  $$W_2$$ از  $$d_{\text{ff}}$$ دوباره به  $$d_{\text{model}}$$ projection می‌کند.
--  $$\sigma$$ یک تابع غیرخطی مانند ReLU، GELU یا SiLU است.
+-  $W_1$ از  $d_{\text{model}}$ به  $d_{\text{ff}}$ projection می‌کند.
+-  $W_2$ از  $d_{\text{ff}}$ دوباره به  $d_{\text{model}}$ projection می‌کند.
+-  $\sigma$ یک تابع غیرخطی مانند ReLU، GELU یا SiLU است.
 
 معمولاً:
 
@@ -696,10 +696,10 @@ $$
 
 که در آن:
 
-- $$W_g$$ projection مربوط به gate است.
-- $$W_u$$ projection بالارونده (Up Projection) است.
-- $$W_d$$ projection پایین‌رونده (Down Projection) است.
-- $$\odot$$ ضرب درایه‌به‌درایه (Elementwise Multiplication) است.
+- $W_g$ projection مربوط به gate است.
+- $W_u$ projection بالارونده (Up Projection) است.
+- $W_d$ projection پایین‌رونده (Down Projection) است.
+- $\odot$ ضرب درایه‌به‌درایه (Elementwise Multiplication) است.
 
 SwiGLU به‌طور گسترده در LLMهای مدرن فقط-رمزگشا استفاده می‌شود.
 
@@ -746,9 +746,9 @@ $$
 
 که در آن:
 
-- $$\mu$$ میانگین روی ابعاد نهان است.
-- $$\sigma^2$$ واریانس است.
-- $$\gamma$$ و $$\beta$$ پارامترهای آموختنی‌اند.
+- $\mu$ میانگین روی ابعاد نهان است.
+- $\sigma^2$ واریانس است.
+- $\gamma$ و $\beta$ پارامترهای آموختنی‌اند.
 
 ### RMSNorm
 
@@ -912,23 +912,33 @@ predict x4 from x1 x2 x3
 
 پس از آخرین لایه‌ی ترنسفورمر، هر موقعیت یک hidden state دارد:
 
-$$ h_t \in \mathbb{R}^{d_{\text{model}}} $$
+$$
+h_t \in \mathbb{R}^{d_{\text{model}}}
+$$
 
 برای پیش‌بینی توکن بعدی، مدل این بردار را به اندازه‌ی واژگان (Vocabulary Size) projection می‌کند:
 
-$$ z_t = h_t W_{\text{out}} + b $$
+$$
+z_t = h_t W_{\text{out}} + b
+$$
 
 که در آن:
 
-$$ W_{\text{out}} \in \mathbb{R}^{d_{\text{model}} \times |V|} $$
+$$
+W_{\text{out}} \in \mathbb{R}^{d_{\text{model}} \times |V|}
+$$
 
 خروجی \(z_t\) بردار logits نامیده می‌شود:
 
-$$ z_t \in \mathbb{R}^{|V|} $$
+$$
+z_t \in \mathbb{R}^{|V|}
+$$
 
 توزیع احتمال به‌صورت زیر است:
 
-$$ P(x_{t+1} \mid x_{\le t}) = \text{softmax}(z_t) $$
+$$
+P(x_{t+1} \mid x_{\le t}) = \text{softmax}(z_t)
+$$
 
 loss آموزشی، cross-entropy نسبت به توکن صحیحِ بعدی است.
 
@@ -942,11 +952,15 @@ loss آموزشی، cross-entropy نسبت به توکن صحیحِ بعدی ا�
 
 embedding ورودی:
 
-$$ E \in \mathbb{R}^{|V| \times d_{\text{model}}} $$
+$$
+E \in \mathbb{R}^{|V| \times d_{\text{model}}}
+$$
 
 projection خروجی می‌تواند از این رابطه استفاده کند:
 
-$$ W_{\text{out}} = E^\top $$
+$$
+W_{\text{out}} = E^\top
+$$
 
 weight tying تعداد پارامترها را کاهش می‌دهد و می‌تواند کارایی را بهبود دهد.
 
@@ -958,18 +972,22 @@ weight tying تعداد پارامترها را کاهش می‌دهد و می�
 
 ماتریس امتیاز attention دارای شکل زیر است:
 
-$$ T \times T $$
+$$
+T \times T
+$$
 
 برای هر لایه و هر head، attention نیاز دارد هر توکن را با هر توکنِ مجاز دیگر مقایسه کند.
 
 پیچیدگی تقریبی attention برابر است با:
 
-$$ O(T^2 d) $$
+$$
+O(T^2 d)
+$$
 
 که در آن:
 
-- $$T$$ طول دنباله (Sequence Length) است.
-- $$d$$ بسته به زمینه، اندازه‌ی hidden state یا بُعد head است.
+- $T$ طول دنباله (Sequence Length) است.
+- $d$ بسته به زمینه، اندازه‌ی hidden state یا بُعد head است.
 
 این وابستگی درجه‌دو به طول دنباله، یکی از محدودیت‌های اصلی ترنسفورمرها است.
 
@@ -985,9 +1003,10 @@ $$ O(T^2 d) $$
 
 پیچیدگی تقریبی آن برابر است با:
 
-$$ O(T d_{\text{model}} d_{\text{ff}}) $$
+$$
+O(T d_{\text{model}} d_{\text{ff}}) $$
 
-از آن‌جا که $$d_{\text{ff}}$$ معمولاً چند برابرِ $$d_{\text{model}}$$ است، FFN می‌تواند بخش غالبِ محاسبه باشد، به‌ویژه در طول‌دنباله‌های متوسط.
+از آن‌جا که $d_{\text{ff}}$ معمولاً چند برابرِ $d_{\text{model}}$ است، FFN می‌تواند بخش غالبِ محاسبه باشد، به‌ویژه در طول‌دنباله‌های متوسط.
 
 در بسیاری از LLMها، بخش بزرگی از پارامترها در لایه‌های FFN قرار دارد.
 
@@ -1009,30 +1028,40 @@ $$ O(T d_{\text{model}} d_{\text{ff}}) $$
 
 اگر biasها و normalization را نادیده بگیریم، attention چندسریِ استاندارد تقریباً این تعداد پارامتر دارد:
 
-$$ 4 d_{\text{model}}^2 $$
+$$
+4 d_{\text{model}}^2
+$$
 
 این تعداد مربوط به این ماتریس‌ها است:
 
-- $$W_Q$$
-- $$W_K$$
-- $$W_V$$
-- $$W_O$$
+- $W_Q$
+- $W_K$
+- $W_V$
+- $W_O$
 
 یک FFN استاندارد تقریباً این تعداد پارامتر دارد:
 
-$$ 2 d_{\text{model}} d_{\text{ff}} $$
+$$
+2 d_{\text{model}} d_{\text{ff}}
+$$
 
 اگر:
 
-$$ d_{\text{ff}} = 4d_{\text{model}} $$
+$$
+d_{\text{ff}} = 4d_{\text{model}}
+$$
 
 در آن صورت پارامترهای FFN برابر می‌شود با:
 
-$$ 8d_{\text{model}}^2 $$
+$$
+8d_{\text{model}}^2
+$$
 
 بنابراین، یک بلوک کلاسیک ترنسفورمر تقریباً این تعداد پارامتر دارد:
 
-$$ 12d_{\text{model}}^2 $$
+$$ 
+12d_{\text{model}}^2
+$$
 
 که embeddingها و جمله‌های کوچک‌تر را شامل نمی‌شود.
 
@@ -1048,7 +1077,7 @@ $$ 12d_{\text{model}}^2 $$
 
 به‌جای آن‌که در هر گام، keyها و valueهای تمام توکن‌های قبلی دوباره محاسبه شوند، سیستم‌های استنتاج آن‌ها را در یک **KV cache** ذخیره می‌کنند.
 
-در گام تولید \(t\)، مدل این موارد را ذخیره می‌کند:
+در گام تولید $t$، مدل این موارد را ذخیره می‌کند:
 
 ```text
 Keys:   K_1, K_2, ..., K_t
@@ -1073,20 +1102,24 @@ Values: V_1, V_2, ..., V_t
 
 یک فرمول ساده‌شده به‌صورت زیر است:
 
-$$ \text{KV cache elements} = 2 \times B \times T \times L \times n_{\text{kv heads}} \times d_{\text{head}} $$
+$$
+\text{KV cache elements} = 2 \times B \times T \times L \times n_{\text{kv heads}} \times d_{\text{head}}
+$$
 
 که در آن:
 
-- $$2$$ مربوط به keyها و valueها است.
-- $$B$$ اندازه‌ی batch است.
-- $$T$$ طول دنباله است.
-- $$L$$ تعداد لایه‌ها است.
-- $$n_{\text{kv heads}}$$ تعداد headهای key-value است.
-- $$d_{\text{head}}$$ بُعد head است.
+- $2$ مربوط به keyها و valueها است.
+- $B$ اندازه‌ی batch است.
+- $T$ طول دنباله است.
+- $L$ تعداد لایه‌ها است.
+- $n_{\text{kv heads}}$ تعداد headهای key-value است.
+- $d_{\text{head}}$ بُعد head است.
 
 حافظه بر حسب بایت:
 
-$$ \text{bytes} = \text{elements} \times \text{bytes per element} $$
+$$
+\text{bytes} = \text{elements} \times \text{bytes per element}
+$$
 
 در سروینگ long-context، حافظه‌ی KV-cache اغلب یک گلوگاه اصلی است، زیرا به‌صورت خطی با طول دنباله، batch size، تعداد لایه‌ها، تعداد KV headها و بُعد head رشد می‌کند.
 
@@ -1163,7 +1196,7 @@ Window size = 4
 
 Token 10 attends to tokens:
 7, 8, 9, 10
-
+```
 
 این روش هزینه محاسباتی Full Quadratic Attention (توجه درجه‌دوم کامل) را در سراسر دنباله کاهش می‌دهد.
 
