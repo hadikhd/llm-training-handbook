@@ -168,27 +168,6 @@ Examples include:
 - constrained assistant responses
 
 ---
-## Learning Objectives
-
-By the end of this chapter, you should be able to:
-
-- Explain the autoregressive generation loop and major decoding strategies.
-- Understand temperature, top-k, top-p, beam search, stopping, and chat-template behavior.
-- Analyze KV-cache, batching, quantization, compilation, scheduling, and serving trade-offs.
-- Measure inference quality, latency, throughput, concurrency, memory, and cost.
-
-
----
-
-## Engineering Lens
-
-Read this chapter with four engineering questions in mind:
-
-1. **What problem does this technique solve?**
-2. **How do we measure whether it is working?**
-3. **What trade-offs or resource costs does it introduce?**
-4. **What failure modes should we expect, and how would we diagnose them?**
-
 
 ## 6. Sampling
 
