@@ -405,7 +405,7 @@ $$
 هدف بریده‌شدهٔ PPO به‌صورت زیر است:
 
 $$
-\mathcal{L}_{\text{PPO}}(\theta) = \mathbb{E}_t\!\left[ \min\!\left( \rho_t(\theta) A_t,\; \operatorname{clip}(\rho_t(\theta), 1-\epsilon, 1+\epsilon) A_t \right) \right]
+\mathcal{L}_{\text{PPO}}(\theta) = \mathbb{E}_t \left[ \min \left( \rho_t(\theta) A_t, \mathrm{clip}(\rho_t(\theta), 1-\epsilon, 1+\epsilon) A_t \right) \right]
 $$
 
 که در آن:
