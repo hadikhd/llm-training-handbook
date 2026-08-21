@@ -1402,3 +1402,6 @@ define the task
 1. کدام اصول مهندسی (Engineering Principles) در این کتاب احتمالاً حتی با تغییر معماری‌ها نیز مفید باقی می‌مانند؟
 2. چرا عملکرد بهتر در بنچمارک (Benchmark Performance) تضمین‌کنندهٔ سامانه‌های واقعی بهتر (Better Real-World Systems) نیست؟
 3. یک مهندس مدل زبانی بزرگ (LLM Engineer) فراتر از معماری مدل (Model Architecture) چه مهارت‌هایی باید توسعه دهد؟
+---
+[قبلی: سامانه‌ها (Systems)](./10-inference-and-decoding.md) |
+[فهرست مطالب (Contents)](./index.md) |
