@@ -120,7 +120,7 @@ while not stop_condition(tokens):
 برای تبدیل لاجیت‌ها (Logits) به احتمال‌ها (Probabilities)، تابع سافت‌مکس (Softmax) اعمال می‌شود:
 
 $$
-p(\mathrm{token}_i) = \frac{\exp(\mathrm{logit}_i)}{\sum_j \exp(\mathrm{logit}_j)}
+p(\mathrm{token}_i) = \frac{\exp(\mathrm{logit}_i)}{\sum_{j} \exp(\mathrm{logit}_j)}
 $$
 
 سپس توکن بعدی را می‌توان با استفاده از راهبردهای مختلف رمزگشایی (Decoding Strategies) انتخاب کرد.
