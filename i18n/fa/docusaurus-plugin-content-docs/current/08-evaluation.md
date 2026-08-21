@@ -17,7 +17,6 @@ sidebar_position: 1
 
 ---
 
-```markdown
 ## اهداف یادگیری (Learning Objectives)
 
 در پایان این فصل، باید بتوانید:
