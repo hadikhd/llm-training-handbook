@@ -719,8 +719,9 @@ A strong evaluation pipeline does more than rank models. It explains failures, d
 1. Why is a single benchmark insufficient for evaluating an LLM?
 2. How should offline evaluation connect to regression testing and online monitoring?
 3. What information does error analysis provide that a single metric cannot?
+---
 
 [Previous: Post-Training](./07-post-training.md) |
 [Contents](./index.md) |
 [Next: Systems](./09-systems.md)
-```
+
