@@ -96,7 +96,9 @@ Assistant: Gradient descent is an optimization algorithm...
 
 تابع هدف استاندارد SFT به‌صورت زیر است:
 
-$$ \mathcal{L}_{\text{SFT}}(\theta) = -\sum_{t \in \mathcal{A}} \log \pi_{\theta}(y_t \mid x, y_{<t}) $$
+$$
+\mathcal{L}_{\text{SFT}}(\theta) = -\sum_{t \in \mathcal{A}} \log \pi_{\theta}(y_t \mid x, y_{<t})
+$$
 
 که در آن:
 
@@ -171,14 +173,14 @@ def format_example(example):
 ```
 ممکن است به شکل زیر تبدیل شود:
 
-text
+```text
 <|system|>
 You are a concise assistant.
 <|user|>
 What is LoRA?
 <|assistant|>
 LoRA is a parameter-efficient fine-tuning method...
-
+```
 قالب دقیق، وابسته به مدل (Model-Specific) است. استفاده از قالب اشتباه (Wrong Template) می‌تواند عملکرد را کاهش دهد، زیرا مدل رفتاری را یاد گرفته است که به توکن‌های نقش مشخص (Particular Role Tokens)، جداکننده‌ها (Delimiters)، و پیشوندهای دستیار (Assistant Prefixes) وابسته است.
 
 بنابراین، دادهٔ خوب برای پس‌آموزش (Good Post-Training Data) باید موارد زیر را استاندارد کند:
@@ -256,9 +258,13 @@ LoRA is a parameter-efficient fine-tuning method...
 
 LoRA ماتریس وزن اصلی $W$ را منجمد (Freeze) می‌کند و یک به‌روزرسانی کم‌رتبه (Low-Rank Update) را یاد می‌گیرد:
 
-$$ W' = W + \Delta W $$
+$$
+W' = W + \Delta W
+$$
 
-$$ \Delta W = BA $$
+$$
+\Delta W = BA
+$$
 
 که در آن:
 
@@ -329,7 +335,9 @@ SFT به مدل می‌آموزد نمایش‌ها (Demonstrations) را تقل
 
 یک مدل پاداش (Reward Model) یک جفت پرامپت-پاسخ (Prompt-Response Pair) را به یک نمرهٔ اسکالر (Scalar Score) نگاشت می‌کند:
 
-$$ r_{\phi}(x, y) \in \mathbb{R} $$
+$$
+r_{\phi}(x, y) \in \mathbb{R}
+$$
 
 که در آن:
 
@@ -341,7 +349,9 @@ $$ r_{\phi}(x, y) \in \mathbb{R} $$
 
 برای دادهٔ ترجیح دوتایی $(x, y_w, y_l)$ که در آن $y_w$ پاسخ انتخاب‌شده (Chosen Response) و $y_l$ پاسخ ردشده (Rejected Response) است، یک زیان رایج به‌صورت زیر است:
 
-$$ \mathcal{L}_{\text{RM}}(\phi) = -\log \sigma\!\left(r_{\phi}(x, y_w) - r_{\phi}(x, y_l)\right) $$
+$$
+\mathcal{L}_{\text{RM}}(\phi) = -\log \sigma\!\left(r_{\phi}(x, y_w) - r_{\phi}(x, y_l)\right)
+$$
 
 این تابع از مدل ترجیح برادلی-تری (Bradley-Terry Preference Model) پیروی می‌کند. یادداشت‌های دوره توضیح می‌دهند که مدل Bradley-Terry را می‌توان به‌صورت یک سیگموید (Sigmoid) اعمال‌شده بر اختلاف دو نمرهٔ پاداش نوشت، و این‌که زیان مدل پاداش یک زیان آنتروپی متقاطع (Cross-Entropy Loss) بین ترجیح پیش‌بینی‌شده و ترجیح واقعی است.
 
@@ -365,7 +375,9 @@ $$ \mathcal{L}_{\text{RM}}(\phi) = -\log \sigma\!\left(r_{\phi}(x, y_w) - r_{\ph
 
 هدف RLHF اغلب به‌شکل زیر نوشته می‌شود:
 
-$$ \max_{\pi_{\theta}} \mathbb{E}_{x \sim \mathcal{D},\; y \sim \pi_{\theta}(\cdot \mid x)} \left[ r_{\phi}(x, y) - \beta D_{\mathrm{KL}}\!\left( \pi_{\theta}(\cdot \mid x)\;\Vert\;\pi_{\text{ref}}(\cdot \mid x) \right) \right] $$
+$$
+\max_{\pi_{\theta}} \mathbb{E}_{x \sim \mathcal{D},\; y \sim \pi_{\theta}(\cdot \mid x)} \left[ r_{\phi}(x, y) - \beta D_{\mathrm{KL}}\!\left( \pi_{\theta}(\cdot \mid x)\;\Vert\;\pi_{\text{ref}}(\cdot \mid x) \right) \right]
+$$
 
 که در آن:
 
@@ -386,11 +398,15 @@ PPO با محدودکردن میزان فاصله‌گرفتن سیاست جدی
 
 نسبت احتمال (Probability Ratio) را تعریف می‌کنیم:
 
-$$ \rho_t(\theta) = \frac{\pi_{\theta}(a_t \mid s_t)}{\pi_{\theta_{\text{old}}}(a_t \mid s_t)} $$
+$$
+\rho_t(\theta) = \frac{\pi_{\theta}(a_t \mid s_t)}{\pi_{\theta_{\text{old}}}(a_t \mid s_t)}
+$$
 
 هدف بریده‌شدهٔ PPO به‌صورت زیر است:
 
-$$ \mathcal{L}_{\text{PPO}}(\theta) = \mathbb{E}_t\!\left[ \min\!\left( \rho_t(\theta) A_t,\; \operatorname{clip}(\rho_t(\theta), 1-\epsilon, 1+\epsilon) A_t \right) \right] $$
+$$
+\mathcal{L}_{\text{PPO}}(\theta) = \mathbb{E}_t\!\left[ \min\!\left( \rho_t(\theta) A_t,\; \operatorname{clip}(\rho_t(\theta), 1-\epsilon, 1+\epsilon) A_t \right) \right]
+$$
 
 که در آن:
 
@@ -442,7 +458,9 @@ rejected response y_l
 ```
 زیان DPO به‌صورت زیر است:
 
-$$ \mathcal{L}_{\text{DPO}}(\theta) = - \mathbb{E}_{(x, y_w, y_l) \sim \mathcal{D}} \left[ \log \sigma\!\left( \beta \left[ \log \frac{\pi_{\theta}(y_w \mid x)}{\pi_{\text{ref}}(y_w \mid x)} - \log \frac{\pi_{\theta}(y_l \mid x)}{\pi_{\text{ref}}(y_l \mid x)} \right] \right) \right] $$
+$$
+\mathcal{L}_{\text{DPO}}(\theta) = - \mathbb{E}_{(x, y_w, y_l) \sim \mathcal{D}} \left[ \log \sigma\!\left( \beta \left[ \log \frac{\pi_{\theta}(y_w \mid x)}{\pi_{\text{ref}}(y_w \mid x)} - \log \frac{\pi_{\theta}(y_l \mid x)}{\pi_{\text{ref}}(y_l \mid x)} \right] \right) \right]
+$$
 
 که در آن:
 

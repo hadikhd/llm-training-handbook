@@ -115,7 +115,9 @@ For causal language models, SFT is still next-token prediction. The difference i
 
 The standard SFT objective is:
 
-$$ \mathcal{L}_{\text{SFT}}(\theta) = -\sum_{t \in \mathcal{A}} \log \pi_{\theta}(y_t \mid x, y_{<t}) $$
+$$
+\mathcal{L}_{\text{SFT}}(\theta) = -\sum_{t \in \mathcal{A}} \log \pi_{\theta}(y_t \mid x, y_{<t})
+$$
 
 where:
 
@@ -281,9 +283,13 @@ Parameter-Efficient Fine-Tuning updates only a small number of additional or sel
 
 LoRA freezes the original weight matrix $W$ and learns a low-rank update:
 
-$$ W' = W + \Delta W $$
+$$
+W' = W + \Delta W
+$$
 
-$$ \Delta W = BA $$
+$$
+\Delta W = BA
+$$
 
 where:
 
@@ -355,7 +361,8 @@ Preference data is used in two major ways:
 
 A reward model maps a prompt-response pair to a scalar score:
 
-$$ r_{\phi}(x, y) \in \mathbb{R} $$
+$$
+r_{\phi}(x, y) \in \mathbb{R} $$
 
 where:
 
@@ -367,7 +374,9 @@ The reward model should assign a higher score to the preferred response than to 
 
 For pairwise preference data $(x, y_w, y_l)$, where $y_w$ is the chosen response and $y_l$ is the rejected response, a common loss is:
 
-$$ \mathcal{L}_{\text{RM}}(\phi) = -\log \sigma\!\left(r_{\phi}(x, y_w) - r_{\phi}(x, y_l)\right) $$
+$$
+\mathcal{L}_{\text{RM}}(\phi) = -\log \sigma\!\left(r_{\phi}(x, y_w) - r_{\phi}(x, y_l)\right)
+$$
 
 This follows the Bradley-Terry preference model. The course notes explain that the Bradley-Terry model can be written as a sigmoid applied to the difference between two reward scores , and that the reward model loss is a cross-entropy loss between predicted and true preference.
 
@@ -391,7 +400,9 @@ The reward model provides a scalar reward for prompt-response pairs. The course 
 
 The RLHF objective is often written as:
 
-$$ \max_{\pi_{\theta}} \mathbb{E}_{x \sim \mathcal{D},\; y \sim \pi_{\theta}(\cdot \mid x)} \left[ r_{\phi}(x, y) - \beta D_{\mathrm{KL}}\!\left( \pi_{\theta}(\cdot \mid x)\;\Vert\;\pi_{\text{ref}}(\cdot \mid x) \right) \right] $$
+$$
+\max_{\pi_{\theta}} \mathbb{E}_{x \sim \mathcal{D},\; y \sim \pi_{\theta}(\cdot \mid x)} \left[ r_{\phi}(x, y) - \beta D_{\mathrm{KL}}\!\left( \pi_{\theta}(\cdot \mid x)\;\Vert\;\pi_{\text{ref}}(\cdot \mid x) \right) \right]
+$$
 
 where:
 
@@ -412,7 +423,9 @@ PPO stabilizes policy updates by limiting how much the new policy can move away 
 
 Define the probability ratio:
 
-$$ \rho_t(\theta) = \frac{\pi_{\theta}(a_t \mid s_t)}{\pi_{\theta_{\text{old}}}(a_t \mid s_t)} $$
+$$
+\rho_t(\theta) = \frac{\pi_{\theta}(a_t \mid s_t)}{\pi_{\theta_{\text{old}}}(a_t \mid s_t)}
+$$
 
 The clipped PPO objective is:
 
@@ -469,7 +482,9 @@ rejected response y_l
 ```
 The DPO loss is:
 
-$$ \mathcal{L}_{\text{DPO}}(\theta) = - \mathbb{E}_{(x, y_w, y_l) \sim \mathcal{D}} \left[ \log \sigma\!\left( \beta \left[ \log \frac{\pi_{\theta}(y_w \mid x)}{\pi_{\text{ref}}(y_w \mid x)} - \log \frac{\pi_{\theta}(y_l \mid x)}{\pi_{\text{ref}}(y_l \mid x)} \right] \right) \right] $$
+$$
+\mathcal{L}_{\text{DPO}}(\theta) = - \mathbb{E}_{(x, y_w, y_l) \sim \mathcal{D}} \left[ \log \sigma\!\left( \beta \left[ \log \frac{\pi_{\theta}(y_w \mid x)}{\pi_{\text{ref}}(y_w \mid x)} - \log \frac{\pi_{\theta}(y_l \mid x)}{\pi_{\text{ref}}(y_l \mid x)} \right] \right) \right]
+$$
 
 where:
 
