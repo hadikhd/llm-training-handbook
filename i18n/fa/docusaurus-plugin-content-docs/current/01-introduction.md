@@ -137,9 +137,7 @@ $$
 یک مدل سه‌گرمی (Trigram Model) تقریب می‌زند:
 
 $$
-P(x_t \mid x_{<t})
-\approx
-P(x_t \mid x_{t-2}, x_{t-1})
+P(x_t \mid x_{\lt t}) \approx P(x_t \mid x_{t-2}, x_{t-1})
 $$
 
 احتمال‌های آن را می‌توان با استفاده از شمارش‌های پیکره (Corpus Counts) برآورد کرد:
