@@ -292,13 +292,13 @@ The complete handbook is available as a Docusaurus website:
 
 Source Markdown files:
 
-### English 🇬🇧
+### English
 
 - [Preface](./docs/00-preface.md)
 - [Introduction](./docs/01-introduction.md)
 - [Book Index](./docs/index.md)
 
-### فارسی 🇮🇷
+### فارسی 
 
 If the Persian edition is stored alongside the English edition, use the corresponding Persian Markdown/Docusaurus documents from the repository's language-specific documentation structure.
 
@@ -499,6 +499,6 @@ https://github.com/hadik/llm-training-handbook
 
 **Learn the model. Understand the system. Engineer the whole stack.**
 
-🇬🇧 English &nbsp;·&nbsp; 🇮🇷 فارسی &nbsp;·&nbsp; 🧠 LLM Engineering
+ English &nbsp;·&nbsp; فارسی &nbsp;·&nbsp; 🧠 LLM Engineering
 
 </div>
