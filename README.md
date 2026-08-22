@@ -74,8 +74,8 @@ This project is maintained as a **bilingual technical handbook**:
 
 | Language | Audience | Status |
 |:---|:---|:---|
-| 🇬🇧 **English** | International AI/ML engineering audience | Available |
-| 🇮🇷 **فارسی (Persian)** | Persian-speaking AI/ML engineering audience | Available |
+| **English** | International AI/ML engineering audience | Available |
+|  **فارسی (Persian)** | Persian-speaking AI/ML engineering audience | Available |
 
 The Persian edition is not intended to replace technical terminology with informal translations. Established terms such as **Transformer, Tokenization, Pretraining, Post-training, Scaling Laws, Inference, Evaluation, Fine-tuning, Quantization, RAG, and LLM** are retained where that is clearer for an expert technical audience.
 
