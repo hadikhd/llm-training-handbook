@@ -122,3 +122,27 @@
   direction: ltr;
   unicode-bidi: isolate;
 }
+.math-block {
+  direction: ltr;
+  text-align: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 1.5rem 0;
+  padding: 0.5rem 0;
+}
+
+.katex-display {
+  direction: ltr;
+  text-align: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 1.5rem 0;
+}
+
+.katex {
+  direction: ltr;
+}
+
+.katex-display > .katex {
+  max-width: 100%;
+}
