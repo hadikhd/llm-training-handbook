@@ -7,7 +7,7 @@ sidebar_position: 1
 # فصل ۶: قوانین مقیاس‌پذیری
 <div className="chapter-hero">
 
-![فصل ۶ — قوانین مقیاس پذیری](/static/img/chapters/scaling-laws.png)
+![فصل ۶ — قوانین مقیاس پذیری](/img/chapters/scaling-laws.png)
 
 </div>
 

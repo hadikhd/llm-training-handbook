@@ -7,7 +7,7 @@ sidebar_position: 1
 # فصل ۷: پس‌آموزش (Post-Training)
 <div className="chapter-hero">
 
-![فصل ۷: پس‌آموزش ](/static/img/chapters/post-training.png)
+![فصل ۷: پس‌آموزش ](/img/chapters/post-training.png)
 
 </div>
 

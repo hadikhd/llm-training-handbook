@@ -6,7 +6,7 @@ sidebar_position: 1
 ---
 <div className="chapter-hero">
 
-![Chapter 2 — داده](/static/img/chapters/data.png)
+![Chapter 2 — داده](/img/chapters/data.png)
 
 </div>
 ## ۲ نقش مرکزی داده در LLMها

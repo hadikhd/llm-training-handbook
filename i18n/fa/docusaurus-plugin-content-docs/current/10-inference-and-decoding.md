@@ -8,7 +8,7 @@ sidebar_label: استنتاج و رمزگشایی
 # فصل ۱۰: استنتاج (Inference) و رمزگشایی (Decoding)
 <div className="chapter-hero">
 
-![فصل ۱۰: استنتاج و رمزگشایی](/static/img/chapters/inference.png)
+![فصل ۱۰: استنتاج و رمزگشایی](/img/chapters/inference.png)
 
 </div>
 
