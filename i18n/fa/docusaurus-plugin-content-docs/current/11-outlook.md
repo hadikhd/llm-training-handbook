@@ -7,7 +7,7 @@ sidebar_label: چشم‌انداز
 
 <div className="chapter-hero">
 
-![فصل ۱۱:  چشم‌انداز]([]/img/chapters/outlook.png)
+![فصل ۱۱:  چشم‌انداز](/img/chapters/outlook.png)
 
 </div>
 
