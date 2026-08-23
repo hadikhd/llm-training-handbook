@@ -7,7 +7,7 @@ description: A practical engineering perspective on building, training, evaluati
 ---
 <div className="chapter-hero">
 
-![Preface](/static/img/chapters/preface.png)
+![Preface](/img/chapters/preface.png)
 
 </div>
 
