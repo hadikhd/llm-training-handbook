@@ -34,11 +34,11 @@ By the end of this chapter, you should be able to:
 A language model assigns probabilities to sequences of tokens.
 
 Let a token sequence be:
-<div className="math-block">
+
 $$
 x_{1:T} = (x_1, x_2, \ldots, x_T)
 $$
-</div>
+
 A language model estimates the joint probability:
 
 $$
