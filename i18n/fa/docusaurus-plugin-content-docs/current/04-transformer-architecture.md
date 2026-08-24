@@ -2,7 +2,7 @@
 id: Transformers Architecture
 title: معماری ترنسفورمرها
 sidebar_label: معماری ترنسفورمرها
-sidebar_position: 1
+sidebar_position: 5
 ---
 
 <div className="chapter-hero">

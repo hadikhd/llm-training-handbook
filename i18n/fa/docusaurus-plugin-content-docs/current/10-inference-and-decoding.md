@@ -1,7 +1,7 @@
 ---
 id: inference and decoding
 title: استنتاج و رمزگشایی
-sidebar_position: 1
+sidebar_position: 11
 sidebar_label: استنتاج و رمزگشایی
 ---
 

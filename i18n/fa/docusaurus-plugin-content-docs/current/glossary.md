@@ -1,7 +1,7 @@
 ---
 id: glossary
 title: واژه‌نامه
-sidebar_position: 1
+sidebar_position: 13
 sidebar_label: واژه‌نامه 
 ---
 

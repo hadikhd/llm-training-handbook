@@ -2,7 +2,7 @@
 id: systems
 title: سامانه‌ها
 sidebar_label: سامانه‌ها
-sidebar_position: 1
+sidebar_position: 10
 ---
 # فصل ۹: سامانه‌ها
 <div className="chapter-hero">

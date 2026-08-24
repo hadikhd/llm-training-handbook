@@ -2,7 +2,7 @@
 id: data
 title: داده
 sidebar_label: داده
-sidebar_position: 1
+sidebar_position: 3
 ---
 <div className="chapter-hero">
 

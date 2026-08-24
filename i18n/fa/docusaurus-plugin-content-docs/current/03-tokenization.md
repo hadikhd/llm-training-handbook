@@ -2,7 +2,7 @@
 id: tokenization
 title: توکن سازی
 sidebar_label: توکن سازی
-sidebar_position: 1
+sidebar_position: 4
 ---
 # توکن‌سازی
 <div className="chapter-hero">

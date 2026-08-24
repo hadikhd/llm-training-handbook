@@ -2,7 +2,7 @@
 id: pretraining
 title: پیش آموزش  
 sidebar_label: پیش آموزش
-sidebar_position: 1
+sidebar_position: 6
 ---
 ## پیش‌آموزش
 <div className="chapter-hero">

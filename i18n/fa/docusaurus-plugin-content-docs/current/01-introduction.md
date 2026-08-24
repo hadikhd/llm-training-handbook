@@ -2,7 +2,7 @@
 id: مقدمه 
 title: مقدمه 
 sidebar_label: مقدمه 
-sidebar_position: 1
+sidebar_position: 2
 ---
 <div className="chapter-hero">
 

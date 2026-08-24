@@ -2,7 +2,7 @@
 id: scaling-laws
 title: قوانین مقیاس پذیری
 sidebar_label: قوانین مقیاس پذیری
-sidebar_position: 1
+sidebar_position: 7
 ---
 # فصل ۶: قوانین مقیاس‌پذیری
 <div className="chapter-hero">

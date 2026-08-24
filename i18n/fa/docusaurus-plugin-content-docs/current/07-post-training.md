@@ -2,7 +2,7 @@
 id: Post-Training
 title: پس‌آموزش
 sidebar_label: پس‌آموزش
-sidebar_position: 1
+sidebar_position: 8
 ---
 # فصل ۷: پس‌آموزش (Post-Training)
 <div className="chapter-hero">

@@ -2,7 +2,7 @@
 id: evaluation
 title: ارزیابی
 sidebar_label: ارزیابی
-sidebar_position: 1
+sidebar_position: 9
 ---
 # فصل ۸: ارزیابی (Evaluation)
 <div className="chapter-hero">
