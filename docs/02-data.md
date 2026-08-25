@@ -1,5 +1,5 @@
 ---
-id: Data for LLM Training
+id: data
 title: Data for LLM Training
 sidebar_label: Data for LLM Training
 sidebar_position: 3

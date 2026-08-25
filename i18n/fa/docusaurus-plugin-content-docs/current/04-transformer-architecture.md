@@ -1,5 +1,5 @@
 ---
-id: Transformers Architecture
+id: transformers
 title: معماری ترنسفورمرها
 sidebar_label: معماری ترنسفورمرها
 sidebar_position: 5

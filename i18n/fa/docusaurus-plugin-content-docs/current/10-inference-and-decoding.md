@@ -1,5 +1,5 @@
 ---
-id: inference and decoding
+id: inference-and- decoding
 title: استنتاج و رمزگشایی
 sidebar_position: 11
 sidebar_label: استنتاج و رمزگشایی

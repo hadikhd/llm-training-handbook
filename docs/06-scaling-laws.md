@@ -1,5 +1,5 @@
 ---
-id: Scaling Laws
+id: scaling-laws
 title: Scaling Laws
 sidebar_label: Scaling Laws
 sidebar_position: 7

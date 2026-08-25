@@ -1,5 +1,5 @@
 ---
-id: Tokenization
+id: tokenization
 title: Tokenization
 sidebar_label: Tokenization
 sidebar_position: 4

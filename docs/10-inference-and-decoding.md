@@ -1,5 +1,5 @@
 ---
-id: Inference and Decoding
+id: inference-and- decoding
 title: Inference and Decoding
 sidebar_label: Inference and Decoding
 sidebar_position: 11

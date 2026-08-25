@@ -1,5 +1,5 @@
 ---
-id: Post-Training
+id: post-training
 title: Post-Training
 sidebar_label: Post-Training
 sidebar_position: 8

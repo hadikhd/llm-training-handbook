@@ -1,5 +1,5 @@
 ---
-id: scaling-laws
+id: Scaling Laws
 title: قوانین مقیاس پذیری
 sidebar_label: قوانین مقیاس پذیری
 sidebar_position: 7

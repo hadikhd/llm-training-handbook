@@ -1,5 +1,5 @@
 ---
-id: Transformer Architecture
+id: transformers
 title: Transformer Architecture
 sidebar_label: Transformer Architecture
 sidebar_position: 5

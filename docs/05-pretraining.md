@@ -1,5 +1,5 @@
 ---
-id: Pretraining
+id: pretraining
 title: Pretraining
 sidebar_label: Pretraining
 sidebar_position: 6

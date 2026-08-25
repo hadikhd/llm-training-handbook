@@ -1,5 +1,5 @@
 ---
-id: Introduction 
+id: introduction 
 title: مقدمه 
 sidebar_label: مقدمه 
 sidebar_position: 2

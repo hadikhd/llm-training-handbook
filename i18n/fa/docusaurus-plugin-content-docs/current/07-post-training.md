@@ -1,5 +1,5 @@
 ---
-id: Post-Training
+id: post-training
 title: پس‌آموزش
 sidebar_label: پس‌آموزش
 sidebar_position: 8
