@@ -20,11 +20,11 @@ sidebar_position: 2
 یک مدل زبانی (Language Model) به دنباله‌هایی از توکن‌ها (Tokens) احتمال اختصاص می‌دهد.
 
 فرض کنید یک دنبالهٔ توکن (Token Sequence) به‌صورت زیر باشد:
-</div>
+
 $$
 x_{1:T} = (x_1, x_2, \ldots, x_T)
 $$
-<div className="rtl-content">
+
 یک مدل زبانی (Language Model) احتمال مشترک (Joint Probability) را به‌صورت زیر برآورد می‌کند:
 
 $$
