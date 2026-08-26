@@ -16,7 +16,7 @@ sidebar_position: 2
 [فهرست (Contents)](./index.md) |
 [بعدی: توکن‌سازی (Tokenization)](./02-data.md)
 
-<div className="ltr-term">
+
 یک مدل زبانی (Language Model) به دنباله‌هایی از توکن‌ها (Tokens) احتمال اختصاص می‌دهد.
 
 فرض کنید یک دنبالهٔ توکن (Token Sequence) به‌صورت زیر باشد:
