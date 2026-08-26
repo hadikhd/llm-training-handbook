@@ -1,3 +1,4 @@
+---
 id: outlook
 title: چشم‌انداز
 sidebar_position: 12
