@@ -109,7 +109,7 @@ Large language models
 
 فرایند تولید (Generation Process) ممکن است به این شکل باشد:
 
-text
+```text
 Step 1: Large language models are
 Step 2: Large language models are trained
 Step 3: Large language models are trained on
