@@ -28,6 +28,7 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
 /* Main container for Persian + English mixed content */
 .mixed-content {
   direction: rtl;
@@ -38,13 +39,6 @@
 .ltr {
   direction: ltr;
   text-align: left;
-  unicode-bidi: isolate;
-}
-
-/* Mathematical expressions */
-.math-block {
-  direction: ltr;
-  text-align: center;
   unicode-bidi: isolate;
 }
 
@@ -86,22 +80,25 @@
 }
 
 /* English technical terms inside Persian text */
-.rtl-content .ltr-term {
+.rtl-content .ltr-term,
+.ltr-term {
   direction: ltr;
   unicode-bidi: isolate;
   display: inline-block;
   text-align: left;
 }
 
-/* Code should always remain LTR */
+/* Code should always remain LTR and isolated */
 .rtl-content pre,
-.rtl-content code {
+.rtl-content code,
+pre,
+code {
   direction: ltr;
   text-align: left;
 }
 
-/* Code blocks */
-.rtl-content pre {
+.rtl-content pre,
+pre {
   unicode-bidi: isolate;
 }
 
@@ -118,19 +115,36 @@
   text-align: right;
 }
 
-.ltr-term {
-  direction: ltr;
-  unicode-bidi: isolate;
-}
+/* =========================================
+   Math / KaTeX (LTR inside RTL document)
+   ========================================= */
+
+/* Consolidated math-block rule (duplicate removed) */
 .math-block {
   direction: ltr;
   text-align: center;
+  unicode-bidi: isolate;
   overflow-x: auto;
   overflow-y: hidden;
   margin: 1.5rem 0;
   padding: 0.5rem 0;
 }
 
+/* KaTeX visual output stays LTR */
+.katex,
+.katex-display {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.katex-display {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  text-align: center;
+}
+
+/* Accessibility: hide the MathML twin for sighted users, keep it for screen readers */
 .katex-mathml {
   position: absolute;
   width: 1px;
@@ -143,15 +157,36 @@
   border: 0;
 }
 
-.katex,
-.katex-display {
-  direction: ltr;
-}
+/* =========================================
+   RTL document: force math to remain LTR
+   ========================================= */
 
-.katex-display {
-  margin: 1.5rem 0;
-  overflow-x: auto;
-  overflow-y: hidden;
+html[dir='rtl'] .katex,
+html[dir='rtl'] .katex-display,
+html[dir='rtl'] .katex .katex-html {
+  direction: ltr !important;
   text-align: center;
+  unicode-bidi: isolate;
 }
 
+/* Isolate inline math inside RTL paragraphs */
+html[dir='rtl'] .katex-html {
+  direction: ltr !important;
+  unicode-bidi: isolate;
+}
+
+/* MathML source is always LTR (already visually hidden above) */
+html[dir='rtl'] .katex-mathml {
+  direction: ltr !important;
+  unicode-bidi: isolate;
+}
+
+/* Keep code/pre blocks LTR even when the document is RTL */
+html[dir='rtl'] pre,
+html[dir='rtl'] code,
+html[dir='rtl'] .theme-code-block,
+html[dir='rtl'] .code-block {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
+}
