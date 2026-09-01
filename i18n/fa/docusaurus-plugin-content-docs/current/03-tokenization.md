@@ -101,11 +101,11 @@ Token IDs:
 مدل‌های زبانی بزرگِ خودرگرسیو (Autoregressive LLMs) معمولاً برای پیش‌بینی توکن بعدی (Next-Token Prediction) آموزش می‌بینند.
 
 با داشتن یک دنباله از توکن‌ها:
-
+<div className = "katex-mathml">
 $$
 x_1, x_2, \ldots, x_T
 $$
-
+</div>
 مدل مقدار زیر را تخمین می‌زند:
 
 $$
