@@ -101,11 +101,11 @@ Token IDs:
 مدل‌های زبانی بزرگِ خودرگرسیو (Autoregressive LLMs) معمولاً برای پیش‌بینی توکن بعدی (Next-Token Prediction) آموزش می‌بینند.
 
 با داشتن یک دنباله از توکن‌ها:
-<div className = "katex-mathml">
+
 $$
 x_1, x_2, \ldots, x_T
 $$
-</div>
+
 مدل مقدار زیر را تخمین می‌زند:
 
 $$
@@ -455,7 +455,7 @@ pretraining
 برای مثال، یک توکن‌ساز (Tokenizer) ممکن است عبارت زیر را:
 ```text
 "Hello world"
-
+```
 به شکل زیر نمایش دهد:
 
 ```text
@@ -507,40 +507,40 @@ BPE در ابتدا به‌عنوان یک الگوریتم فشرده‌ساز�
 
 نمونه‌ی پیکره (Corpus):
 
-text
+```text
 low
 lower
 lowest
 newer
 wider
-
+```
 نمایش اولیه‌ی نویسه‌ای (Initial Character Representation):
 
-text
+```text
 l o w
 l o w e r
 l o w e s t
 n e w e r
 w i d e r
-
+```
 اگر جفت `l o` پرتکرار باشد، آن را ادغام می‌کنیم:
 
-text
+```text
 lo w
 lo w e r
 lo w e s t
 n e w e r
 w i d e r
-
+```
 اگر `lo w` پرتکرار باشد، آن را ادغام می‌کنیم:
 
-text
+```text
 low
 low e r
 low e s t
 n e w e r
 w i d e r
-
+```
 پس از تکرارهای زیاد، الگوهای پرتکرار به توکن (Token) تبدیل می‌شوند.
 
 ---
@@ -617,10 +617,10 @@ BPE عملی و بسیار مفید است، اما از نظر زبانی کا�
 
 مثال:
 
-text
+```text
 unaffordable
 = ["un", "##aff", "##ord", "##able"]
-
+```
 ### مقایسه‌ی BPE و WordPiece
 
 | جنبه | BPE | WordPiece |
@@ -803,9 +803,9 @@ EOS is especially important for generation. A model trained with EOS can learn w
 
 ```text
 [101, 233, 421, 2, 0, 0, 0]
-```
-where `0` may be the PAD token.
 
+where `0` may be the PAD token.
+```
 زیان (Loss) معمولاً باید روی موقعیت‌های PAD ماسک شود:
 
 $$
@@ -948,7 +948,7 @@ $$
 |V| \times d_{\text{model}}
 $$
 
-مثال با $$|V|=100{,}000$$ و 
+مثال با $|V|=100{,}000$ و 
 $$
 d_{\text{model}}=4096
 $$:
