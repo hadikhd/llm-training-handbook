@@ -102,9 +102,11 @@ Token IDs:
 
 با داشتن یک دنباله از توکن‌ها:
 <div className="math-container" dir="ltr">
+<span class="katex-display">
 $$
 x_1, x_2, \ldots, x_T
 $$
+</spam>
 </div>
 مدل مقدار زیر را تخمین می‌زند:
 <div className="math-container" dir="ltr">
@@ -114,9 +116,11 @@ $$
 </div>
 هدف آموزشی (Training Objective) معمولاً پیش‌بینی توکن بعدی است:
 <div className="math-container" dir="ltr">
+<span class="katex-display">
 $$
 \mathcal{L} = -\sum_{t=1}^{T} \log P(x_t \mid x_{1:t-1})
 $$
+</spam>
 </div>
 این بدان معناست که توکن‌سازی (Tokenization) تعیین می‌کند مدل در هر مرحله چه چیزی را پیش‌بینی کند.
 
@@ -154,15 +158,19 @@ $$
 
 یک توکن‌ساز، متن را به شناسه‌های توکن (Token IDs) نگاشت می‌کند:
 <div className="math-container" dir="ltr">
+<span class="katex-display">
 $$ 
 \text{tokenizer}: \text{text} \rightarrow [i_1, i_2, \ldots, i_T]
 $$
+</spam>
 </div>
 که در آن هر $i_t$ یک عدد صحیح در بازه‌ی زیر است:
 <div className="math-container" dir="ltr">
+<span class="katex-display">
 $$
 0 \le i_t < |V|
 $$
+</spam>
 </div>
 و $|V|$ نشان‌دهنده‌ی اندازه‌ی واژگان (Vocabulary Size) است.
 
