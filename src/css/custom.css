@@ -167,7 +167,7 @@ pre {
 }
 
 /* Display math blocks */
-[dir='rtl'] .katex-display,
+[dir='ltr'] .katex-display,
 .rtl-content .katex-display {
   display: block !important;
   width: 100%;
@@ -180,7 +180,7 @@ pre {
 }
 
 /* KaTeX sometimes wraps the rendered formula like this */
-[dir='rtl'] .katex-display > .katex,
+[dir='ltr'] .katex-display > .katex,
 .rtl-content .katex-display > .katex {
   display: block !important;
   text-align: center !important;
@@ -190,21 +190,20 @@ pre {
 }
 
 /* Fallback: force all inner KaTeX elements to remain LTR */
-[dir='rtl'] .katex *,
+[dir='ltr'] .katex *,
 .rtl-content .katex * {
   direction: ltr !important;
 }
 
 /* Prevent RTL tables/lists from changing math alignment */
-[dir='rtl'] table .katex-display,
-[dir='rtl'] ul .katex-display,
-[dir='rtl'] ol .katex-display,
+[dir='ltr'] table .katex-display,
+[dir='ltr'] ul .katex-display,
+[dir='ltr'] ol .katex-display,
 .rtl-content table .katex-display,
 .rtl-content ul .katex-display,
 .rtl-content ol .katex-display {
   text-align: center !important;
 }
-
 
 
 
