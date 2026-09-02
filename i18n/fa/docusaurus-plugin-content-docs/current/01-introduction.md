@@ -106,7 +106,7 @@ $$
 
 ```text
 Large language models
-
+```
 فرایند تولید (Generation Process) ممکن است به این شکل باشد:
 
 ```text
