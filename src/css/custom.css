@@ -213,3 +213,18 @@ html[dir='rtl'] .code-block {
   direction: ltr !important;
   unicode-bidi: isolate;
 }
+html[dir='rtl'] .theme-doc-markdown .katex-display {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  text-align: center !important;
+  margin: 1.25rem 0;
+}
+
+html[dir='rtl'] .theme-doc-markdown .katex-display > .katex {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+}
