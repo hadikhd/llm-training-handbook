@@ -190,3 +190,26 @@ html[dir='rtl'] .code-block {
   text-align: left;
   unicode-bidi: isolate;
 }
+
+.math-container {
+  direction: ltr !important;
+  unicode-bidi: isolate;
+  width: 100%;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  text-align: center;
+}
+
+.math-container .katex-display {
+  direction: ltr !important;
+  margin: 0;
+  text-align: center;
+}
+
+.math-container .katex,
+.math-container .katex-html,
+.math-container .base {
+  direction: ltr !important;
+  unicode-bidi: isolate;
+}
