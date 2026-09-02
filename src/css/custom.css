@@ -119,113 +119,91 @@ pre {
    Math / KaTeX (LTR inside RTL document)
    ========================================= */
 
-/* Consolidated math-block rule (duplicate removed) */
-.math-block {
-  direction: ltr;
-  text-align: center;
-  unicode-bidi: isolate;
-  overflow-x: auto;
-  overflow-y: hidden;
-  margin: 1.5rem 0;
-  padding: 0.5rem 0;
-}
+/* ==========================================================
+   Fix KaTeX / math rendering inside Persian / RTL Docusaurus
+   ========================================================== */
 
-/* KaTeX visual output stays LTR */
-.katex,
-.katex-display {
-  direction: ltr;
-  unicode-bidi: isolate;
-}
+/*
+  This works when:
+  - <html dir="rtl">
+  - <body dir="rtl">
+  - any wrapper has dir="rtl"
+  - or your content has .rtl-content
+*/
 
-.katex-display {
-  margin: 1.5rem 0;
-  overflow-x: auto;
-  overflow-y: hidden;
-  text-align: center;
-}
-
-/* Accessibility: hide the MathML twin for sighted users, keep it for screen readers */
-.katex-mathml {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* =========================================
-   RTL document: force math to remain LTR
-   ========================================= */
-
-html[dir='rtl'] .katex,
-html[dir='rtl'] .katex-display,
-html[dir='rtl'] .katex .katex-html {
-  direction: ltr !important;
-  text-align: center;
-  unicode-bidi: isolate;
-}
-
-/* Isolate inline math inside RTL paragraphs */
-html[dir='rtl'] .katex-html {
-  direction: ltr !important;
-  unicode-bidi: isolate;
-}
-
-/* MathML source is always LTR (already visually hidden above) */
-html[dir='rtl'] .katex-mathml {
-  direction: ltr !important;
-  unicode-bidi: isolate;
-}
-
-/* Keep code/pre blocks LTR even when the document is RTL */
-html[dir='rtl'] pre,
-html[dir='rtl'] code,
-html[dir='rtl'] .theme-code-block,
-html[dir='rtl'] .code-block {
-  direction: ltr;
-  text-align: left;
-  unicode-bidi: isolate;
-}
-/* Force rendered math to stay LTR inside Persian/RTL pages */
-html[dir='rtl'] .theme-doc-markdown .katex,
-html[dir='rtl'] .theme-doc-markdown .katex-display,
-html[dir='rtl'] .theme-doc-markdown .katex-html,
-html[dir='rtl'] .theme-doc-markdown .katex .base,
-html[dir='rtl'] .theme-doc-markdown .katex .strut,
-html[dir='rtl'] .theme-doc-markdown .katex .mord,
-html[dir='rtl'] .theme-doc-markdown .katex .mbin,
-html[dir='rtl'] .theme-doc-markdown .katex .mrel {
+/* Force math roots to be LTR */
+[dir='rtl'] .katex,
+[dir='rtl'] .katex-display,
+[dir='rtl'] .katex-html,
+[dir='rtl'] .katex-mathml,
+[dir='rtl'] .math,
+[dir='rtl'] .math-inline,
+[dir='rtl'] .math-display,
+.rtl-content .katex,
+.rtl-content .katex-display,
+.rtl-content .katex-html,
+.rtl-content .katex-mathml,
+.rtl-content .math,
+.rtl-content .math-inline,
+.rtl-content .math-display {
   direction: ltr !important;
   unicode-bidi: isolate !important;
 }
 
-/* Display math block */
-html[dir='rtl'] .theme-doc-markdown .katex-display {
-  display: block;
+/* Inline math inside Persian paragraphs, lists, tables */
+[dir='rtl'] p .katex,
+[dir='rtl'] li .katex,
+[dir='rtl'] td .katex,
+[dir='rtl'] th .katex,
+.rtl-content p .katex,
+.rtl-content li .katex,
+.rtl-content td .katex,
+.rtl-content th .katex {
+  display: inline-block !important;
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  margin: 0 0.15em;
+  vertical-align: middle;
+}
+
+/* Display math blocks */
+[dir='rtl'] .katex-display,
+.rtl-content .katex-display {
+  display: block !important;
   width: 100%;
-  margin: 1.25rem 0;
+  margin: 1.5rem 0;
   text-align: center !important;
   overflow-x: auto;
   overflow-y: hidden;
-}
-
-/* Inline math */
-html[dir='rtl'] .theme-doc-markdown p .katex {
-  display: inline-block;
   direction: ltr !important;
   unicode-bidi: isolate !important;
 }
 
-/* KaTeX inner HTML should also stay LTR */
-html[dir='rtl'] .theme-doc-markdown .katex-html {
+/* KaTeX sometimes wraps the rendered formula like this */
+[dir='rtl'] .katex-display > .katex,
+.rtl-content .katex-display > .katex {
+  display: block !important;
+  text-align: center !important;
+  white-space: nowrap;
   direction: ltr !important;
   unicode-bidi: isolate !important;
 }
 
+/* Fallback: force all inner KaTeX elements to remain LTR */
+[dir='rtl'] .katex *,
+.rtl-content .katex * {
+  direction: ltr !important;
+}
+
+/* Prevent RTL tables/lists from changing math alignment */
+[dir='rtl'] table .katex-display,
+[dir='rtl'] ul .katex-display,
+[dir='rtl'] ol .katex-display,
+.rtl-content table .katex-display,
+.rtl-content ul .katex-display,
+.rtl-content ol .katex-display {
+  text-align: center !important;
+}
 
 
 
