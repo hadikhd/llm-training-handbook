@@ -65,7 +65,7 @@ stylesheets: [
     href: 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css',
     type: 'text/css',
   },
-],
+], 
 
   presets: [
     [
@@ -78,7 +78,7 @@ stylesheets: [
           
           // 2. ADD THE PLUGINS TO THE DOCS CONFIG HERE:
           remarkPlugins: [remarkMath],
-          rehypePlugins: [rehypeKatex],
+          rehypePlugins: [[rehypeKatex, { output: 'html' }]],
 
           editUrl:
             'https://github.com/hadikhd/llm-training-handbook/edit/main/',
