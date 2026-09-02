@@ -190,6 +190,41 @@ html[dir='rtl'] .code-block {
   text-align: left;
   unicode-bidi: isolate;
 }
+/* Force rendered math to stay LTR inside Persian/RTL pages */
+html[dir='rtl'] .theme-doc-markdown .katex,
+html[dir='rtl'] .theme-doc-markdown .katex-display,
+html[dir='rtl'] .theme-doc-markdown .katex-html,
+html[dir='rtl'] .theme-doc-markdown .katex .base,
+html[dir='rtl'] .theme-doc-markdown .katex .strut,
+html[dir='rtl'] .theme-doc-markdown .katex .mord,
+html[dir='rtl'] .theme-doc-markdown .katex .mbin,
+html[dir='rtl'] .theme-doc-markdown .katex .mrel {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+}
+
+/* Display math block */
+html[dir='rtl'] .theme-doc-markdown .katex-display {
+  display: block;
+  width: 100%;
+  margin: 1.25rem 0;
+  text-align: center !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* Inline math */
+html[dir='rtl'] .theme-doc-markdown p .katex {
+  display: inline-block;
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+}
+
+/* KaTeX inner HTML should also stay LTR */
+html[dir='rtl'] .theme-doc-markdown .katex-html {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+}
 
 
 
