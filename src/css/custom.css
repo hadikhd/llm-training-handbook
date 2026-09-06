@@ -1,6 +1,6 @@
 /**
  * Global custom CSS (Docusaurus / Infima)
- * Fixes: Persian prose direction, LTR isolation for code and KaTeX math.
+ * Robust RTL Support with Deep KaTeX & Inline Code Isolation
  */
 
 /* =========================================================
@@ -32,14 +32,13 @@
 /* =========================================================
    Persian / RTL Base Rules
    ========================================================= */
+html[dir='rtl'] body,
+html[dir='rtl'] main,
 html[dir='rtl'] article,
-html[dir='rtl'] .theme-doc-markdown,
-article[dir='rtl'],
-.rtl-content,
-.theme-doc-markdown[dir='rtl'],
-.mixed-content {
+html[dir='rtl'] .theme-doc-markdown {
   direction: rtl;
   text-align: right;
+  unicode-bidi: isolate;
 }
 
 html[dir='rtl'] .theme-doc-markdown p,
@@ -47,12 +46,43 @@ html[dir='rtl'] .theme-doc-markdown li,
 html[dir='rtl'] .theme-doc-markdown blockquote {
   direction: rtl;
   text-align: right;
+  unicode-bidi: isolate;
 }
 
 /* =========================================================
-   Technical Exceptions (LTR Isolation for Code & Math)
+   DEEP KaTeX & Math Formulas Fix (LTR Strict Enforcement)
    ========================================================= */
-/* Code Blocks & Inline Code */
+/* اعمال LTR روی تمام لایه‌ها و اجزای داخلی فرمول‌های ریاضی */
+html[dir='rtl'] .katex,
+html[dir='rtl'] .katex-display,
+html[dir='rtl'] .katex-html,
+html[dir='rtl'] .katex .base,
+html[dir='rtl'] .katex-display > .katex,
+html[dir='rtl'] .katex-display > .katex > .katex-html {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: isolate !important;
+}
+
+/* نمایش فرمول‌های بلاکی در مرکز صفحه با جهت چپ‌به‌راست */
+html[dir='rtl'] .katex-display {
+  display: flex !important;
+  justify-content: center !important;
+  margin: 1.2rem 0 !important;
+}
+
+/* اطمینان از اینکه فرمول‌های اینلاین متن را بهم نمی‌ریزند */
+html[dir='rtl'] p .katex,
+html[dir='rtl'] li .katex {
+  display: inline-block;
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  vertical-align: middle;
+}
+
+/* =========================================================
+   Code Blocks & Inline Tech Terms Isolation
+   ========================================================= */
 html[dir='rtl'] .theme-doc-markdown pre,
 html[dir='rtl'] .theme-doc-markdown pre code,
 html[dir='rtl'] .theme-doc-markdown .codeBlockContainer,
@@ -61,32 +91,24 @@ html[dir='rtl'] .theme-doc-markdown code[class*='language-'],
 html[dir='rtl'] .theme-doc-markdown .docusaurus-highlight-code-line {
   direction: ltr !important;
   text-align: left !important;
-  unicode-bidi: isolate;
+  unicode-bidi: isolate !important;
   white-space: pre !important;
 }
 
+/* کدها و اصطلاحات انگلیسی داخل خطوط */
 html[dir='rtl'] .theme-doc-markdown :not(pre) > code {
   direction: ltr !important;
-  unicode-bidi: isolate;
+  display: inline-block;
+  unicode-bidi: isolate !important;
 }
 
-/* KaTeX & Math Formulae */
-html[dir='rtl'] .theme-doc-markdown .katex,
-html[dir='rtl'] .theme-doc-markdown .katex-display,
-html[dir='rtl'] .theme-doc-markdown .katex-mathml,
-html[dir='rtl'] .theme-doc-markdown .MathJax,
-html[dir='rtl'] .theme-doc-markdown .mjx-container {
-  direction: ltr !important;
-  text-align: center !important;
-  unicode-bidi: isolate;
-}
-
-/* Tables in RTL */
+/* =========================================================
+   Tables, Sidebar & Layout
+   ========================================================= */
 html[dir='rtl'] .theme-doc-markdown table {
   direction: rtl;
 }
 
-/* Sidebar & TOC */
 html[dir='rtl'] .theme-doc-sidebar .menu__link,
 html[dir='rtl'] .theme-doc-sidebar .menu__link:hover,
 html[dir='rtl'] .theme-doc-toc__link {
