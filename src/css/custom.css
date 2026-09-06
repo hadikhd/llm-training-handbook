@@ -168,3 +168,32 @@ pre {
   white-space: nowrap;
   border: 0;
 }
+
+/* Persian pages */
+html[lang='fa-IR'] .theme-doc-markdown,
+html[lang='fa-IR'] .markdown {
+  direction: rtl;
+  text-align: right;
+}
+
+/* KaTeX must stay LTR even inside RTL pages */
+html[lang='fa-IR'] .katex,
+html[lang='fa-IR'] .katex-display,
+html[lang='fa-IR'] .katex .katex-html {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* Display math */
+html[lang='fa-IR'] .katex-display {
+  display: block;
+  text-align: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 1.25rem 0;
+}
+
+/* Inline math */
+html[lang='fa-IR'] .katex {
+  white-space: normal;
+}
