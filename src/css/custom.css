@@ -47,7 +47,7 @@ article[dir='rtl'],
   text-align: right;
 }
 
-/* Explicit LTR helpers (usable in Markdown) */
+/* Explicit LTR helpers (usable in Markdown) 
 .ltr,
 .ltr-term,
 .tech-term {
@@ -55,10 +55,10 @@ article[dir='rtl'],
   text-align: left;
   unicode-bidi: isolate;
 }
-
+*/
 /* =========================================================
    Code blocks and inline code: always LTR and isolated
-   ========================================================= */
+   ========================================================= 
 pre,
 code,
 .rtl-content pre,
@@ -71,7 +71,7 @@ code,
 pre {
   overflow-x: auto;
 }
-
+*/
 /* Tables and lists follow document direction (RTL here) */
 html[dir='rtl'] article table,
 .rtl-content table {
