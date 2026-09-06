@@ -177,9 +177,9 @@ $$
 
 where:
 
-- $$|V|$$ is the vocabulary size.
-- $$d_{\text{model}}$$ is the hidden dimension.
-- $$e_t$$ is the dense vector for token $$i_t$$.
+- $|V|$ is the vocabulary size.
+- $d_{\text{model}}$ is the hidden dimension.
+- $e_t$ is the dense vector for token $i_t$.
 
 If the vocabulary has 50,000 tokens and the model dimension is 4096, the input embedding matrix contains:
 
@@ -317,7 +317,7 @@ $$
 O(T^2)
 $$
 
-where $$T$$ is the sequence length. If tokenization doubles the number of tokens, attention computation can increase substantially.
+where $T$ is the sequence length. If tokenization doubles the number of tokens, attention computation can increase substantially.
 
 Character-level tokenization is elegant but usually inefficient for large-scale LLMs.
 
@@ -870,9 +870,9 @@ Vocabulary size is one of the most important tokenizer design choices.
 
 Let:
 
-- $$|V|$$ be vocabulary size.
-- $$d_{\text{model}}$$ be hidden dimension.
-- $$T$$ be sequence length.
+- $|V|$ be vocabulary size.
+- $d_{\text{model}}$ be hidden dimension.
+- $T$ be sequence length.
 
 Increasing vocabulary size usually reduces sequence length, but increases embedding and output projection size.
 
@@ -963,7 +963,7 @@ $$
 |V| \times d_{\text{model}} 
 $$
 
-Example with $$|V|=100{,}000$$ and $$d_{\text{model}}=4096$$:
+Example with $|V|=100{,}000$ and $d_{\text{model}}=4096$:
 
 Untied:
 
@@ -1074,8 +1074,8 @@ $$
 
 where:
 
-- $$T$$ is sequence length.
-- $$d$$ is hidden dimension.
+- $T$ is sequence length.
+- $d$ is hidden dimension.
 
 Thus, token inflation increases both attention and non-attention computation.
 
@@ -1644,7 +1644,7 @@ If tokenizer training data is sampled proportionally from a web corpus, high-res
 
 A better approach is to use temperature sampling.
 
-Let language $$i$$ have $$N_i$$ characters or documents. Define:
+Let language $i$ have $N_i$ characters or documents. Define:
 
 $$
 p_i = \frac{N_i^\alpha} {\sum_j N_j^\alpha}
@@ -1652,11 +1652,11 @@ $$
 
 where:
 
-- $$\alpha = 1$$: proportional sampling.
-- $$0 < \alpha < 1$$: boosts lower-resource languages.
-- $$\alpha = 0$$: equal language sampling.
+- $\alpha = 1$: proportional sampling.
+- $0 < \alpha < 1$: boosts lower-resource languages.
+- $\alpha = 0$: equal language sampling.
 
-For tokenizer training, using $$\alpha < 1$$ can improve vocabulary allocation for lower-resource languages.
+For tokenizer training, using $\alpha < 1$ can improve vocabulary allocation for lower-resource languages.
 
 This is separate from the final pretraining data mixture.
 

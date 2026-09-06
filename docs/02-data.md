@@ -1087,10 +1087,10 @@ $$
 $$
 where:
 
-- $$q(x)$$ is quality.
-- $$c(x)$$ is completeness.
-- $$p(x)$$ is provenance preference.
-- $$n(x)$$ is noise.
+- $q(x)$ is quality.
+- $c(x)$ is completeness.
+- $p(x)$ is provenance preference.
+- $n(x)$ is noise.
 
 Keeping an arbitrary first-seen document may retain a corrupted copy instead of the original.
 
@@ -1255,9 +1255,9 @@ $$
 
 where:
 
-- $$\alpha = 1$$ gives proportional sampling.
-- $$0 < \alpha < 1$$ increases the relative weight of smaller datasets.
-- $$\alpha = 0$$ gives equal probability to every dataset.
+- $\alpha = 1$ gives proportional sampling.
+- $0 < \alpha < 1$ increases the relative weight of smaller datasets.
+- $\alpha = 0$ gives equal probability to every dataset.
 
 For multilingual training, the same method can be applied to language-level token counts.
 
