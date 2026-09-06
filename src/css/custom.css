@@ -40,7 +40,7 @@ html[dir='rtl'] .katex .base,
 html[dir='rtl'] .katex-display > .katex,
 html[dir='rtl'] .katex-display > .katex > .katex-html {
   direction: rtl !important;
-  text-align: right !important;
+  text-align: center !important;
   unicode-bidi: isolate !important;
 }
 
