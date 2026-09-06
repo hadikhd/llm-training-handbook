@@ -30,90 +30,129 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-/* Main container for Persian + English mixed content */
-.mixed-content {
-  direction: rtl;
-  text-align: right;
-}
+/* =========================================
+Global RTL document
+========================================= */
 
-/* Explicit English/LTR content */
-.ltr {
-  direction: ltr;
-  text-align: left;
-  unicode-bidi: isolate;
-}
-
-/* Code / terminal commands */
-.code-block {
-  direction: ltr;
-  text-align: left;
-}
-
-/* English technical terms inside Persian text */
-.tech-term {
-  direction: ltr;
-  unicode-bidi: isolate;
-}
-
-.chapter-hero {
-  margin: 0 auto 2.5rem;
-  text-align: center;
-}
-
-.chapter-hero img {
-  display: block;
-  width: 100%;
-  max-width: 1400px;
-  height: auto;
-  margin: 0 auto;
-  border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+html[dir='rtl'] .theme-doc-markdown,
+html[dir='rtl'] .markdown {
+direction: rtl;
+text-align: right;
 }
 
 /* =========================================
-   Persian / RTL Documentation
-   ========================================= */
+English, technical terms and code
+========================================= */
 
-.rtl-content {
-  direction: rtl;
-  text-align: right;
-  unicode-bidi: isolate;
+/*
+* Use these classes for English phrases embedded in Persian text.
+*/
+.ltr,
+.ltr-text,
+.english,
+.technical-term,
+.code-inline {
+direction: ltr;
+unicode-bidi: isolate;
+text-align: left;
 }
 
-/* English technical terms inside Persian text */
-.rtl-content .ltr-term,
-.ltr-term {
-  direction: ltr;
-  unicode-bidi: isolate;
-  display: inline-block;
-  text-align: left;
+/*
+* Inline elements need inline-block to isolate English text
+* from Persian punctuation and neighboring RTL characters.
+*/
+.ltr,
+.ltr-text,
+.english,
+.technical-term,
+.code-inline {
+display: inline-block;
 }
 
-/* Code should always remain LTR and isolated */
-.rtl-content pre,
-.rtl-content code,
-pre,
-code {
-  direction: ltr;
-  text-align: left;
+/* Code blocks are always LTR */
+html[dir='rtl'] .theme-doc-markdown pre,
+html[dir='rtl'] .theme-doc-markdown pre code,
+html[dir='rtl'] .theme-doc-markdown code,
+html[dir='rtl'] .markdown pre,
+html[dir='rtl'] .markdown pre code {
+direction: ltr;
+unicode-bidi: isolate;
+text-align: left;
 }
 
-.rtl-content pre,
-pre {
-  unicode-bidi: isolate;
+/* Inline code */
+html[dir='rtl'] .theme-doc-markdown :not(pre) > code,
+html[dir='rtl'] .markdown :not(pre) > code {
+direction: ltr;
+unicode-bidi: isolate;
+display: inline-block;
+text-align: left;
 }
 
-/* Tables */
-.rtl-content table {
-  direction: rtl;
-  text-align: right;
+/* =========================================
+KaTeX
+========================================= */
+
+/*
+* Inline math must not inherit RTL direction.
+*/
+html[dir='rtl'] .theme-doc-markdown .katex,
+html[dir='rtl'] .markdown .katex {
+direction: ltr !important;
+unicode-bidi: isolate !important;
+text-align: left;
 }
 
-/* Lists */
-.rtl-content ul,
-.rtl-content ol {
-  direction: rtl;
-  text-align: right;
+/*
+* The internal KaTeX HTML tree must remain LTR.
+*/
+html[dir='rtl'] .theme-doc-markdown .katex-html,
+html[dir='rtl'] .markdown .katex-html {
+direction: ltr !important;
+unicode-bidi: isolate !important;
+}
+
+/*
+* Display equations.
+*/
+html[dir='rtl'] .theme-doc-markdown .katex-display,
+html[dir='rtl'] .markdown .katex-display {
+direction: ltr !important;
+unicode-bidi: isolate !important;
+display: block;
+width: 100%;
+margin: 1.25rem 0;
+overflow-x: auto;
+overflow-y: hidden;
+text-align: center !important;
+}
+
+/*
+* Do not use inline-flex for .katex.
+* KaTeX's own stylesheet controls its internal layout.
+*/
+html[dir='rtl'] .theme-doc-markdown .katex-display > .katex,
+html[dir='rtl'] .markdown .katex-display > .katex {
+display: inline-block;
+direction: ltr !important;
+unicode-bidi: isolate !important;
+white-space: nowrap;
+}
+
+/*
+* Defensive rule for MathML accessibility markup.
+*/
+.katex .katex-mathml {
+position: absolute !important;
+width: 1px;
+height: 1px;
+padding: 0;
+margin: -1px;
+overflow: hidden;
+clip: rect(0, 0, 0, 0);
+clip-path: inset(50%);
+white-space: nowrap;
+border: 0;
 }
 
 /* =========================================
