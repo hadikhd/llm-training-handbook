@@ -1,15 +1,7 @@
 /**
- * Corrected global custom CSS (Docusaurus / Infima)
- * Root cause of the bug:
- *  - Prose direction was only applied via `html[dir='rtl'] ...` / `html[lang^='fa'] ...`
- *    selectors. If `dir`/`lang` are set on a wrapper (MDX page, <body>, or the
- *    markdown>, or the
- *    markdown container) instead of <html>, those selectors Persian prose falls back to LTR.
- *  - Code/KaTeX LTR rules were NOT marked `!important` and were overridden by
- *    the generic RTL `direction` inheritance from the RTL prose container
- *    (bidi algorithm reorders inline code / math runs inside an RTL paragraph).
- * Fix: apply RTL to prose with broad attribute matching ([dir='rtl'] anywhere),
- * and force LTR + bidi isolation on code and KaTeX with !important.
+ * Global custom CSS (Docusaurus / Infima)
+ * Fixes: Persian prose direction, LTR isolation for code and KaTeX math.
+ * Infima color variables are preserved unchanged.
  */
 
 /* =========================================================
@@ -27,6 +19,7 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
+/* Lighter palette in dark mode (unchanged) */
 [data-theme='dark'] {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
@@ -39,16 +32,15 @@
 }
 
 /* =========================================================
-   1) Persian document prose: RTL
-   Matches dir/lang on html, body, article, or any wrapper.
+   Persian / RTL document content
+   Targets the real Docusaurus containers, not custom classes.
+   Set dir: rtl in the doc frontmatter (or html attr); these
+   rules then make all Markdown prose RTL automatically.
    ========================================================= */
-html[dir='rtl'],
-html[dir='rtl'] body,
-body[dir='rtl'],
-[dir='rtl'] .theme-doc-markdown,
-[dir='rtl'] article,
-[dir='rtl'] .markdown,
+html[dir='rtl'] article,
+html[dir='rtl'] .theme-doc-markdown,
 article[dir='rtl'],
+.theme-doc-markdown[dir='rtl'],
 .rtl-content,
 .mixed-content {
   direction: rtl;
@@ -65,65 +57,52 @@ article[dir='rtl'],
 }
 
 /* =========================================================
-   2) Code (inline + blocks): always LTR, isolated from RTL
+   Code blocks and inline code: always LTR and isolated
    ========================================================= */
 pre,
 code,
-kbd,
-samp,
 .rtl-content pre,
-.rtl-content code,
-.mixed-content pre,
-.mixed-content code,
-.theme-code-block,
-.theme-code-block pre {
-  direction: ltr !important;
-  text-align: left !important;
-  unicode-bidi: isolate !important;
-}
-
-/* Prism tokens inside code must not flip */
-pre code,
-pre span,
-pre *,
-.theme-code-block span {
-  direction: ltr !important;
-  unicode-bidi: normal !important;
-  text-align: left !important;
+.rtl-content code {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
 }
 
 pre {
   overflow-x: auto;
 }
 
-/* =========================================================
-   3) KaTeX math: GLOBAL LTR isolation (independent of dir/lang)
-   ========================================================= */
-.katex,
-.katex *,
-.katex-display,
-.katex-display * {
-  direction: ltr !important;
-  unicode-bidi: isolate !important;
+/* Tables and lists follow document direction (RTL here) */
+html[dir='rtl'] article table,
+.rtl-content table {
+  direction: rtl;
+  text-align: right;
 }
 
-.katex {
-  text-align: left;
+html[dir='rtl'] article ul,
+html[dir='rtl'] article ol,
+.rtl-content ul,
+.rtl-content ol {
+  direction: rtl;
+  text-align: right;
+}
+
+/* =========================================================
+   Math / KaTeX: always LTR inside an RTL document
+   ========================================================= */
+.katex,
+.katex-display,
+.katex .katex-html {
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 
 .katex-display {
-  display: block;
-  text-align: center;
   margin: 1.5rem 0;
   padding: 0.5rem 0;
   overflow-x: auto;
   overflow-y: hidden;
-}
-
-/* KaTeX layout uses inline-block spans; do not change display */
-.katex .base,
-.katex .strut {
-  display: inline-block;
+  text-align: center;
 }
 
 /* Hide the MathML twin visually, keep it for screen readers */
@@ -139,28 +118,28 @@ pre {
   border: 0;
 }
 
-/* =========================================================
-   4) Tables / lists follow document direction (RTL)
-   ========================================================= */
-[dir='rtl'] .theme-doc-markdown table,
-article[dir='rtl'] table,
-.rtl-content table {
-  direction: rtl;
-  text-align: right;
+/* Strong guarantees when the site root is RTL */
+html[dir='rtl'] .katex,
+html[dir='rtl'] .katex-display,
+html[dir='rtl'] .katex .katex-html,
+html[dir='rtl'] .katex-mathml {
+  direction: ltr !important;
+  text-align: center;
+  unicode-bidi: isolate;
 }
 
-[dir='rtl'] .theme-doc-markdown ul,
-[dir='rtl'] .theme-doc-markdown ol,
-article[dir='rtl'] ul,
-article[dir='rtl'] ol,
-.rtl-content ul,
-.rtl-content ol {
-  direction: rtl;
-  text-align: right;
+/* Keep code/pre blocks LTR even when the document is RTL */
+html[dir='rtl'] pre,
+html[dir='rtl'] code,
+html[dir='rtl'] .theme-code-block,
+html[dir='rtl'] .code-block {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
 }
 
 /* =========================================================
-   5) Chapter hero image (unchanged)
+   Chapter hero image (unchanged)
    ========================================================= */
 .chapter-hero {
   margin: 0 auto 2.5rem;
