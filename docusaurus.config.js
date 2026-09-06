@@ -1,19 +1,15 @@
 // @ts-check
 // `@type` JSDoc annotations allow editor autocompletion and type checking
 // (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import {themes as prismThemes} from 'prism-react-renderer';
-// 1. IMPORT THE MATH PLUGINS HERE:
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'LLM Training Handbook', // Updated to your book title
+  title: 'LLM Training Handbook',
   tagline: 'A practical guide to training Large Language Models',
   favicon: 'img/favicon.ico',
 
@@ -25,47 +21,43 @@ const config = {
   baseUrl: '/llm-training-handbook/',
 
   organizationName: 'hadikhd',
-  projectName: 'llm-traning-handbook',
+  projectName: 'llm-training-handbook', // اصلاح typo در اسم پروژه
 
   onBrokenLinks: 'throw',
 
   i18n: {
-  defaultLocale: 'en',
-
-  locales: ['en', 'fa'],
-
-  localeConfigs: {
-    en: {
-      label: 'English',
-      direction: 'ltr',
-      htmlLang: 'en-US',
-    },
-
-    fa: {
-      label: 'فارسی',
-      direction: 'rtl',
-      htmlLang: 'fa-IR',
+    defaultLocale: 'en',
+    locales: ['en', 'fa'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+      },
+      fa: {
+        label: 'فارسی',
+        direction: 'rtl',
+        htmlLang: 'fa-IR',
+      },
     },
   },
-  
-},
-   // ==========================================
-  // MARKDOWN CONFIGURATION (FIXES ACORN ERRORS)
+
+  // ==========================================
+  // MARKDOWN CONFIGURATION
   // ==========================================
   markdown: {
-    format: 'md', // Kept! This prevents the { } and < > errors in your book.
-    // 'math: true' is REMOVED from here because it causes the TypeScript error.
+    format: 'md',
   },
 
   // ==========================================
   // KATEX CSS STYLESHEET
   // ==========================================
-stylesheets: [
-  {
-    href: 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css',
-    type: 'text/css',
-  },
-], 
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css',
+      type: 'text/css',
+    },
+  ],
 
   presets: [
     [
@@ -74,18 +66,15 @@ stylesheets: [
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          routeBasePath: '/',        // book = homepage
-
-          // 2. ADD THE PLUGINS TO THE DOCS CONFIG HERE:
+          routeBasePath: '/', // Document-first mode (homepage = docs)
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
-
           editUrl:
             'https://github.com/hadikhd/llm-training-handbook/edit/main/',
         },
-        blog: false, // Disabled for your book
+        blog: false,
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: require.resolve('./src/css/custom.css'), // استفاده از require.resolve برای لود مطمئن
         },
       }),
     ],
@@ -119,7 +108,7 @@ stylesheets: [
       },
       footer: {
         style: 'dark',
-        copyright: `Copyright © ${new Date().getFullYear()} LLM Training Handbook, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} LLM Training Handbook. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,

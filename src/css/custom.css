@@ -1,11 +1,10 @@
 /**
  * Global custom CSS (Docusaurus / Infima)
  * Fixes: Persian prose direction, LTR isolation for code and KaTeX math.
- * Infima color variables are preserved unchanged.
  */
 
 /* =========================================================
-   Infima color variables (unchanged)
+   Infima color variables
    ========================================================= */
 :root {
   --ifm-color-primary: #2e8555;
@@ -19,7 +18,6 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
-/* Lighter palette in dark mode (unchanged) */
 [data-theme='dark'] {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
@@ -32,21 +30,16 @@
 }
 
 /* =========================================================
-   Persian / RTL document content
-   Targets the real Docusaurus containers, not custom classes.
-   Set dir: rtl in the doc frontmatter (or html attr); these
-   rules then make all Markdown prose RTL automatically.
+   Persian / RTL Base Rules
    ========================================================= */
-/* src/css/custom.css */
-
-/* ====================== RTL پایه ====================== */
-html[dir='rtl'],
-html[dir='rtl'] .theme-doc-root,
-html[dir='rtl'] .theme-doc-sidebar,
-html[dir='rtl'] .theme-doc-page {
+html[dir='rtl'] article,
+html[dir='rtl'] .theme-doc-markdown,
+article[dir='rtl'],
+.rtl-content,
+.theme-doc-markdown[dir='rtl'],
+.mixed-content {
   direction: rtl;
   text-align: right;
-  unicode-bidi: plaintext;
 }
 
 html[dir='rtl'] .theme-doc-markdown p,
@@ -56,45 +49,58 @@ html[dir='rtl'] .theme-doc-markdown blockquote {
   text-align: right;
 }
 
-/* ====================== استثنای کامل کد و ریاضی ====================== */
-html[dir='rtl'] pre,
-html[dir='rtl'] pre code,
-html[dir='rtl'] .codeBlockContainer,
-html[dir='rtl'] .prism-code,
-html[dir='rtl'] code[class*='language-'],
-html[dir='rtl'] .docusaurus-highlight-code-line {
+/* =========================================================
+   Technical Exceptions (LTR Isolation for Code & Math)
+   ========================================================= */
+/* Code Blocks & Inline Code */
+html[dir='rtl'] .theme-doc-markdown pre,
+html[dir='rtl'] .theme-doc-markdown pre code,
+html[dir='rtl'] .theme-doc-markdown .codeBlockContainer,
+html[dir='rtl'] .theme-doc-markdown .prism-code,
+html[dir='rtl'] .theme-doc-markdown code[class*='language-'],
+html[dir='rtl'] .theme-doc-markdown .docusaurus-highlight-code-line {
   direction: ltr !important;
   text-align: left !important;
   unicode-bidi: isolate;
   white-space: pre !important;
 }
 
-html[dir='rtl'] :not(pre) > code {
+html[dir='rtl'] .theme-doc-markdown :not(pre) > code {
   direction: ltr !important;
   unicode-bidi: isolate;
 }
 
-html[dir='rtl'] .katex,
-html[dir='rtl'] .katex-display,
-html[dir='rtl'] .MathJax,
-html[dir='rtl'] .mjx-container {
+/* KaTeX & Math Formulae */
+html[dir='rtl'] .theme-doc-markdown .katex,
+html[dir='rtl'] .theme-doc-markdown .katex-display,
+html[dir='rtl'] .theme-doc-markdown .katex-mathml,
+html[dir='rtl'] .theme-doc-markdown .MathJax,
+html[dir='rtl'] .theme-doc-markdown .mjx-container {
   direction: ltr !important;
   text-align: center !important;
   unicode-bidi: isolate;
 }
 
-/* SIDEBAR و TOC */
+/* Tables in RTL */
+html[dir='rtl'] .theme-doc-markdown table {
+  direction: rtl;
+}
+
+/* Sidebar & TOC */
 html[dir='rtl'] .theme-doc-sidebar .menu__link,
+html[dir='rtl'] .theme-doc-sidebar .menu__link:hover,
 html[dir='rtl'] .theme-doc-toc__link {
   direction: rtl;
 }
 
 @media (max-width: 996px) {
-  html[dir='rtl'] .theme-doc-sidebar { direction: rtl; }
+  html[dir='rtl'] .theme-doc-sidebar {
+    direction: rtl;
+  }
 }
 
 /* =========================================================
-   Chapter hero image (unchanged)
+   Chapter Hero Image
    ========================================================= */
 .chapter-hero {
   margin: 0 auto 2.5rem;
