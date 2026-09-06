@@ -1,3 +1,4 @@
+@import 'katex/dist/katex.min.css';
 /**
  * Any CSS included here will be global. The classic template
  * bundles Infima by default. Infima is a CSS framework designed to
@@ -116,33 +117,46 @@ pre {
 }
 
 /* =========================================
-   Math / KaTeX (LTR inside RTL document)
+   Math / KaTeX in Persian RTL documentation
    ========================================= */
 
-/* Consolidated math-block rule (duplicate removed) */
-/* =====================================================
-   KaTeX RTL FIX — workaround for upstream KaTeX bug
-   (KaTeX#343 / #3550, docusaurus#6621)
-   The flex display is the KEY part: it makes the inner
-   .katex-html a block container so direction:ltr works.
-   ===================================================== */
-.katex {
-  direction: ltr !important;
-  display: inline-flex !important;
-  unicode-bidi: isolate !important;
+/*
+ * Persian prose is RTL, but mathematical notation must preserve
+ * its native LTR ordering.
+ */
+.rtl-content .katex,
+.mixed-content .katex {
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 
-/* Display (block) equations: LTR + centered + scrollable */
-.katex-display {
-  direction: ltr !important;
-  display: block !important;
-  text-align: center !important;
+/* Display equations: centered, LTR, and horizontally scrollable. */
+.rtl-content .katex-display,
+.mixed-content .katex-display {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: block;
+  width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
   margin: 1.25rem 0;
+  text-align: center;
 }
 
-/* Keep the invisible MathML twin from affecting layout */
+/*
+ * KaTeX places its visible HTML representation inside .katex-html.
+ * Explicitly preserve LTR ordering inside an RTL document.
+ */
+.rtl-content .katex .katex-html,
+.mixed-content .katex .katex-html {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/*
+ * The official KaTeX stylesheet normally includes this rule.
+ * Retain it as a safeguard only; katex.min.css must still be loaded.
+ */
 .katex-mathml {
   position: absolute !important;
   width: 1px;
@@ -151,5 +165,6 @@ pre {
   margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
   border: 0;
 }
