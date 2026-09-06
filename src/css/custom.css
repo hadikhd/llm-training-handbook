@@ -31,6 +31,65 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+/* =========================================================
+   Persian / RTL document content
+   Targets the real Docusaurus containers, not custom classes.
+   Set dir: rtl in the doc frontmatter (or html attr); these
+   rules then make all Markdown prose RTL automatically.
+   ========================================================= */
+html[dir='rtl'] article,
+html[dir='rtl'] .theme-doc-markdown,
+article[dir='rtl'],
+.theme-doc-markdown[dir='rtl'],
+.rtl-content,
+.mixed-content {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Explicit LTR helpers (usable in Markdown) */
+.ltr,
+.ltr-term,
+.tech-term {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
+}
+
+/* =========================================================
+   Code blocks and inline code: always LTR and isolated
+   ========================================================= */
+pre,
+code,
+.rtl-content pre,
+.rtl-content code {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
+}
+
+pre {
+  overflow-x: auto;
+}
+
+/* Tables and lists follow document direction (RTL here) */
+html[dir='rtl'] article table,
+.rtl-content table {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir='rtl'] article ul,
+html[dir='rtl'] article ol,
+.rtl-content ul,
+.rtl-content ol {
+  direction: rtl;
+  text-align: right;
+}
+
+/* =========================================================
+   Math / KaTeX: always LTR inside an RTL document
+   ========================================================= */
 
 
 /* =========================================================
