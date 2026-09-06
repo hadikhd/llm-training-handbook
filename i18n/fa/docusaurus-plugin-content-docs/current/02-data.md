@@ -16,6 +16,7 @@ sidebar_position: 3
 [بعدی: توکن‌سازی](./03-tokenization.md)
 
 ---
+
 ## اهداف یادگیری (Learning Objectives)
 
 تا پایان این فصل، باید بتوانید:

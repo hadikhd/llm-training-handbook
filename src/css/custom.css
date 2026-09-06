@@ -37,56 +37,62 @@
    Set dir: rtl in the doc frontmatter (or html attr); these
    rules then make all Markdown prose RTL automatically.
    ========================================================= */
-html[dir='rtl'] article,
-html[dir='rtl'] .theme-doc-markdown,
-article[dir='rtl'],
-.theme-doc-markdown[dir='rtl'],
-.rtl-content,
-.mixed-content {
+/* src/css/custom.css */
+
+/* ====================== RTL پایه ====================== */
+html[dir='rtl'],
+html[dir='rtl'] .theme-doc-root,
+html[dir='rtl'] .theme-doc-sidebar,
+html[dir='rtl'] .theme-doc-page {
+  direction: rtl;
+  text-align: right;
+  unicode-bidi: plaintext;
+}
+
+html[dir='rtl'] .theme-doc-markdown p,
+html[dir='rtl'] .theme-doc-markdown li,
+html[dir='rtl'] .theme-doc-markdown blockquote {
   direction: rtl;
   text-align: right;
 }
 
-/* Explicit LTR helpers (usable in Markdown) 
-.ltr,
-.ltr-term,
-.tech-term {
-  direction: ltr;
-  text-align: left;
+/* ====================== استثنای کامل کد و ریاضی ====================== */
+html[dir='rtl'] pre,
+html[dir='rtl'] pre code,
+html[dir='rtl'] .codeBlockContainer,
+html[dir='rtl'] .prism-code,
+html[dir='rtl'] code[class*='language-'],
+html[dir='rtl'] .docusaurus-highlight-code-line {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: isolate;
+  white-space: pre !important;
+}
+
+html[dir='rtl'] :not(pre) > code {
+  direction: ltr !important;
   unicode-bidi: isolate;
 }
-*/
-/* =========================================================
-   Code blocks and inline code: always LTR and isolated
-   ========================================================= 
-pre,
-code,
-.rtl-content pre,
-.rtl-content code {
-  direction: ltr;
-  text-align: left;
+
+html[dir='rtl'] .katex,
+html[dir='rtl'] .katex-display,
+html[dir='rtl'] .MathJax,
+html[dir='rtl'] .mjx-container {
+  direction: ltr !important;
+  text-align: center !important;
   unicode-bidi: isolate;
 }
 
-pre {
-  overflow-x: auto;
-}
-*/
-/* Tables and lists follow document direction (RTL here) 
-html[dir='rtl'] article table,
-.rtl-content table {
+/* SIDEBAR و TOC */
+html[dir='rtl'] .theme-doc-sidebar .menu__link,
+html[dir='rtl'] .theme-doc-toc__link {
   direction: rtl;
-  text-align: right;
 }
 
-html[dir='rtl'] article ul,
-html[dir='rtl'] article ol,
-.rtl-content ul,
-.rtl-content ol {
-  direction: rtl;
-  text-align: right;
+@media (max-width: 996px) {
+  html[dir='rtl'] .theme-doc-sidebar { direction: rtl; }
 }
-*/
+
 /* =========================================================
    Chapter hero image (unchanged)
    ========================================================= */

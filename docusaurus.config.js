@@ -75,7 +75,7 @@ stylesheets: [
         docs: {
           sidebarPath: './sidebars.js',
           routeBasePath: '/',        // book = homepage
-          
+
           // 2. ADD THE PLUGINS TO THE DOCS CONFIG HERE:
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
