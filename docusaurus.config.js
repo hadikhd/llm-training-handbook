@@ -78,7 +78,7 @@ stylesheets: [
           
           // 2. ADD THE PLUGINS TO THE DOCS CONFIG HERE:
           remarkPlugins: [remarkMath],
-          rehypePlugins: [[rehypeKatex, { output: 'html' }]],
+          rehypePlugins: [rehypeKatex],
 
           editUrl:
             'https://github.com/hadikhd/llm-training-handbook/edit/main/',
