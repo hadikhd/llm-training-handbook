@@ -72,7 +72,7 @@ pre {
   overflow-x: auto;
 }
 */
-/* Tables and lists follow document direction (RTL here) */
+/* Tables and lists follow document direction (RTL here) 
 html[dir='rtl'] article table,
 .rtl-content table {
   direction: rtl;
@@ -86,12 +86,7 @@ html[dir='rtl'] article ol,
   direction: rtl;
   text-align: right;
 }
-
-/* =========================================================
-   Math / KaTeX: always LTR inside an RTL document
-   ========================================================= */
-
-
+*/
 /* =========================================================
    Chapter hero image (unchanged)
    ========================================================= */
