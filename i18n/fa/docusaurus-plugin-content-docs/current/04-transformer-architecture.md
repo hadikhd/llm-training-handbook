@@ -1190,26 +1190,26 @@ GQA reduces KV cache memory while preserving more capacity than MQA.
 
 به‌جای اینکه هر Token (توکن) بتواند به تمام Tokenهای قبلی توجه کند، هر Token فقط به یک پنجره اخیر توجه می‌کند.
 
-Example (مثال):
-
-‍‍‍‍```text
+مثال:
+```text
+‍‍‍
 Window size = 4
 
 Token 10 attends to tokens:
 7, 8, 9, 10
-```
 
+```
 این روش هزینه محاسباتی Full Quadratic Attention (توجه درجه‌دوم کامل) را در سراسر دنباله کاهش می‌دهد.
 
 
-### Advantages (مزایا)
+### مزایا
 
 - مصرف حافظه کمتر
 - Long-Context Scalability (مقیاس‌پذیری بهتر برای متن طولانی)
 - آموزش و Inference (استنتاج) سریع‌تر برای دنباله‌های طولانی
 
 
-### Disadvantages (معایب)
+### معایب
 
 - دسترسی مستقیم به Tokenهای دور را محدود می‌کند.
 - به تنظیمات معماری یا آموزشی نیاز دارد.

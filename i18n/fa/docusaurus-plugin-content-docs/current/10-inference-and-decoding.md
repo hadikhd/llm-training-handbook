@@ -487,20 +487,20 @@ assistant:
 
 با کش کلید-مقدار (KV Cache):
 
-```text
+
 پیش‌پرکردن (Prefill):
   کلیدها و مقدارها را برای توکن‌های پرامپت محاسبه کن
 
 رمزگشایی (Decode):
   کلید و مقدار را فقط برای توکن جدید محاسبه کن
   به کلیدها و مقدارهای کش‌شده قبلی توجه کن
-```
+
 کش کلید-مقدار (KV Cache) برای تولید خودرگرسیو کارآمد (Efficient Autoregressive Generation) ضروری است.
 
 ---
 
 ## ۱۸. حافظه کش KV (KV Cache Memory)
-```text
+
 حافظه کش KV (KV Cache Memory) با عوامل زیر مقیاس می‌شود:
 
 - اندازه دسته (Batch Size)
@@ -509,7 +509,7 @@ assistant:
 - تعداد سرهای KV (Number of KV Heads)
 - بُعد سر (Head Dimension)
 - دقت (Precision)
-```
+
 این موضوع کش KV (KV Cache) را به یک گلوگاه مهم برای تولید با زمینه بلند (Long-Context Generation) و اندازه‌های دسته بزرگ (Large Batch Sizes) تبدیل می‌کند.
 
 راهبردهای کاهش حافظه کش KV (KV Cache Memory) شامل موارد زیر هستند:
