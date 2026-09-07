@@ -10,6 +10,7 @@ sidebar_position: 8
 ![فصل ۷: پس‌آموزش ](/img/chapters/post-training.png)
 
 </div>
+---
 
 [قبلی: قوانین مقیاس‌پذیری (Scaling Laws)](./06-scaling-laws.md) |
 [فهرست (Contents)](./index.md) |
@@ -613,6 +614,7 @@ base model
 
 چالش اصلی مهندسی فقط انتخاب الگوریتم نیست. مسئله، کنترل کیفیت داده، قالب‌بندی، ارزیابی، پایداری، و پس‌رفت‌ها در سراسر خط لولهٔ کامل پس‌آموزش (Full Post-Training Pipeline) است.
 ---
+
 [قبلی: قوانین مقیاس‌پذیری (Scaling Laws)](./06-scaling-laws.md) |
 [فهرست (Contents)](./index.md) |
 [بعدی: ارزیابی (Evaluation)](./08-evaluation.md)
