@@ -13,7 +13,7 @@ sidebar_position: 6
 
 [فهرست مطالب](./index.md) |
 [قبلی: معماری Transformer](./04-transformer-architecture.md) |
-[بعدی: پس‌آموزش و هم‌ترازسازی](./06-post-training.md)
+[بعدی: پس‌آموزش و هم‌ترازسازی](./06-scaling-laws.md)
 
 ---
 
@@ -462,4 +462,4 @@ Training checkpointها اغلب بسیار بزرگ‌تر هستند، زیر�
 
 [فهرست مطالب](./index.md) |
 [قبلی: معماری Transformer](./04-transformer-architecture.md) |
-[بعدی: پس‌آموزش و هم‌ترازسازی](./06-post-training.md)
+[بعدی: قوانین مقیاس پذیری](./06-scaling-laws.md)
