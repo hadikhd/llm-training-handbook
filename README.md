@@ -288,7 +288,7 @@ The repository is designed to support a Docusaurus documentation experience in a
 The complete handbook is available as a Docusaurus website:
 
 🌐 Website:
-`https://hadikhd.github.io/llm-training-handbook/`
+`https://hadikhdodavirdi.github.io/llm-training-handbook/`
 
 Source Markdown files:
 
@@ -489,7 +489,7 @@ The content is being developed iteratively. Chapters may be revised as technical
 ## 🔗 Project
 
 **Repository:**  
-https://github.com/hadik/llm-training-handbook
+https://github.com/hadikhodavirdi/llm-training-handbook
 
 ---
 
