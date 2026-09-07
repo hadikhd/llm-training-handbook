@@ -1,0 +1,54 @@
+---
+id: license
+title: مجوز (License)
+sidebar_label: مجوز
+sidebar_position: 99
+---
+
+<div className="chapter-hero">
+
+![License](./img/chapters/license.png)
+
+</div>
+
+# مجوز استفاده (License)
+
+این هندبوک تحت مجوز **MIT License** منتشر شده است. این یکی از آزادترین مجوزهای دنیای متن‌باز (Open Source) است که به شما اجازه می‌دهد از محتوا با حداکثر آزادی استفاده کنید.
+
+---
+
+## ⚖️ خلاصه شرایط (Summary)
+
+شما مجاز هستید این محتوا را برای هر هدفی (شخصی یا تجاری) استفاده کنید، کپی کنید، تغییر دهید و توزیع کنید، **به شرط آنکه**:
+1. نام نویسنده اصلی و اعلان کپی‌رایت را در نسخه‌های کپی‌شده حفظ کنید.
+2. مسئولیت هرگونه خسارت احتمالی بر عهده خود شماست و نویسنده مسئولیتی ندارد.
+
+---
+
+## 📄 متن کامل مجوز (Full License Text)
+
+### English (Official)
+
+**MIT License**
+
+Copyright (c) 2024–PRESENT Hadi Khodavirdi
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+---
+
+### فارسی (ترجمه مفهومی)
+
+**مجوز MIT**
+
+حق تکثیر (c) ۲۰۲۴ تا کنون، متعلق به هادی خدوردی است.
+
+بدین‌وسیله به هر شخصی که یک نسخه از این نرم‌افزار و فایل‌های مستندات مرتبط را دریافت می‌کند، مجوز رایگان داده می‌شود تا بدون هیچ‌گونه محدودیتی با این نرم‌افزار رفتار کند؛ از جمله، بدون محدودیت، حقوق استفاده، کپی، اصلاح، ترکیب، انتشار، توزیع، زیرمجوزدهی و/یا فروش نسخه‌های نرم‌افزار، و همچنین اجازه دادن به اشخاصی که نرم‌افزار در اختیار آن‌ها قرار می‌گیرد تا این کارها را انجام دهند، مشروط به رعایت شرایط زیر:
+
+اعلان حق تکثیر (کپی‌رایت) فوق و این اعلان مجوز باید در تمامی نسخه‌ها یا بخش‌های قابل توجهی از نرم‌افزار گنجانده شود.
+
+این نرم‌افزار «همان‌طور که هست» (AS IS) ارائه شده است، بدون هیچ‌گونه ضمانتی، اعم از صریح یا ضمنی، از جمله، اما نه محدود به ضمانت‌های تجاری بودن، تناسب برای یک هدف خاص و عدم نقض حقوق دیگران. در هیچ موردی، نویسندگان یا دارندگان حق تکثیر در قبال هیچ ادعا، خسارت یا مسئولیت دیگری، چه در یک اقدام قراردادی، شبه‌جرم یا غیر آن، که ناشی از، خارج از، یا در ارتباط با نرم‌افزار یا استفاده یا سایر معاملات در نرم‌افزار باشد، مسئولیتی نخواهند داشت.

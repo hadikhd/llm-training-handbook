@@ -108,7 +108,7 @@ const config = {
       },
       footer: {
         style: 'dark',
-        copyright: `Copyright © ${new Date().getFullYear()} Hadi Khodavirdi. LLM Training Handbook. All rights reserved. Built with Docusaurus.`,
+        copyright: `Copyright © ${2026} Hadi Khodavirdi. LLM Training Handbook. All rights reserved. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
