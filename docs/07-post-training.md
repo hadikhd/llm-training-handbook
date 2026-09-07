@@ -362,7 +362,8 @@ Preference data is used in two major ways:
 A reward model maps a prompt-response pair to a scalar score:
 
 $$
-r_{\phi}(x, y) \in \mathbb{R} $$
+r_{\phi}(x, y) \in \mathbb{R}
+$$
 
 where:
 
