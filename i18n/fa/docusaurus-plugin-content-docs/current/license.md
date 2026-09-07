@@ -5,12 +5,6 @@ sidebar_label: مجوز
 sidebar_position: 14
 ---
 
-<div className="chapter-hero">
-
-![License](/img/chapters/license.png)
-
-</div>
-
 # مجوز
 
 ---
