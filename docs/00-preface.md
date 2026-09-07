@@ -11,7 +11,6 @@ description: A practical engineering perspective on building, training, evaluati
 
 </div>
 
-[Contents](./00-preface.md) |
 [Contents](./index.md) |
 [Next: Introduction](./01-introduction.md)
 

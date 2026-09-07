@@ -10,6 +10,7 @@ sidebar_position: 6
 ![فصل ۵  — پیش آموزش](/img/chapters/pretraining.png)
 
 </div>
+
 [فهرست مطالب](./index.md) |
 [قبلی: معماری Transformer](./04-transformer-architecture.md) |
 [بعدی: پس‌آموزش و هم‌ترازسازی](./06-post-training-and-alignment.md)
@@ -459,3 +460,6 @@ Training checkpointها اغلب بسیار بزرگ‌تر هستند، زیر�
 
 ---
 
+[فهرست مطالب](./index.md) |
+[قبلی: معماری Transformer](./04-transformer-architecture.md) |
+[بعدی: پس‌آموزش و هم‌ترازسازی](./06-post-training-and-alignment.md)

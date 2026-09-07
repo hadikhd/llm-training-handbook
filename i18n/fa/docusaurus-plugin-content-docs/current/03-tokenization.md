@@ -2780,5 +2780,7 @@ return query_tensor @ key_tensor.T
 
 11. Google SentencePiece Repository.  
     https://github.com/google/sentencepiece
-
-
+---
+[فهرست مطالب](./index.md) |
+[قبلی: داده](./02-data.md) |
+[بعدی: معماری Transformer](./04-transformer-architecture.md)

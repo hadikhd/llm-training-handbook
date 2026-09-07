@@ -1467,7 +1467,7 @@ Important Fields (فیلدهای مهم) شامل موارد زیر هستند:
 - `num_hidden_layers`: Model Depth (عمق مدل).
 - `num_attention_heads`: تعداد Query Headها (سرهای پرس‌وجو).
 - `num_key_value_heads`: تعداد o
-
+---
 [قبلی: توکن‌سازی](./03-tokenization.md) |
 [فهرست مطالب](./index.md) |
 [بعدی: پیش‌آموزش](./05-pretraining.md)

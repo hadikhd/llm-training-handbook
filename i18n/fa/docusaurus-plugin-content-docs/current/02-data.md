@@ -2183,3 +2183,7 @@ $$
 
 10. Biderman, S. et al.  
    *Data Provenance Initiative: A Large-Scale Audit of Dataset Licensing and Attribution in AI*. 2023.
+---
+[قبلی: مقدمه](./01-introduction.md) |
+[فهرست مطالب](./index.md) |
+[بعدی: توکن‌سازی](./03-tokenization.md)

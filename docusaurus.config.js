@@ -17,10 +17,10 @@ const config = {
     v4: false,
   },
 
-  url: 'https://hadikhd.github.io',
+  url: 'https://hadikhodavirdi.github.io',
   baseUrl: '/llm-training-handbook/',
 
-  organizationName: 'hadikhd',
+  organizationName: 'hadikhodavirdi',
   projectName: 'llm-training-handbook', // اصلاح typo در اسم پروژه
 
   onBrokenLinks: 'throw',
@@ -70,7 +70,7 @@ const config = {
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
           editUrl:
-            'https://github.com/hadikhd/llm-training-handbook/edit/main/',
+            'https://github.com/hadikhodavirdi/llm-training-handbook/edit/main/',
         },
         blog: false,
         theme: {
@@ -108,7 +108,7 @@ const config = {
       },
       footer: {
         style: 'dark',
-        copyright: `Copyright © ${new Date().getFullYear()} LLM Training Handbook. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Hadi Khodavirdi. LLM Training Handbook. All rights reserved. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,

@@ -10,7 +10,6 @@ sidebar_position: 1
 
 </div>
 
-[فهرست مطالب](./00-preface.md) |
 [محتوا](./index.md) |
 [بعدی: مقدمه](./01-introduction.md)
 
@@ -356,6 +355,5 @@ Large Language Model (مدل‌های زبانی بزرگ) قدرتمند هست
 
 ---
 
-[فهرست مطالب](./00-preface.md) |
 [فهرست](./index.md) |
 [بعدی: مقدمه](./01-introduction.md)

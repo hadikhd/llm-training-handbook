@@ -11,8 +11,6 @@ description: How raw data becomes a governed, filtered, deduplicated, multilingu
 
 </div>
 
-# Chapter 2: Data for LLM Training
-
 [Previous: Introduction to Large Language Models](./01-introduction.md) |
 [Contents](./index.md) |
 [Next: Tokenization](./03-tokenization.md)

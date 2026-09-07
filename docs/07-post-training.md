@@ -11,6 +11,7 @@ description: How supervised and preference-based methods shape a pretrained mode
 ![Chapter 7 — Post-training](/img/chapters/post-training.png)
 
 </div>
+
 [Previous: Scaling Laws](./06-scaling-laws.md) |
 [Contents](./index.md) |
 [Next: Evaluation](./08-evaluation.md)

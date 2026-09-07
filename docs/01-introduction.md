@@ -821,5 +821,6 @@ A theoretically suitable architecture may be impractical if it cannot be trained
    *A Survey of Large Language Models*. 2023.
 
 ---
-
-[Previous: Preface](./00-preface.md) | [Next: Data for LLM Training](./02-data.md)
+[Previous:Preface](./00-preface.md) |
+[Contents](./index.md) |
+[Next: Tokenization](./02-data.md)
